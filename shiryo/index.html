@@ -73,6 +73,8 @@
 
   /* ============ generic content ============ */
   .content{padding-top:4mm;}
+  .content.vcenter{padding-top:0;min-height:calc(297mm - 34mm);display:flex;flex-direction:column;justify-content:center;}
+  .content.vcenter .voice-grid--lg .voice-card{min-height:190px;}
 
   /* profile / P2 */
   .greet{ display:grid; grid-template-columns:38mm 1fr; gap:11mm; align-items:start; margin-top:8px;}
@@ -168,8 +170,20 @@
   .flow-time .ic{font-size:20px;}
 
   /* works+voice / P6 */
-  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:6px;}
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 9px;margin-top:6px;align-items:start;}
   .works-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block;}
+  .works-grid a.work{display:block;text-decoration:none;color:var(--ink);}
+  .works-grid a.work img{transition:none;}
+  .works-grid .wl{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--blue);margin-top:6px;line-height:1.3;}
+  .works-grid .wl i{font-style:normal;font-size:11px;}
+  .cap-more{margin-top:16px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:15px 18px;}
+  .cap-more .cap-h{font-size:12.5px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .cap-more .cap-h::before{content:"";width:4px;height:15px;background:var(--blue);border-radius:2px;}
+  .cap-tags{display:flex;flex-wrap:wrap;gap:7px;}
+  .cap-tags span{background:#fff;color:#2c6f8c;border:1px solid #cfe4f2;border-radius:999px;padding:5px 13px;font-size:11.5px;font-weight:700;}
+  .cap-tags span.more{background:none;border:none;color:var(--sub);padding:5px 2px;}
+  .cap-link{display:inline-block;margin-top:12px;color:var(--blue);font-weight:700;font-size:12.5px;text-decoration:none;}
+  .cap-link .arw{font-family:"Roboto Mono",monospace;}
   .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;}
   .voice-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:15px 15px 16px;}
   .voice-card .vh{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
@@ -178,6 +192,19 @@
   .voice-card h4{font-size:13px;font-weight:800;margin-bottom:6px;line-height:1.45;}
   .voice-card p{font-size:11.5px;color:var(--sub);line-height:1.7;}
   .voice-src{font-size:10.5px;color:#9aa1ab;margin-top:10px;text-align:right;}
+  /* standalone voice page: bigger cards */
+  .voice-grid--lg{gap:15px;margin-top:14px;}
+  .voice-grid--lg .voice-card{padding:22px 20px 24px;}
+  .voice-grid--lg .voice-card .vh img{width:56px;height:56px;}
+  .voice-grid--lg .voice-card .stars{font-size:15px;}
+  .voice-grid--lg .voice-card h4{font-size:14.5px;margin-bottom:9px;}
+  .voice-grid--lg .voice-card p{font-size:12.5px;line-height:1.85;}
+  .rank-band{ margin-top:24px; background:linear-gradient(100deg,#fffaf0,#fff5e2); border:1.5px solid #f4dca0;
+    border-radius:14px; padding:18px 22px; display:flex; align-items:center; gap:16px;}
+  .rank-band .rank-ic{ width:46px;height:46px;border-radius:50%;background:var(--orange);color:#fff;
+    font-size:24px;line-height:46px;text-align:center;flex:none;box-shadow:0 8px 18px rgba(246,172,14,.35);}
+  .rank-band b{font-size:15px;font-weight:800;display:block;}
+  .rank-band span{font-size:12px;color:var(--sub);display:block;margin-top:3px;line-height:1.6;}
 
   /* faq + contact / P7 */
   .faq-list{display:grid;gap:10px;margin-top:6px;}
@@ -305,7 +332,7 @@
       <div class="ph-r">
         <div><span class="yen">¥</span><span class="num">22,000</span><span class="u">〜</span></div>
         <span class="kaikiri">買い切り・月額0円</span>
-        <div class="taxnote">税込・前払い</div>
+        <div class="taxnote">税込</div>
       </div>
     </div>
 
@@ -316,7 +343,7 @@
       <tr><td class="name">WordPress組み込み<small>ご自身で更新できる仕組みに</small></td><td class="val">+¥11,000</td></tr>
     </table>
 
-    <div class="pay-ex"><b>お支払い例）</b>1枚もの＋WordPress組み込み ＝ <span class="big">33,000円</span>（税込・前払い）</div>
+    <div class="pay-ex"><b>お支払い例）</b>1枚もの＋WordPress組み込み ＝ <span class="big">33,000円</span>（税込）</div>
 
     <div class="incl">
       <div class="h"><span class="badge">全プラン共通</span>以下はすべて、基本料金に含まれます。</div>
@@ -332,7 +359,7 @@
       </div>
     </div>
 
-    <p class="price-note">※表示価格はすべて<b style="color:#2c3038;">税込・前払い</b>です。内容・ボリュームによって変動する場合があります。正確なお見積りは無料相談でご案内します。</p>
+    <p class="price-note">※表示価格はすべて<b style="color:#2c3038;">税込</b>です。内容・ボリュームによって変動する場合があります。正確なお見積りは無料相談でご案内します。</p>
   </div>
   <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>04</div></div>
 </section>
@@ -343,16 +370,16 @@
   <div class="content">
     <div class="eyebrow">FLOW</div>
     <h2 class="sec">ご依頼から納品までの<span class="bl">流れ</span></h2>
-    <p class="lead">むずかしい準備は要りません。フォームからのお申し込み後は、公式LINEでやりとりしながら進めます。</p>
+    <p class="lead">むずかしい準備は要りません。フォームからのお申し込み後は、LINEでやりとりしながら進めます。</p>
 
     <div class="flow">
       <div class="flow-step"><div class="fn">01</div><div><h4>フォームから申し込み</h4><p>お名前とメールアドレスの入力だけ、約30秒で完了。この時点で費用は一切かかりません。</p></div></div>
       <div class="flow-step"><div class="fn">02</div><div><h4>資料が届く・無料相談</h4><p>この資料をお届けします。ご相談もフォームで受け付け、内容にしっかりお答えします。検討だけで終わってもOKです。</p></div></div>
-      <div class="flow-step hl"><div class="fn">03</div><div><h4>公式LINEで制作スタート<span class="pill">ここから制作</span></h4><p>進める際は公式LINEへ。ヒアリングしながら、構成・デザイン・文章をプロが組み立てます。専門知識は不要です。</p></div></div>
+      <div class="flow-step hl"><div class="fn">03</div><div><h4>LINEで制作スタート<span class="pill">ここから制作</span></h4><p>ご依頼が決まったら、お支払いの確認後に制作用のLINEをご案内します。あとはチャットでヒアリングしながら、構成・デザイン・文章までプロがまとめて組み立て。専門知識は不要、スマホだけで完結します。</p></div></div>
       <div class="flow-step"><div class="fn">04</div><div><h4>確認・納品</h4><p>仕上がりをご確認いただき、修正のうえ納品。買い切りなので、データも含めてすべてあなたのものになります。</p></div></div>
     </div>
 
-    <div class="flow-time"><span class="ic">🗓️</span><div>制作期間の目安：<b>最短1週間〜</b>（ボリュームやご確認のペースにより変動します）</div></div>
+    <div class="flow-time"><span class="ic">🗓️</span><div>制作期間の目安：<b>通常1週間〜10日程度</b>（ボリュームやご確認のペースにより変動します）</div></div>
   </div>
   <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>05</div></div>
 </section>
@@ -365,23 +392,45 @@
     <h2 class="sec">制作実績</h2>
     <p class="lead">業種・目的に合わせて一点ずつ制作しています。実績の一部をご紹介します。</p>
     <div class="works-grid">
-      <img src="../images/work-01.jpg" alt=""><img src="../images/work-02.jpg" alt=""><img src="../images/work-03.jpg" alt="">
+      <a class="work" href="https://gofukuno-yokoo.com/kimono-care-event-fukuoka/"><img src="../images/work-01.jpg" alt="呉服店 制作事例"><span class="wl">呉服店（福岡）<i>↗ サイトを見る</i></span></a>
+      <a class="work" href="https://illustrious-zuccutto-cdc1f2.netlify.app/"><img src="../images/work-02.jpg" alt="Web制作会社 制作事例"><span class="wl">Web制作会社<i>↗ サイトを見る</i></span></a>
+      <a class="work" href="https://eyespa-academy.com/lp/"><img src="../images/work-03.jpg" alt="アイスパ・スクール 制作事例"><span class="wl">アイスパ・スクール<i>↗ サイトを見る</i></span></a>
       <img src="../images/work-04.jpg" alt=""><img src="../images/work-05.jpg" alt=""><img src="../images/work-06.jpg" alt="">
     </div>
 
-    <div class="eyebrow pink" style="margin-top:26px;">VOICE</div>
+    <div class="cap-more">
+      <div class="cap-h">HP・LP以外の、こんなご相談も承っています</div>
+      <div class="cap-tags"><span>セールスファネル</span><span>マーケティング全般</span><span>SNS連携</span><span>AIボット</span><span>機能追加</span><span>UTAGE・マイスピー対応</span><span class="more">など</span></div>
+      <a class="cap-link" href="https://taf-design.com/price/"><span class="arw">▶</span> 詳しい料金・ご相談はこちら： taf-design.com/price/</a>
+    </div>
+
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>06</div></div>
+</section>
+
+<!-- ============================ PAGE 7 : VOICE ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content vcenter">
+    <div class="eyebrow pink">VOICE</div>
     <h2 class="sec">お客様の声 <span class="pk" style="font-size:18px;">— 全レビュー星5</span></h2>
-    <div class="voice-grid">
+    <p class="lead">「安いのに、大丈夫？」——その答えは、お客様の声にありました。サービス開始からわずか3ヶ月でココナラ最高ランク「プラチナ」を獲得。実際にいただいた声を、そのままご紹介します。</p>
+    <div class="voice-grid voice-grid--lg">
       <div class="voice-card"><div class="vh"><img src="../images/lp-voice-01.webp" alt=""><span class="stars">★★★★★</span></div><h4>すべて金額以上でした</h4><p>細かな対応、スピード、デザイン、気遣いなど全て金額以上でした。また是非お世話になろうと思えます。</p></div>
       <div class="voice-card"><div class="vh"><img src="../images/lp-voice-02.webp" alt=""><span class="stars">★★★★★</span></div><h4>初めてでも安心・美しい仕上がり</h4><p>終始丁寧にご対応いただき、大変感謝しております。仕上がりもとても美しく、大変満足しております。</p></div>
       <div class="voice-card"><div class="vh"><img src="../images/lp-voice-03.webp" alt=""><span class="stars">★★★★★</span></div><h4>マーケの土台づくりに満足</h4><p>スピード感、クオリティ、アドバイス、行間を読み取る力、全て申し分ないです。</p></div>
     </div>
     <p class="voice-src">※ココナラでのお取引レビューより（原文抜粋）</p>
+
+    <div class="rank-band">
+      <div class="rank-ic">★</div>
+      <div><b>ココナラ プラチナランク獲得</b><span>全レビュー星5／サービス開始3ヶ月で最高ランクに到達しました。</span></div>
+    </div>
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>06</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>07</div></div>
 </section>
 
-<!-- ============================ PAGE 7 : FAQ + CONTACT ============================ -->
+<!-- ============================ PAGE 8 : FAQ + CONTACT ============================ -->
 <section class="page">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
@@ -402,20 +451,20 @@
       </dl>
       <dl>
         <dt>Web</dt><dd>taf-design.com</dd>
-        <dt>お問い合わせ</dt><dd>公式LINE（下記より）</dd>
+        <dt>お問い合わせ</dt><dd>LINE（下記より）</dd>
       </dl>
     </div>
 
     <div class="cta">
       <div class="lb">CONTACT</div>
-      <h3>まずは、<span class="or">公式LINE</span>から。</h3>
+      <h3>まずは、<span class="or">LINE</span>から。</h3>
       <p>今すぐ決めなくて大丈夫。ご相談・お見積りは無料です。<br>「話を聞いてみたい」だけでも、お気軽にどうぞ。</p>
       <a class="btn" href="https://lin.ee/pqfXTUJ">友だち追加して相談する</a>
       <div class="url">https://lin.ee/pqfXTUJ</div>
       <div class="sub2">相談は無料 ／ 約30秒で申込完了 ／ しつこい営業はしません</div>
     </div>
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>07</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>08</div></div>
 </section>
 
 </body>
