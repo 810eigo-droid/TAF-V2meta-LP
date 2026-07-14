@@ -196,6 +196,35 @@ a { color: var(--color-blue); }
   position: relative;
   overflow: hidden;
 }
+/* FV背景の透かし写真(個人事業主たち) */
+.fv-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 0.45;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+/* 左(文字エリア)を白く抜いて可読性を確保するオーバーレイ */
+.fv-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      #fff 0%,
+      rgba(255, 255, 255, 0.82) 34%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(255, 255, 255, 0) 72%),
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(255, 255, 255, 0.85) 100%);
+}
 .fv-grid {
   display: grid;
   grid-template-columns: 1.08fr 1fr;
@@ -913,6 +942,16 @@ a { color: var(--color-blue); }
   :root { --section-space: 72px; }
 
   .fv { padding: 48px 0 72px; }
+  /* モバイルは縦積みで文字が全幅に乗るため、透かしをより薄く */
+  .fv-bg { opacity: 0.4; object-position: 70% center; }
+  .fv-bg-overlay {
+    background:
+      linear-gradient(180deg,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.55) 30%,
+        rgba(255, 255, 255, 0.4) 60%,
+        rgba(255, 255, 255, 0.9) 100%);
+  }
   .fv-grid { grid-template-columns: 1fr; gap: 48px; }
   .fv-actions { align-items: stretch; }
   .fv-actions .cta-button { min-width: 0; width: 100%; max-width: 400px; margin-inline: auto; }
