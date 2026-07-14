@@ -99,6 +99,8 @@ a { color: var(--color-blue); }
 
 /* ===== ボタン ===== */
 .cta-button {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -112,17 +114,40 @@ a { color: var(--color-blue); }
   font-size: 17px;
   letter-spacing: 0.04em;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(246, 172, 14, 0.32);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 24px rgba(246, 172, 14, 0.34);
+  animation: cta-pulse 1.5s ease-in-out infinite;
 }
-.cta-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(246, 172, 14, 0.4); }
-.cta-button:active { transform: scale(0.97); }
+.cta-button:active { transform: scale(0.96); }
+/* 流れるキラッと光る演出 */
+.cta-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -80%;
+  width: 55%;
+  height: 200%;
+  background: linear-gradient(100deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 80%);
+  transform: skewX(-20deg);
+  animation: cta-shine 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes cta-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes cta-shine {
+  0% { left: -80%; }
+  55% { left: 135%; }
+  100% { left: 135%; }
+}
 
 .cta-button--pink {
   background: var(--color-pink);
-  box-shadow: 0 8px 24px rgba(232, 46, 108, 0.28);
+  box-shadow: 0 8px 24px rgba(232, 46, 108, 0.3);
 }
-.cta-button--pink:hover { box-shadow: 0 12px 28px rgba(232, 46, 108, 0.36); }
 
 .cta-note {
   font-size: 12.5px;
@@ -141,7 +166,7 @@ a { color: var(--color-blue); }
 .cta-badge {
   position: relative;
   display: inline-block;
-  background: #1b2431;
+  background: #566072;
   color: #FFFFFF;
   font-size: 13px;
   font-weight: 700;
@@ -159,7 +184,7 @@ a { color: var(--color-blue); }
   transform: translateX(-50%);
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 7px solid #1b2431;
+  border-top: 7px solid #566072;
 }
 
 .text-link {
@@ -285,6 +310,18 @@ a { color: var(--color-blue); }
   height: 2px;
   background: var(--color-blue);
   margin-top: 10px;
+}
+/* 波打って一文字ずつ出現 */
+.wave-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em);
+  animation: wave-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes wave-in {
+  0%   { opacity: 0; transform: translateY(0.6em); }
+  60%  { opacity: 1; transform: translateY(-0.14em); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 .hero-title {
   font-size: clamp(30px, 3.6vw, 46px);
@@ -636,6 +673,19 @@ a { color: var(--color-blue); }
   font-weight: 800;
   line-height: 1.75;
   color: var(--color-text);
+}
+/* スマホでは背景ではなく本文の下にイラストを表示 */
+.story-illust-inline { display: none; }
+@media (max-width: 700px) {
+  .story-sec .sec-bg,
+  .story-sec .sec-ov { display: none; }
+  .story-illust-inline {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    margin: 26px auto 0;
+    border-radius: var(--radius-card);
+  }
 }
 
 /* ===== 流れ(3ステップ) ===== */
@@ -1080,6 +1130,8 @@ a { color: var(--color-blue); }
   .fade-in { opacity: 1; transform: none; transition: none; }
   .stickybar { transition: none; }
   .cta-button, .works-grid a { transition: none; }
+  .cta-button, .cta-button::after { animation: none; }
+  .wave-char { opacity: 1 !important; transform: none !important; animation: none !important; }
 }
 
 /* ============================================================

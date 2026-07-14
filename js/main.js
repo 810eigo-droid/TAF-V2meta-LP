@@ -7,6 +7,24 @@
     if (img.complete && img.naturalWidth === 0) { img.style.display = 'none'; }
   });
 
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // FV上部の小見出しを一文字ずつ波打って出現させる
+  var cat = document.querySelector('.fv-cat');
+  if (cat && !prefersReduced) {
+    var text = cat.textContent;
+    cat.textContent = '';
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < text.length; i++) {
+      var span = document.createElement('span');
+      span.className = 'wave-char';
+      span.textContent = text.charAt(i) === ' ' ? ' ' : text.charAt(i);
+      span.style.animationDelay = (i * 0.045).toFixed(3) + 's';
+      frag.appendChild(span);
+    }
+    cat.appendChild(frag);
+  }
+
   var supportsIO = 'IntersectionObserver' in window;
 
   // スクロール連動フェードイン
