@@ -373,6 +373,8 @@ a { color: var(--color-blue); }
   justify-content: center;
   padding: 20px 0;
 }
+/* SP用のFVビジュアル(スマホのみ表示) */
+.fv-sp { display: none; }
 .phone {
   width: min(300px, 78vw);
   background: #FFFFFF;
@@ -1057,16 +1059,16 @@ a { color: var(--color-blue); }
 .site-footer {
   background: var(--color-blue);
   color: var(--color-white);
-  padding: 56px 0 120px;
+  padding: 26px 0 84px;
   text-align: center;
 }
-.footer-name { font-weight: 800; font-size: 15px; margin: 0 0 20px; }
+.footer-name { font-weight: 800; font-size: 13.5px; margin: 0 0 12px; }
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 26px;
-  margin: 0 0 26px;
+  gap: 6px 22px;
+  margin: 0 0 14px;
   padding: 0;
   list-style: none;
 }
@@ -1114,7 +1116,7 @@ a { color: var(--color-blue); }
 /* PC幅ではヘッダーCTAがあるため追従バーは出さない */
 @media (min-width: 961px) {
   .stickybar { display: none; }
-  .site-footer { padding-bottom: 56px; }
+  .site-footer { padding-bottom: 26px; }
 }
 
 /* ===== スクロールフェードイン ===== */
@@ -1162,20 +1164,22 @@ a { color: var(--color-blue); }
   .works-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* スマホは縦長専用の背景画像に差し替え */
+/* スマホは背景画像をやめ、文章の下にSP用ビジュアルを表示 */
 @media (max-width: 700px) {
-  .fv-bg--desktop { display: none; }
-  .fv-bg--mobile {
+  .fv-bg--desktop,
+  .fv-bg--mobile,
+  .fv-bg-overlay { display: none; }
+  .fv-visual { padding: 0; }
+  .fv-visual .phone,
+  .fv-visual .deco-ring--small { display: none; }
+  .fv-sp {
     display: block;
-    opacity: 0.85;
-    object-fit: cover;
-    object-position: center bottom;
-  }
-  /* 縦長画像は元々上半分が白いので、オーバーレイは下側だけ軽く */
-  .fv-bg-overlay {
-    background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0) 60%,
-      rgba(255, 255, 255, 0.55) 100%);
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 16px;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 11%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0, #000 11%, #000 86%, transparent 100%);
   }
 }
 
@@ -1187,8 +1191,8 @@ a { color: var(--color-blue); }
 
   .problem-grid { grid-template-columns: 1fr; }
   .works-grid { grid-template-columns: repeat(2, 1fr); }
-  .works-track a { width: 190px; }
-  .works-track { gap: 12px; }
+  .works-track a { width: 280px; }
+  .works-track { gap: 14px; }
 
   .cta-button { min-width: 0; width: 100%; max-width: 400px; }
   .cv-box { padding: 40px 22px; }
