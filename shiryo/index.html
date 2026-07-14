@@ -269,6 +269,11 @@
   .apply-box .av{font-size:16px;font-weight:800;color:#fff;margin-top:7px;letter-spacing:.02em;}
   .apply-box .av.sm{font-size:13.5px;}
   .apply-box .as{font-size:10.5px;color:#9aa1ab;margin-top:5px;}
+  .cta a.apply-box{text-decoration:none;color:inherit;display:block;transition:.15s;}
+  .cta a.apply-box:hover{background:rgba(255,255,255,.12);}
+  .to-toc{font-size:10.5px;font-weight:700;color:var(--blue);text-decoration:none;border:1px solid var(--blue-l);border-radius:999px;padding:4px 11px;background:#fff;}
+  .works-more{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;border:1.5px solid var(--blue);color:var(--blue);font-weight:800;font-size:13px;padding:12px;border-radius:12px;text-decoration:none;background:#fff;}
+  .works-more .arw{font-family:"Roboto Mono",monospace;}
 
   /* ===== Web閲覧用: 印刷/PDF保存ボタン ===== */
   .dl-print{
@@ -311,7 +316,7 @@
 </section>
 
 <!-- ============================ PAGE 2 : 目次 ============================ -->
-<section class="page">
+<section class="page" id="p-toc">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
     <div class="eyebrow">CONTENTS</div>
@@ -333,7 +338,7 @@
 
 <!-- ============================ PAGE 3 : GREETING ============================ -->
 <section class="page" id="p-about">
-  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><a href="#p-toc" class="to-toc">目次に戻る ▲</a></div>
   <div class="content">
     <div class="eyebrow">ABOUT US</div>
     <h2 class="sec">はじめまして、<span class="bl">TAF Design</span>です。</h2>
@@ -360,7 +365,7 @@
 
 <!-- ============================ PAGE 4 : 対応できるサービス ============================ -->
 <section class="page" id="p-services">
-  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><a href="#p-toc" class="to-toc">目次に戻る ▲</a></div>
   <div class="content">
     <div class="eyebrow">SERVICES</div>
     <h2 class="sec">Web制作だけでは、<span class="bl">ありません。</span></h2>
@@ -384,7 +389,7 @@
 
 <!-- ============================ PAGE 5 : WHY KAIKIRI ============================ -->
 <section class="page" id="p-why">
-  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><a href="#p-toc" class="to-toc">目次に戻る ▲</a></div>
   <div class="content">
     <div class="eyebrow pink">STORY</div>
     <h2 class="sec">なぜ、<span class="pk">&ldquo;買い切り&rdquo;</span>なのか。</h2>
@@ -415,7 +420,7 @@
 
 <!-- ============================ PAGE 4 : PRICE ============================ -->
 <section class="page" id="p-price">
-  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><a href="#p-toc" class="to-toc">目次に戻る ▲</a></div>
   <div class="content">
     <div class="eyebrow orange">PRICE</div>
     <h2 class="sec">料金プラン</h2>
@@ -465,7 +470,7 @@
 
 <!-- ============================ PAGE 5 : FLOW ============================ -->
 <section class="page" id="p-flow">
-  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><a href="#p-toc" class="to-toc">目次に戻る ▲</a></div>
   <div class="content">
     <div class="eyebrow">FLOW</div>
     <h2 class="sec">ご依頼から納品までの<span class="bl">流れ</span></h2>
@@ -485,7 +490,7 @@
 
 <!-- ============================ PAGE 6 : WORKS + VOICE ============================ -->
 <section class="page" id="p-works">
-  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><a href="#p-toc" class="to-toc">目次に戻る ▲</a></div>
   <div class="content">
     <div class="eyebrow">WORKS</div>
     <h2 class="sec">制作実績</h2>
@@ -496,6 +501,8 @@
       <a class="work" href="https://eyespa-academy.com/lp/"><img src="../images/work-03.jpg" alt="アイスパ・スクール 制作事例"><span class="wl">アイスパ・スクール<i>↗ サイトを見る</i></span></a>
       <img src="../images/work-04.jpg" alt=""><img src="../images/work-05.jpg" alt=""><img src="../images/work-06.jpg" alt="">
     </div>
+
+    <a class="works-more" href="https://www.foriio.com/surelywork-810"><span class="arw">▶</span> 制作実績をもっと見る（foriio ポートフォリオ）</a>
 
     <div class="cap-more">
       <div class="cap-h">HP・LP以外の、こんなご相談も承っています</div>
@@ -509,11 +516,11 @@
 
 <!-- ============================ PAGE 7 : VOICE ============================ -->
 <section class="page" id="p-voice">
-  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><a href="#p-toc" class="to-toc">目次に戻る ▲</a></div>
   <div class="content vcenter">
     <div class="eyebrow pink">VOICE</div>
     <h2 class="sec">お客様の声 <span class="pk" style="font-size:18px;">— 全レビュー星5</span></h2>
-    <p class="lead">「安いのに、大丈夫？」——その答えは、お客様の声にありました。サービス開始からわずか3ヶ月でココナラ最高ランク「プラチナ」を獲得。実際にいただいた声を、そのままご紹介します。</p>
+    <p class="lead">「安いのに、大丈夫？」——その答えは、お客様の声にありました。実際にいただいた声の一部を、そのままご紹介します。</p>
     <div class="voice-grid voice-grid--lg">
       <div class="voice-card"><div class="vh"><img src="../images/lp-voice-01.webp" alt=""><span class="stars">★★★★★</span></div><h4>すべて金額以上でした</h4><p>細かな対応、スピード、デザイン、気遣いなど全て金額以上でした。また是非お世話になろうと思えます。</p></div>
       <div class="voice-card"><div class="vh"><img src="../images/lp-voice-02.webp" alt=""><span class="stars">★★★★★</span></div><h4>初めてでも安心・美しい仕上がり</h4><p>終始丁寧にご対応いただき、大変感謝しております。仕上がりもとても美しく、大変満足しております。</p></div>
@@ -531,7 +538,7 @@
 
 <!-- ============================ PAGE 8 : FAQ + CONTACT ============================ -->
 <section class="page" id="p-faq">
-  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><a href="#p-toc" class="to-toc">目次に戻る ▲</a></div>
   <div class="content">
     <div class="eyebrow">FAQ</div>
     <h2 class="sec">よくある<span class="bl">ご質問</span></h2>
@@ -550,7 +557,7 @@
       </dl>
       <dl>
         <dt>Web</dt><dd>taf-design.com</dd>
-        <dt>お問い合わせ</dt><dd>フォーム・LINE・お電話（下記）</dd>
+        <dt>お問い合わせ</dt><dd>フォーム・LINE・SMS（下記）</dd>
       </dl>
     </div>
 
@@ -561,8 +568,8 @@
       <a class="btn btn-apply" href="https://taf-design.com/offer2/">お申し込み・無料相談フォーム</a>
       <div class="url">https://taf-design.com/offer2/</div>
       <div class="apply-row">
-        <div class="apply-box"><div class="al">LINE</div><div class="av sm">友だち追加して相談</div><div class="as">lin.ee/pqfXTUJ</div></div>
-        <div class="apply-box"><div class="al">PHONE / SMS</div><div class="av">090-2514-6064</div><div class="as">ショートメール(SMS)も可</div></div>
+        <a class="apply-box" href="https://lin.ee/pqfXTUJ"><div class="al">LINE</div><div class="av sm">友だち追加して相談</div><div class="as">lin.ee/pqfXTUJ</div></a>
+        <a class="apply-box" href="sms:09025146064"><div class="al">SMS / ショートメール</div><div class="av">090-2514-6064</div><div class="as">SMS（ショートメール）で承ります</div></a>
       </div>
       <div class="sub2">相談は無料 ／ しつこい営業はしません</div>
     </div>
