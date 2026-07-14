@@ -667,9 +667,9 @@ a { color: var(--color-blue); }
     rgba(255, 255, 255, 0.2) 76%,
     rgba(255, 255, 255, 0) 100%);
 }
-/* STEP:全面に薄く敷き、白ヴェールでカード/文字を優先 */
-.sec-bg--step { object-position: center; opacity: 0.4; }
-.sec-ov--white { background: rgba(245, 247, 250, 0.66); }
+/* STEP:イラストをしっかり見せつつ、白ヴェールでカード/文字を確保 */
+.sec-bg--step { object-position: center; opacity: 0.85; }
+.sec-ov--white { background: rgba(245, 247, 250, 0.34); }
 /* 最終CTA:写真を暗く敷いて白文字を乗せる */
 .sec-bg--photo { opacity: 1; }
 .sec-ov--dark {
@@ -711,12 +711,16 @@ a { color: var(--color-blue); }
   line-height: 1.75;
   color: var(--color-text);
 }
-/* スマホでは背景ではなく本文の下にイラストを表示 */
-.story-illust-inline { display: none; }
+/* スマホでは背景ではなく本文の下にイラストを表示(STORY/STEP共通) */
+.story-illust-inline,
+.step-illust-inline { display: none; }
 @media (max-width: 700px) {
   .story-sec .sec-bg,
-  .story-sec .sec-ov { display: none; }
-  .story-illust-inline {
+  .story-sec .sec-ov,
+  .step-sec .sec-bg,
+  .step-sec .sec-ov { display: none; }
+  .story-illust-inline,
+  .step-illust-inline {
     display: block;
     width: 100%;
     max-width: 440px;
