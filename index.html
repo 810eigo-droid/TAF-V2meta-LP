@@ -43,11 +43,11 @@
   .cv-char--boy  { left: calc(50% + 225px); }
 }
 @media (max-width: 700px) {
-  /* スマホ: カードの上に2人(足元をカード縁に重ねる) */
-  .cv { padding-top: calc(var(--section-space) + 118px) !important; }
-  .cv-char { height: 150px; top: calc(var(--section-space) - 26px); bottom: auto; z-index: 0; }
-  .cv-char--girl { right: calc(50% + 10px); }
-  .cv-char--boy  { left: calc(50% + 10px); }
+  /* スマホ: カード左右の縁に重ねて(カードの手前)、頭を上端から出す */
+  .cv { padding-top: calc(var(--section-space) + 70px) !important; }
+  .cv-char { height: 190px; top: calc(var(--section-space) + 10px); bottom: auto; z-index: 2; }
+  .cv-char--girl { left: -30px; right: auto; }
+  .cv-char--boy  { right: -30px; left: auto; }
 }
 </style>
 
