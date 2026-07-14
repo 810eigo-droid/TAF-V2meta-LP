@@ -131,6 +131,37 @@ a { color: var(--color-blue); }
   line-height: 1.8;
 }
 
+/* ===== CTA:吹き出しバッジ + ボタン ===== */
+.cta-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.cta-badge {
+  position: relative;
+  display: inline-block;
+  background: #1b2431;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 7px 20px;
+  border-radius: 8px;
+  margin-bottom: 13px;
+  white-space: nowrap;
+}
+.cta-badge::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #1b2431;
+}
+
 .text-link {
   display: inline-block;
   color: var(--color-blue);
@@ -209,6 +240,8 @@ a { color: var(--color-blue); }
   pointer-events: none;
   user-select: none;
 }
+/* デスクトップ用(横長)を表示、モバイル用(縦長)は隠す */
+.fv-bg--mobile { display: none; }
 /* 左(文字エリア)を白く抜いて可読性を確保するオーバーレイ */
 .fv-bg-overlay {
   position: absolute;
@@ -954,13 +987,23 @@ a { color: var(--color-blue); }
   }
   .fv-grid { grid-template-columns: 1fr; gap: 48px; }
   .fv-actions { align-items: stretch; }
-  .fv-actions .cta-button { min-width: 0; width: 100%; max-width: 400px; margin-inline: auto; }
-  .fv-actions .text-link { text-align: center; margin-inline: auto; }
+  .fv-actions .cta-wrap { width: 100%; max-width: 400px; margin-inline: auto; }
+  .fv-actions .cta-button { min-width: 0; width: 100%; }
 
   .reason-grid { grid-template-columns: 1fr; gap: 44px; }
   .steps { grid-template-columns: 1fr; }
   .voice-grid { grid-template-columns: 1fr; }
   .works-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* スマホは縦長専用の背景画像に差し替え */
+@media (max-width: 700px) {
+  .fv-bg--desktop { display: none; }
+  .fv-bg--mobile {
+    display: block;
+    opacity: 0.4;
+    object-position: center top;
+  }
 }
 
 @media (max-width: 600px) {
