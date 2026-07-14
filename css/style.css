@@ -322,14 +322,17 @@ a { color: var(--color-blue); }
 }
 .fv-tags li {
   font-size: 12.5px;
-  font-weight: 500;
-  color: var(--color-text-sub);
-  background: var(--color-bg-light);
-  border: 1px solid var(--color-border);
+  font-weight: 600;
+  border: 1.5px solid;
   border-radius: var(--radius-button);
   padding: 4px 14px;
   line-height: 1.7;
 }
+/* アクセント4色を循環させて配色(機能=青/メリット=橙/注目=桃/分類=紫) */
+.fv-tags li:nth-child(4n+1) { color: var(--color-blue);   border-color: #b9e4f5; background: #f1fafe; }
+.fv-tags li:nth-child(4n+2) { color: var(--color-orange); border-color: #f7d79a; background: #fef7e9; }
+.fv-tags li:nth-child(4n+3) { color: var(--color-pink);   border-color: #f6b8ce; background: #fdedf3; }
+.fv-tags li:nth-child(4n+4) { color: var(--color-purple); border-color: #dcc4e9; background: #f7f0fb; }
 
 .fv-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .fv-actions .cta-button { min-width: 320px; }
@@ -1001,8 +1004,15 @@ a { color: var(--color-blue); }
   .fv-bg--desktop { display: none; }
   .fv-bg--mobile {
     display: block;
-    opacity: 0.4;
-    object-position: center top;
+    opacity: 0.85;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+  /* 縦長画像は元々上半分が白いので、オーバーレイは下側だけ軽く */
+  .fv-bg-overlay {
+    background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.55) 100%);
   }
 }
 
@@ -1021,4 +1031,16 @@ a { color: var(--color-blue); }
   .fv .deco-ring { width: 90px; border-width: 13px; top: -26px; right: -30px; }
   .header-logo { font-size: 14px; }
   .header-cta { padding: 0 16px; font-size: 12.5px; height: 38px; }
+
+  /* --- スマホFV:CTAをファーストビュー内に収めるための余白圧縮 --- */
+  .fv { padding: 14px 0 40px; }
+  .fv-badge { margin-bottom: 12px; padding: 4px 15px; font-size: 11.5px; }
+  .fv-cat { margin-bottom: 8px; font-size: 13px; }
+  .fv-cat::after { margin-top: 7px; }
+  .hero-title { line-height: 1.34; margin-bottom: 12px; }
+  .fv-sub { margin-bottom: 16px; line-height: 1.85; }
+  .fv-tags { gap: 7px 8px; margin-bottom: 18px; }
+  .fv-tags li { font-size: 11.5px; padding: 3.5px 12px; }
+  .fv-grid { gap: 30px; }
+  .fv-actions .cta-note { margin-top: 10px; }
 }
