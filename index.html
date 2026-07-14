@@ -3,945 +3,344 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5,000円OFFクーポン配布中|個人事業主のためのWeb制作 TAF Design</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
+<title>無料相談・資料請求受付中|個人事業主のためのWeb制作 TAF Design</title>
 
-<meta name="description" content="AIの時代に、HP/LP制作は高いまま。おかしくないですか?買い切り2万円から・月額0円のHP/LP制作。今だけ5,000円OFFクーポン配布中。">
+<meta name="description" content="AIの時代に、HP/LP制作は高いまま。おかしくないですか?買い切り2万円から・月額0円のHP/LP制作。無料相談・資料請求を受付中。">
 <meta name="robots" content="noindex">
+
 <!-- OGP -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://taf-design.com/lp/">
 <meta property="og:title" content="AIの時代に、HPだけ高いまま。おかしくないですか?|TAF Design">
-<meta property="og:description" content="買い切り2万円から・月額0円のHP/LP制作。今だけ5,000円OFFクーポン配布中。">
+<meta property="og:description" content="買い切り2万円から・月額0円のHP/LP制作。無料相談・資料請求を受付中。">
 <meta property="og:image" content="https://taf-design.com/wp-content/uploads/2026/07/lp-fv-main.webp">
 <meta property="og:site_name" content="ティーチ&ファネルDesign">
 <meta name="twitter:card" content="summary_large_image">
-<!-- ▼▼ Meta Pixel ▼▼ -->
-<script>
-(function () {
-  document.querySelectorAll('.taflp img, .taflp2 img').forEach(function (img) {
-    img.addEventListener('error', function () { img.style.display = 'none'; });
-    if (img.complete && img.naturalWidth === 0) { img.style.display = 'none'; }
-  });
 
-  var toTop = document.getElementById('taflp-totop');
-  if (toTop) {
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 500) {
-        toTop.classList.add('is-visible');
-      } else {
-        toTop.classList.remove('is-visible');
-      }
-    }, { passive: true });
-    toTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-})();
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- ▼▼ Meta Pixel(広告配信時に正式なPixelコードへ差し替えてください) ▼▼ -->
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1427280391720324&ev=PageView&noscript=1"
 /></noscript>
 <!-- ▲▲ ここまで ▲▲ -->
- 
 </head>
-<body style="margin:0;padding:0;background:#eee;">
+<body>
 
-
-<style>
-
-/* ===== LP本体 ===== */
-.taflp, .taflp * { box-sizing: border-box; }
-.taflp {
-  --navy: #1b2a4a;
-  --navy-deep: #101c34;
-  --gold: #c9a54a;
-  --gold-light: #e5cf8f;
-  --ivory: #faf7f0;
-  --ink: #2a2a2a;
-  --red: #b03a3a;
-  font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
-  color: var(--ink);
-  background: #fff;
-  max-width: 480px;
-  margin: 0 auto;
-  line-height: 1.9;
-  font-size: 16px;
-  overflow-x: hidden;
-}
-html { scroll-behavior: smooth; }
-
-.taflp img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-.taflp section { padding: 56px 22px; }
-/* 流れセクション(3step画像)の下余白を圧縮 */
-.taflp section:has(.taflp-step-img) { padding-bottom: 28px; }
-/* 選ばれる理由(genba画像)の上余白を圧縮 */
-.taflp2 section:has(.taflp2-genba-img) { padding-top: 24px; }
-.taflp h2 {
-  font-size: 24px;
-  line-height: 1.5;
-  color: var(--navy);
-  margin: 0 0 20px;
-  font-weight: 700;
-}
-
-/* ===== トップバー ===== */
-.taflp-topbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 9999;
-  background: var(--navy-deep);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 9px 12px;
-  font-size: 13px;
-  font-family: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
-}
-.taflp-topbar a {
-  background: var(--gold);
-  color: var(--navy-deep);
-  text-decoration: none;
-  font-weight: 700;
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  white-space: nowrap;
-}
-.taflp-topbar-spacer { height: 20px; }
-
-/* ===== CTAボタン共通 ===== */
-.taflp-cta {
-  display: block;
-  background: linear-gradient(180deg, #d8b45a, var(--gold));
-  color: var(--navy-deep);
-  text-align: center;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
-  padding: 18px 20px;
-  border-radius: 999px;
-  box-shadow: 0 6px 18px rgba(201,165,74,.45);
-  margin: 22px auto 0;
-  max-width: 360px;
-  transition: transform .15s;
-}
-.taflp-cta:active { transform: scale(.97); }
-.taflp-cta small { display: block; font-size: 12px; font-weight: 400; margin-top: 2px; }
-.taflp-cta-note {
-  text-align: center;
-  font-size: 12px;
-  color: #666;
-  margin: 10px 0 0;
-  line-height: 1.7;
-}
-/* ===== CTAボタン:グロー+脈動+流れるきらめき ===== */
-.taflp-cta {
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 6px 22px rgba(201,165,74,.55), 0 0 0 5px rgba(201,165,74,.15);
-  animation: cta-pulse 2.6s ease-in-out infinite;
-}
-.taflp-cta::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -80%;
-  width: 50%;
-  height: 200%;
-  background: linear-gradient(
-    100deg,
-    rgba(255,255,255,0) 20%,
-    rgba(255,255,255,.55) 50%,
-    rgba(255,255,255,0) 80%
-  );
-  transform: skewX(-20deg);
-  animation: cta-shine 3.4s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes cta-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.025); }
-}
-@keyframes cta-shine {
-  0%   { left: -80%; }
-  55%  { left: 130%; }
-  100% { left: 130%; }
-}
-/* 動きを減らす設定のユーザーには停止(酔い対策) */
-@media (prefers-reduced-motion: reduce) {
-  .taflp-cta, .taflp-cta::after { animation: none; }
-}
-
-/* ===== FV ===== */
-.taflp-fv {
-  background: linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 100%);
-  color: #fff;
-  padding: 0px 22px 48px;
-  text-align: center;
-}
-.taflp-fv-label {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--gold-light);
-  color: var(--gold-light);
-  font-size: 12px;
-  letter-spacing: .18em;
-  text-indent: .18em;
-  padding: 5px 18px;
-  border-radius: 999px;
-  margin-bottom: 18px;
-  font-weight: 500;
-}
-.taflp-fv-label::after {
-  content: "";
-  position: absolute;
-  top: 0; bottom: 0;
-  left: -60%;
-  width: 40%;
-  background: linear-gradient(
-    100deg,
-    rgba(255,255,255,0) 15%,
-    rgba(255,255,255,.5) 50%,
-    rgba(255,255,255,0) 85%
-  );
-  transform: skewX(-20deg);
-  animation: label-shine 4.2s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes label-shine {
-  0%   { left: -60%; }
-  45%  { left: 140%; }
-  100% { left: 140%; }
-}
-.taflp-fv-sub {
-  font-size: 15px;
-  letter-spacing: .06em;
-  line-height: 2.1;
-  margin: 0 0 18px;
-  color: #d8d4c6;
-}
-.taflp-fv-sub strong {
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.12em;
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 1px;
-}
-.fv2 { display: block; margin: 0 0 18px; }
-.fv2-l1 {
-  display: block;
-  font-size: clamp(21px, 6vw, 26px);
-  font-weight: 500;
-  letter-spacing: .1em;
-  line-height: 2;
-  color: #f2efe6;
-}
-.fv2-rule {
-  display: block;
-  width: 34px;
-  height: 1px;
-  background: var(--gold);
-  margin: 16px auto 14px;
-}
-.fv2-l2 {
-  display: block;
-  font-size: clamp(27px, 8.4vw, 36px);
-  font-weight: 700;
-  letter-spacing: .06em;
-  line-height: 1.5;
-  color: var(--gold-light);
-}
-.fv2-zero { white-space: nowrap; }
-
-.taflp-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 7px;
-  margin: 0 0 22px;
-  padding: 0;
-  list-style: none;
-}
-.taflp-tags li {
-  font-size: 11.5px;
-  border: 1px solid rgba(255,255,255,.4);
-  color: #f0eee6;
-  padding: 3px 11px;
-  border-radius: 999px;
-}
-.taflp-fv-img { margin: 0 0 22px; }
-.taflp-badge-offer {
-  display: inline-block;
-  background: var(--red);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 7px 20px;
-  border-radius: 6px;
-  margin-bottom: 4px;
-}
-.taflp-fv .taflp-cta-note { color: #cfcabb; }
-
-/* ===== 共感 ===== */
-.taflp-empathy { background: var(--ivory); }
-.taflp-checklist { list-style: none; padding: 0; margin: 0 0 18px; }
-.taflp-checklist li {
-  background: #fff;
-  border-left: 4px solid var(--gold);
-  padding: 13px 16px;
-  margin-bottom: 10px;
-  border-radius: 0 8px 8px 0;
-  box-shadow: 0 2px 8px rgba(27,42,74,.06);
-  font-size: 15px;
-}
-.taflp-checklist li::before { content: "☑ "; color: var(--gold); font-weight: 700; }
-.taflp-empathy-close { font-size: 15px; color: var(--navy); font-weight: 700; text-align: center; margin: 0; }
-
-/* ===== サブスク比較 ===== */
-.taflp-hikaku { background: #fff; }
-.taflp-hikaku h2 { text-align: center; }
-.taflp-hikaku-lead { text-align: center; font-size: 14.5px; margin: 0 0 26px; letter-spacing: .03em; }
-.hikaku-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-  line-height: 1.7;
-}
-.taflp-hikaku-img {
-  margin: 0 0 24px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.hikaku-table th, .hikaku-table td {
-  padding: 13px 8px;
-  text-align: center;
-  border-bottom: 1px solid #eee7d4;
-  vertical-align: middle;
-}
-.hikaku-table thead th {
-  font-size: 12.5px;
-  letter-spacing: .06em;
-  padding-bottom: 10px;
-}
-.hikaku-table thead th.col-sub { color: #8a8a8a; font-weight: 500; }
-.hikaku-table thead th.col-taf {
-  color: var(--navy);
-  background: linear-gradient(180deg, #faf6ea, #fff);
-  border-top: 2.5px solid var(--gold);
-  font-weight: 700;
-}
-.hikaku-table tbody th {
-  text-align: left;
-  font-size: 12px;
-  color: #888;
-  font-weight: 500;
-  letter-spacing: .04em;
-  width: 26%;
-}
-.hikaku-table td.col-sub { color: #999; }
-.hikaku-table td.col-taf {
-  background: #fdfbf4;
-  color: var(--navy);
-  font-weight: 700;
-}
-.hikaku-table td.col-taf .big {
-  font-size: 19px;
-  color: var(--gold);
-  letter-spacing: .02em;
-}
-.hikaku-note {
-  font-size: 11px;
-  color: #aaa;
-  margin: 14px 0 0;
-  line-height: 1.8;
-}
-.hikaku-honest {
-  margin-top: 22px;
-  background: var(--ivory);
-  border-left: 3px solid var(--gold);
-  padding: 14px 16px;
-  font-size: 13px;
-  line-height: 1.9;
-}
-.hikaku-honest-img {
-  margin: 22px auto 0;
-  max-width: 340px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-/* ===== 流れ ===== */
-.taflp-steps { counter-reset: step; list-style: none; padding: 0; margin: 0; }
-.taflp-steps li {
-  counter-increment: step;
-  position: relative;
-  padding: 4px 0 4px 56px;
-  margin-bottom: 22px;
-  font-size: 15px;
-}
-.taflp-steps li::before {
-  content: counter(step);
-  position: absolute;
-  left: 0; top: 0;
-  width: 40px; height: 40px;
-  background: var(--gold);
-  color: var(--navy-deep);
-  font-weight: 700;
-  font-size: 19px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.taflp-step-img {
-  max-width: 340px;
-  margin: 0 auto;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.taflp-steps-close { text-align: center; font-size: 14px; color: var(--navy); font-weight: 700; }
-</style>
-
-<div class="taflp">
-
-  <!-- トップバー -->
-  <div class="taflp-topbar">
-    <span>🎁 今だけ 5,000円OFFクーポン配布中</span>
-    <a href="https://taf-design.com/coupon/">受け取る→</a>
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="container">
+    <a class="header-logo" href="#top">TAF Design<span>TEACH &amp; FUNNEL DESIGN</span></a>
+    <a class="header-cta" href="https://taf-design.com/offer/">相談・資料DL</a>
   </div>
-  <div class="taflp-topbar-spacer"></div>
+</header>
+
+<main id="top">
 
   <!-- FV -->
-  <section class="taflp-fv" id="taflp-fv">
-    <span class="taflp-fv-label">個人事業主・副業オーナーのWeb制作</span>
-    <h1 class="fv2">
-      <span class="fv2-l1">AIの時代に、<br>HP/LP制作は高いまま</span>
-      <span class="fv2-rule" aria-hidden="true"></span>
-      <span class="fv2-l2">おかしくないですか?</span>
-    </h1>
-    <p class="taflp-fv-sub">私たちは<strong>買い切り2万円から</strong>。<span class="fv2-zero">月額はかかりません。</span></p>
+  <section class="fv" id="fv">
+    <div class="deco deco-ring" aria-hidden="true"></div>
+    <div class="deco deco-circle deco-circle--blue" aria-hidden="true"></div>
+    <div class="deco deco-circle deco-circle--pink" aria-hidden="true"></div>
+    <div class="deco deco-dots" aria-hidden="true"></div>
+    <div class="container">
+      <div class="fv-grid">
+        <div class="fv-copy">
+          <span class="fv-badge">無料相談・資料請求</span>
+          <p class="fv-cat">個人事業主・副業オーナーのWeb制作</p>
+          <h1 class="hero-title">AIの時代に、<br>HP/LP制作は高いまま<br><span class="em">おかしくないですか?</span></h1>
+          <p class="fv-sub">私たちは<strong>買い切り2万円から</strong>。月額はかかりません。</p>
+          <ul class="fv-tags">
+            <li>買い切り</li>
+            <li>セールスファネル</li>
+            <li>マーケティング全般</li>
+            <li>SNS連携</li>
+            <li>AIボット</li>
+            <li>機能追加</li>
+            <li>UTAGE・マイスピー対応</li>
+          </ul>
+          <div class="fv-actions">
+            <a class="text-link" href="https://taf-design.com/price/" target="_blank" rel="noopener">詳しい料金はこちら</a>
+            <a class="cta-button" href="https://taf-design.com/offer/">相談・資料ダウンロード</a>
+            <p class="cta-note">相談は無料/しつこい営業はしません</p>
+          </div>
+        </div>
 
-    <ul class="taflp-tags">
-      <li>買い切り</li><li>セールスファネル</li><li>SNS連携</li><li>AIボット</li><li>機能追加</li><li>UTAGE・マイスピー対応</li>
-    </ul>
-
-    <div class="taflp-fv-img">
-      <img src="https://taf-design.com/wp-content/uploads/2026/07/lp-fv-main.webp" alt="買い切り2万円からのHP/LP制作" loading="eager" width="750" height="560">
+        <div class="fv-visual">
+          <div class="deco deco-ring deco-ring--small" aria-hidden="true"></div>
+          <div class="phone" aria-hidden="true">
+            <div class="phone-screen">
+              <div class="chat-header">TAF Design<small>CHAT SUPPORT</small></div>
+              <div class="chat-body">
+                <div class="bubble bubble--user">HPを作りたいけど、予算が心配で…</div>
+                <div class="bubble bubble--taf">買い切り2万円から。月額は0円です</div>
+                <div class="bubble bubble--user">維持費はかからないんですか?</div>
+                <div class="bubble bubble--taf">かかりません。サイトはずっとあなたのものです</div>
+                <div class="chat-card">
+                  <p>まずは資料をご覧ください</p>
+                  <span>無料ダウンロード</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <span class="taflp-badge-offer">🎁 5,000円OFFクーポンは今だけ配布中</span>
-    <a class="taflp-cta" href="https://taf-design.com/coupon/">5,000円OFFクーポンを受け取る<small>(取得から1年間有効)</small></a>
-    <p class="taflp-cta-note">登録30秒/メールだけ/<br>しつこい営業はしません</p>
   </section>
 
-  <!-- 共感 -->
-  <section class="taflp-empathy">
-    <h2>ひとつでも当てはまれば、このクーポンがきっと役に立ちます。</h2>
-    <ul class="taflp-checklist">
-      <li>HPはあるけど、問い合わせにつながらない</li>
-      <li>何から手を付ければいいか分からない</li>
-      <li>制作会社は高そう…でも自作は不安</li>
-      <li>広告や集客、興味はあるけど怖い</li>
-    </ul>
-    <p class="taflp-empathy-close">どれも、私たちが毎日ご相談を受けているお悩みです。</p>
+  <!-- 課題提起(悩み) -->
+  <section class="section section--light">
+    <div class="container fade-in">
+      <span class="sec-label">PROBLEM</span>
+      <h2 class="sec-title">こんなお悩み、<span class="text-blue">ありませんか?</span></h2>
+      <div class="problem-grid">
+        <div class="problem-card"><span class="check">✓</span><p>HPはあるけど、問い合わせにつながらない</p></div>
+        <div class="problem-card"><span class="check">✓</span><p>何から手を付ければいいか分からない</p></div>
+        <div class="problem-card"><span class="check">✓</span><p>制作会社は高そう…でも自作は不安</p></div>
+        <div class="problem-card"><span class="check">✓</span><p>広告や集客、興味はあるけど怖い</p></div>
+      </div>
+      <p class="problem-close">どれも、私たちが毎日ご相談を受けているお悩みです。</p>
+    </div>
   </section>
 
-  <!-- 月額制との違い -->
-  <section class="taflp-hikaku">
-    <h2>作ったあとに、<br>払い続けない。</h2>
-    <p class="taflp-hikaku-lead">最近よく見る「月額制のHPサービス」。<br>私たちは、その仕組みを採用していません。<div class="taflp-hikaku-img">
-      <img src="images/lp-hikaku.webp" alt="月額制と買い切りの比較" loading="lazy" width="750" height="420">
-    </div></p>
+  <!-- 価格比較 -->
+  <section class="section">
+    <div class="container fade-in">
+      <span class="sec-label sec-label--orange">PRICE</span>
+      <h2 class="sec-title">作ったあとに、<span class="text-orange">払い続けない。</span></h2>
+      <p class="sec-lead">最近よく見る「月額制のHPサービス」。私たちは、その仕組みを採用していません。</p>
 
-    <table class="hikaku-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th class="col-sub">よくある月額制</th>
-          <th class="col-taf">TAF Design</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>初期費用</th>
-          <td class="col-sub">0円〜</td>
-          <td class="col-taf">2万円〜</td>
-        </tr>
-        <tr>
-          <th>月額</th>
-          <td class="col-sub">6,000〜10,000円前後</td>
-          <td class="col-taf"><span class="big">0円</span></td>
-        </tr>
-        <tr>
-          <th>3年間の総額</th>
-          <td class="col-sub">約22〜36万円</td>
-          <td class="col-taf"><span class="big">2万円〜</span><br>のまま</td>
-        </tr>
-        <tr>
-          <th>やめたら?</th>
-          <td class="col-sub">サイトが消えることも</td>
-          <td class="col-taf">買い切り。<br>ずっとあなたのもの</td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="hikaku-note">※月額制は一般的なサービスの一例です(各社の条件により異なります)。当社比較。</p>
+      <div class="hikaku-table-wrap">
+        <table class="hikaku-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="col-sub">よくある月額制</th>
+              <th class="col-taf">TAF Design</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>初期費用</th>
+              <td class="col-sub">0円〜</td>
+              <td class="col-taf">2万円〜</td>
+            </tr>
+            <tr>
+              <th>月額</th>
+              <td class="col-sub">6,000〜10,000円前後</td>
+              <td class="col-taf"><span class="big">0円</span></td>
+            </tr>
+            <tr>
+              <th>3年間の総額</th>
+              <td class="col-sub">約22〜36万円</td>
+              <td class="col-taf"><span class="big">2万円〜</span><br>のまま</td>
+            </tr>
+            <tr>
+              <th>やめたら?</th>
+              <td class="col-sub">サイトが消えることも</td>
+              <td class="col-taf">買い切り。<br>ずっとあなたのもの</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="hikaku-note">※月額制は一般的なサービスの一例です(各社の条件により異なります)。当社比較。</p>
 
-    <div class="hikaku-honest-img">
-      <img src="images/lp-hikaku3.webp" alt="正直に言うと、月額制が悪いわけではありません。ただ、AIで制作コストが下がった今、作る費用は一度きりでいい——それが私たちの考えです。保守やサポートが必要な方にだけ、任意のプラン(月5,500円)を別途ご用意しています。" loading="lazy" width="941" height="1672">
+      <div class="honest-card">
+        正直に言うと、<strong>月額制が悪いわけではありません</strong>。ただ、AIで制作コストが下がった今、作る費用は一度きりでいい——それが私たちの考えです。保守やサポートが必要な方にだけ、任意のプラン(月5,500円)を別途ご用意しています。
+      </div>
     </div>
-
-   
-  <!-- 受け取りの流れ -->
-  <section>
-    <div class="taflp-step-img">
-      <img src="images/3step.webp" alt="受け取りはカンタン3ステップ。1. 下のボタンをタップして受け取りページへ。2. メールアドレスを入力して送信。3. その場でクーポンコードが届く。かかる時間、約30秒。費用は一切かかりません。" loading="lazy" width="941" height="1672">
-    </div>
-    <a class="taflp-cta" href="https://taf-design.com/coupon/">クーポンを受け取る<small>(取得後1年間有効・営業なし)</small></a>
   </section>
 
-</div>
-
-
-<style>
-/* ===== 後半共通 ===== */
-.taflp2, .taflp2 * { box-sizing: border-box; }
-.taflp2 {
-  --navy: #1b2a4a;
-  --navy-deep: #101c34;
-  --gold: #c9a54a;
-  --gold-light: #e5cf8f;
-  --ivory: #faf7f0;
-  --ink: #2a2a2a;
-  --red: #b03a3a;
-  font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
-  color: var(--ink);
-  background: #fff;
-  max-width: 480px;
-  margin: 0 auto;
-  line-height: 1.9;
-  font-size: 16px;
-  overflow-x: hidden;
-}
-.taflp2 img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-.taflp2 section { padding: 56px 22px; }
-.taflp2 h2 { font-size: 24px; line-height: 1.5; color: var(--navy); margin: 0 0 20px; font-weight: 700; }
-
-/* ===== 選ばれる理由 ===== */
-.taflp2-career {
-  font-size: 13.5px;
-  color: var(--gold);
-  font-weight: 700;
-  letter-spacing: .04em;
-  margin: -8px 0 18px;
-}
-.taflp2-daihyo { width: 160px; margin: 22px auto 10px; }
-.taflp2-daihyo img { border-radius: 50%; }
-.taflp2-hitokoto { text-align: center; font-size: 14px; color: var(--navy); margin: 0 0 4px; }
-.taflp2-company { text-align: center; font-size: 12px; color: #888; margin: 0; }
-
-.taflp2-numbadges { display: flex; flex-direction: column; gap: 10px; margin: 24px 0 0; }
-.taflp2-numbadges div {
-  background: var(--navy);
-  color: #fff;
-  border-radius: 10px;
-  padding: 13px 16px;
-  text-align: center;
-}
-.taflp2-numbadges span { display: block; font-size: 11.5px; color: #b9c3d8; letter-spacing: .08em; }
-.taflp2-numbadges strong { font-size: 17px; color: var(--gold-light); }
-
-/* ===== 制作実績ギャラリー ===== */
-.taflp2-works { background: #fff; }
-.taflp2-works-sub { font-size: 14px; margin: -6px 0 22px; }
-.taflp2-works-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 0 0 22px;
-}
-.taflp2-works-grid a {
-  display: block;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(27,42,74,.10);
-  border: 1px solid #ece6d6;
-  aspect-ratio: 1220 / 1016;
-  background: #f5f0e4;
-}
-.taflp2-works-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.taflp2-works-btn {
-  display: block;
-  max-width: 320px;
-  margin: 0 auto;
-  border: 1.5px solid var(--gold);
-  color: var(--navy);
-  background: #fff;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 13px 18px;
-  border-radius: 999px;
-}
-.taflp2-genba-img {
-  max-width: 340px;
-  margin: 0 auto 20px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.taflp2-works-btn span { font-size: 11px; color: #999; display: block; font-weight: 400; margin-top: 2px; }
-
-/* ===== お客様の声 ===== */
-.taflp2-voices { background: var(--ivory); }
-.taflp2-voices-sub { font-size: 14px; margin: -6px 0 24px; }
-.taflp2-voices-sub strong { color: var(--red); }
-.taflp2-vcard {
-  background: #fff;
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 14px;
-  box-shadow: 0 3px 12px rgba(27,42,74,.08);
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-.taflp2-vavatar { flex: 0 0 56px; }
-.taflp2-vavatar img {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-}
-.taflp2-vbody { flex: 1; }
-.taflp2-vstars { color: #e0a800; font-size: 14px; letter-spacing: 2px; }
-.taflp2-vhead { font-size: 15px; font-weight: 700; color: var(--navy); margin: 2px 0 6px; }
-.taflp2-vtext { font-size: 13.5px; line-height: 1.8; margin: 0; }
-.taflp2-vsource { font-size: 11px; color: #999; text-align: right; margin: 6px 0 0; }
-
-/* ===== Q&A ===== */
-.taflp2-qa details {
-  border: 1px solid #e2dcc8;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  background: #fff;
-  overflow: hidden;
-}
-.taflp2-qa summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 15px 40px 15px 16px;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--navy);
-  position: relative;
-}
-.taflp2-qa summary::-webkit-details-marker { display: none; }
-.taflp2-qa summary::before { content: "Q. "; color: var(--gold); }
-.taflp2-qa summary::after {
-  content: "＋";
-  position: absolute;
-  right: 14px; top: 50%;
-  transform: translateY(-50%);
-  color: var(--gold);
-  font-size: 18px;
-}
-.taflp2-qa details[open] summary::after { content: "－"; }
-.taflp2-qa .taflp2-ans {
-  padding: 12px 16px 15px;
-  font-size: 14px;
-  margin: 0;
-  border-top: 1px dashed #e2dcc8;
-}
-.taflp2-vhead-img {
-  max-width: 340px;
-  margin: 0 auto 20px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.taflp2-qa .taflp2-ans::before { content: "A. "; color: var(--red); font-weight: 700; }
-
-/* ===== 最終CTA ===== */
-.taflp2-final {
-  background: linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 100%);
-  color: #f0eee6;
-  text-align: center;
-  padding-bottom: 120px;
-}
-.taflp2-final h2 { color: #fff; }
-.taflp2-final h2 .em { color: var(--gold-light); }
-.taflp2-cta {
-  display: block;
-  background: linear-gradient(180deg, #d8b45a, var(--gold));
-  color: var(--navy-deep);
-  text-align: center;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
-  padding: 18px 20px;
-  border-radius: 999px;
-  box-shadow: 0 6px 18px rgba(201,165,74,.45);
-  margin: 22px auto 0;
-  max-width: 360px;
-}
-.taflp2-cta small { display: block; font-size: 12px; font-weight: 400; margin-top: 2px; }
-.taflp2-cta-note { text-align: center; font-size: 12px; color: #cfcabb; margin: 10px 0 0; line-height: 1.7; }
-.taflp2-soudan { font-size: 12.5px; margin: 26px 0 0; }
-.taflp2-soudan a { color: #cfcabb; }
-.taflp2-footlinks { font-size: 11.5px; margin: 30px 0 0; color: #8b93a8; }
-.taflp2-footlinks a { color: #8b93a8; text-decoration: underline; margin: 0 8px; }
-
-/* ===== 追従フッターバー ===== */
-.taflp2-stickybar {
-  display: none; 
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  z-index: 9999;
-  background: rgba(16,28,52,.96);
-  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-  transform: translateY(110%);
-  transition: transform .3s;
-}
-.taflp2-stickybar.is-visible { transform: translateY(0); }
-.taflp2-stickybar a {
-  display: block;
-  max-width: 452px;
-  margin: 0 auto;
-  background: linear-gradient(180deg, #d8b45a, #c9a54a);
-  color: #101c34;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 13px;
-  border-radius: 999px;
-  font-family: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
-}
-/* ===== 上に戻るボタン ===== */
-.taflp-totop {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 9998;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #d8b45a, #c9a54a);
-  border: none;
-  color: #1b2a4a;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .3s, visibility .3s;
-  box-shadow: 0 4px 14px rgba(0,0,0,.3);
-  padding-bottom: calc(env(safe-area-inset-bottom) * 0);
-}
-.taflp-totop.is-visible { opacity: 1; visibility: visible; }
-.taflp-totop:active { transform: scale(.92); }
-</style>
-
-<div class="taflp2">
+  <!-- 流れ(3ステップ) -->
+  <section class="section section--light">
+    <div class="container fade-in">
+      <span class="sec-label">STEP</span>
+      <h2 class="sec-title">相談・資料請求は、<span class="text-blue">カンタン3ステップ。</span></h2>
+      <ol class="steps">
+        <li>
+          <h3>ボタンをタップ</h3>
+          <p>下のボタンから受付ページへ。ご相談か資料請求かを選べます。</p>
+        </li>
+        <li>
+          <h3>フォームに入力</h3>
+          <p>お名前とメールアドレスを入力して送信。かかる時間は約30秒です。</p>
+        </li>
+        <li>
+          <h3>資料到着・日程調整</h3>
+          <p>資料はその場でお届け。ご相談は日程を調整してオンラインで行います。</p>
+        </li>
+      </ol>
+      <p class="steps-close">費用は<span class="em">一切かかりません</span>。まずはお気軽にどうぞ。</p>
+    </div>
+  </section>
 
   <!-- 選ばれる理由 -->
-  <section>
-    <div class="taflp2-genba-img">
-      <img src="images/genba.webp" alt="商売の現場を、ぜんぶ歩いてきました。美容師 → 飲食店経営 → 貿易会社 → 英会話スクール運営 → Web制作&マーケティングへ。" loading="lazy" width="941" height="1672">
-    </div>
-    <p>代表は、作る側・売る側・教える側——商売のあらゆる現場を経験してきました。4,000人以上に英語を教えて学んだ「伝わる説明」と、自分の店で集客に悩んだ経験。だから、専門用語を並べるのではなく、<strong>あなたのお客様に届く言葉</strong>でWebを作ります。</p>
-    <p>制作はAIを活用しつつ、エンジニアとアメリカ人デザイナーを含む<strong>3人のチーム</strong>で品質を担保。「安いのに、ちゃんとしている」を実現しています。</p>
-
-    <div class="taflp2-daihyo">
-      <img src="https://taf-design.com/wp-content/uploads/2026/07/lp-daihyo.webp" alt="代表 大村" loading="lazy" width="400" height="400">
-    </div>
-    <p class="taflp2-hitokoto">「小さなビジネスの味方でいたい。それが私たちの原点です」</p>
-    <p class="taflp2-company">ティーチ&ファネルDesign(株式会社シュアリーワーク)</p>
-
-    <div class="taflp2-numbadges">
-      <div><span>制作期間</span><strong>従来3ヶ月 → 平均7日</strong></div>
-      <div><span>料金体系</span><strong>サブスクなしの買い切り型</strong></div>
-      <div><span>実績</span><strong>ココナラ開始3ヶ月でプラチナランク達成</strong></div>
+  <section class="section">
+    <div class="container fade-in">
+      <div class="reason-grid">
+        <div class="reason-body">
+          <span class="sec-label">REASON</span>
+          <h2 class="sec-title">商売の現場を、<br><span class="text-blue">ぜんぶ歩いてきました。</span></h2>
+          <p class="reason-career">美容師 → 飲食店経営 → 貿易会社 →<br>英会話スクール運営 → Web制作&マーケティング</p>
+          <p>代表は、作る側・売る側・教える側——商売のあらゆる現場を経験してきました。4,000人以上に英語を教えて学んだ「伝わる説明」と、自分の店で集客に悩んだ経験。だから、専門用語を並べるのではなく、<strong>あなたのお客様に届く言葉</strong>でWebを作ります。</p>
+          <p>制作はAIを活用しつつ、エンジニアとアメリカ人デザイナーを含む<strong>3人のチーム</strong>で品質を担保。「安いのに、ちゃんとしている」を実現しています。</p>
+        </div>
+        <div class="reason-profile">
+          <img class="reason-photo" src="https://taf-design.com/wp-content/uploads/2026/07/lp-daihyo.webp" alt="代表 大村" loading="lazy" width="400" height="400">
+          <p class="reason-quote">「小さなビジネスの味方でいたい。<br>それが私たちの原点です」</p>
+          <p class="reason-company">ティーチ&ファネルDesign(株式会社シュアリーワーク)</p>
+          <div class="reason-badges">
+            <div><span>制作期間</span><strong>従来3ヶ月 → 平均7日</strong></div>
+            <div><span>料金体系</span><strong>サブスクなしの買い切り型</strong></div>
+            <div><span>実績</span><strong>ココナラ開始3ヶ月でプラチナランク達成</strong></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 制作実績ギャラリー -->
-  <section class="taflp2-works">
-    <h2>これまでの制作実績。</h2>
-    <p class="taflp2-works-sub">LP・ホームページ・バナーなど、実際にお作りした一部です。</p>
-    <div class="taflp2-works-grid">
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-01.jpg" alt="制作実績 01" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-02.jpg" alt="制作実績 02" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-03.jpg" alt="制作実績 03" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-04.jpg" alt="制作実績 04" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-05.jpg" alt="制作実績 05" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-06.jpg" alt="制作実績 06" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-07.jpg" alt="制作実績 07" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-08.jpg" alt="制作実績 08" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-09.jpg" alt="制作実績 09" loading="lazy"></a>
-      <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-10.jpg" alt="制作実績 10" loading="lazy"></a>
+  <!-- 制作実績 -->
+  <section class="section section--light">
+    <div class="container fade-in">
+      <span class="sec-label">WORKS</span>
+      <h2 class="sec-title">これまでの<span class="text-blue">制作実績。</span></h2>
+      <p class="sec-lead">LP・ホームページ・バナーなど、実際にお作りした一部です。</p>
+      <div class="works-grid">
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-01.jpg" alt="制作実績 01" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-02.jpg" alt="制作実績 02" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-03.jpg" alt="制作実績 03" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-04.jpg" alt="制作実績 04" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-05.jpg" alt="制作実績 05" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-06.jpg" alt="制作実績 06" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-07.jpg" alt="制作実績 07" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-08.jpg" alt="制作実績 08" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-09.jpg" alt="制作実績 09" loading="lazy"></a>
+        <a href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener"><img src="images/work-10.jpg" alt="制作実績 10" loading="lazy"></a>
+      </div>
+      <div class="works-more">
+        <a class="works-btn" href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener">実績をもっと見る<span>foriio(別ウィンドウで開きます)</span></a>
+      </div>
     </div>
-    <a class="taflp2-works-btn" href="https://www.foriio.com/surelywork-810" target="_blank" rel="noopener">実績をもっと見る<span>foriio(別ウィンドウで開きます)</span></a>
   </section>
 
   <!-- お客様の声 -->
-  <section class="taflp2-voices">
-    <div class="taflp2-vhead-img">
-      <img src="images/voice-head.webp" alt="ココナラで、全レビュー星5。「安いのに、大丈夫?」——その答えは、お客様の声にありました。サービス開始からわずか3ヶ月でココナラ最高ランクのプラチナを獲得。実際にいただいた声を、そのままご紹介します。" loading="lazy" width="941" height="1672">
+  <section class="section">
+    <div class="container fade-in">
+      <span class="sec-label sec-label--pink">VOICE</span>
+      <h2 class="sec-title">ココナラで、<span class="text-pink">全レビュー星5。</span></h2>
+      <p class="sec-lead">「安いのに、大丈夫?」——その答えは、お客様の声にありました。サービス開始からわずか3ヶ月でココナラ最高ランクのプラチナを獲得。実際にいただいた声を、そのままご紹介します。</p>
+
+      <div class="voice-grid">
+        <article class="voice-card">
+          <div class="voice-head">
+            <img src="https://taf-design.com/wp-content/uploads/2026/07/lp-voice-01.webp" alt="お客様の声" loading="lazy" width="120" height="120">
+            <div class="voice-stars">★★★★★</div>
+          </div>
+          <h3>すべて金額以上でした</h3>
+          <p>細かな対応、スピード、デザイン、気遣いなど全て金額以上でした。また是非お世話になろうと思えます。</p>
+        </article>
+        <article class="voice-card">
+          <div class="voice-head">
+            <img src="https://taf-design.com/wp-content/uploads/2026/07/lp-voice-02.webp" alt="お客様の声" loading="lazy" width="120" height="120">
+            <div class="voice-stars">★★★★★</div>
+          </div>
+          <h3>初めてでも安心・美しい仕上がり</h3>
+          <p>終始丁寧にご対応いただき、大変感謝しております。仕上がりもとても美しく、大変満足しております。</p>
+        </article>
+        <article class="voice-card">
+          <div class="voice-head">
+            <img src="https://taf-design.com/wp-content/uploads/2026/07/lp-voice-03.webp" alt="お客様の声" loading="lazy" width="120" height="120">
+            <div class="voice-stars">★★★★★</div>
+          </div>
+          <h3>Webマーケティングの土台づくりに満足</h3>
+          <p>スピード感、クオリティ、アドバイス、行間を読み取る力、全て申し分ないです。</p>
+        </article>
+      </div>
+      <p class="voice-source">※ココナラでのお取引レビューより(原文抜粋)</p>
     </div>
-
-    <article class="taflp2-vcard">
-      <div class="taflp2-vavatar">
-        <img src="https://taf-design.com/wp-content/uploads/2026/07/lp-voice-01.webp" alt="お客様の声" loading="lazy" width="120" height="120">
-      </div>
-      <div class="taflp2-vbody">
-        <div class="taflp2-vstars">★★★★★</div>
-        <h3 class="taflp2-vhead">すべて金額以上でした</h3>
-        <p class="taflp2-vtext">細かな対応、スピード、デザイン、気遣いなど全て金額以上でした。また是非お世話になろうと思えます。</p>
-      </div>
-    </article>
-
-    <article class="taflp2-vcard">
-      <div class="taflp2-vavatar">
-        <img src="https://taf-design.com/wp-content/uploads/2026/07/lp-voice-02.webp" alt="お客様の声" loading="lazy" width="120" height="120">
-      </div>
-      <div class="taflp2-vbody">
-        <div class="taflp2-vstars">★★★★★</div>
-        <h3 class="taflp2-vhead">初めてでも安心・美しい仕上がり</h3>
-        <p class="taflp2-vtext">終始丁寧にご対応いただき、大変感謝しております。仕上がりもとても美しく、大変満足しております。</p>
-      </div>
-    </article>
-
-    <article class="taflp2-vcard">
-      <div class="taflp2-vavatar">
-        <img src="https://taf-design.com/wp-content/uploads/2026/07/lp-voice-03.webp" alt="お客様の声" loading="lazy" width="120" height="120">
-      </div>
-      <div class="taflp2-vbody">
-        <div class="taflp2-vstars">★★★★★</div>
-        <h3 class="taflp2-vhead">Webマーケティングの土台づくりに満足</h3>
-        <p class="taflp2-vtext">スピード感、クオリティ、アドバイス、行間を読み取る力、全て申し分ないです。</p>
-      </div>
-    </article>
-
-    <p class="taflp2-vsource">※ココナラでのお取引レビューより(原文抜粋)</p>
   </section>
 
-  <!-- Q&A -->
-  <section class="taflp2-qa">
-    <h2>よくあるご質問</h2>
+  <!-- CV(メイン誘導) -->
+  <section class="section section--light cv">
+    <div class="deco deco-ring" aria-hidden="true"></div>
+    <div class="deco deco-dots" aria-hidden="true"></div>
+    <div class="container fade-in">
+      <div class="cv-box">
+        <span class="sec-label sec-label--orange">CONTACT</span>
+        <h2 class="sec-title">まずは、<br><span class="text-orange">無料相談・資料請求</span>から。</h2>
+        <p class="cv-lead">今すぐ依頼を決めなくて大丈夫。<br>話を聞いてみるだけでも、資料を眺めるだけでもOKです。</p>
+        <a class="cta-button" href="https://taf-design.com/offer/">相談・資料ダウンロード</a>
+        <p class="cta-note">相談は無料/約30秒で申込完了/しつこい営業はしません</p>
+      </div>
+    </div>
+  </section>
 
-    <details>
-      <summary>月額費用はかかりますか?</summary>
-      <p class="taflp2-ans">制作費は買い切りです。月額の縛りはありません。ご希望の方にだけ、運用サポートプランを別途ご用意しています。</p>
-    </details>
-    <details>
-      <summary>しつこい営業はありますか?</summary>
-      <p class="taflp2-ans">一切しません。クーポンを受け取って、そのままでも大丈夫です。</p>
-    </details>
-    <details>
-      <summary>今すぐ依頼しないとダメですか?</summary>
-      <p class="taflp2-ans">いいえ。確保だけでOK。取得から1年間有効なので、必要になったときにお使いください。</p>
-    </details>
-    <details>
-      <summary>Web初心者でも大丈夫ですか?</summary>
-      <p class="taflp2-ans">むしろ歓迎です。専門知識は不要。こちらの質問に答えていただくだけで、構成も文章もプロが組み立てます。</p>
-    </details>
-    <details>
-      <summary>クーポンの使い方は?</summary>
-      <p class="taflp2-ans">ご依頼のときにクーポンコードを伝えるだけ。手続きは何もありません。</p>
-    </details>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container fade-in">
+      <span class="sec-label">FAQ</span>
+      <h2 class="sec-title">よくある<span class="text-blue">ご質問</span></h2>
+      <div class="faq">
+        <details>
+          <summary>月額費用はかかりますか?</summary>
+          <p class="ans">制作費は買い切りです。月額の縛りはありません。ご希望の方にだけ、運用サポートプランを別途ご用意しています。</p>
+        </details>
+        <details>
+          <summary>しつこい営業はありますか?</summary>
+          <p class="ans">一切しません。資料を受け取って、そのままでも大丈夫です。</p>
+        </details>
+        <details>
+          <summary>相談したら、依頼しないとダメですか?</summary>
+          <p class="ans">いいえ。お話を伺って、検討だけで終わっても大丈夫です。まずは疑問や不安の解消にお使いください。</p>
+        </details>
+        <details>
+          <summary>Web初心者でも大丈夫ですか?</summary>
+          <p class="ans">むしろ歓迎です。専門知識は不要。こちらの質問に答えていただくだけで、構成も文章もプロが組み立てます。</p>
+        </details>
+        <details>
+          <summary>資料には何が書いてありますか?</summary>
+          <p class="ans">料金プラン、制作の流れ、制作実績、よくいただくご質問への回答をまとめています。社内での検討にもそのままお使いいただけます。</p>
+        </details>
+      </div>
+    </div>
   </section>
 
   <!-- 最終CTA -->
-  <section class="taflp2-final">
-    <h2>まずは、<span class="em">5,000円OFFクーポン</span>を確保してください。</h2>
-    <p>今すぐ使わなくて大丈夫。将来「頼もう」と思ったとき、この5,000円が効いてきます。</p>
-    <div class="taflp2-final-img">
-      <img src="images/image3.webp" alt="5,000円OFFクーポンのイメージ" loading="lazy" width="1676" height="938">
+  <section class="section final" id="final-cta">
+    <div class="container fade-in">
+      <p class="final-logo">TAF Design<span>TEACH &amp; FUNNEL DESIGN</span></p>
+      <h2 class="sec-title">AIの時代の、<span class="text-pink">ちょうどいいWeb制作を。</span></h2>
+      <p class="final-lead">買い切り2万円から。月額0円。<br>まずは無料相談・資料請求から、お気軽にどうぞ。</p>
+      <a class="cta-button cta-button--pink" href="https://taf-design.com/offer/">相談・資料ダウンロード</a>
+      <p class="cta-note">相談は無料/しつこい営業はしません</p>
+      <p class="final-sub">詳しい料金を先に見たい方はこちら → <a class="text-link" href="https://taf-design.com/price/" target="_blank" rel="noopener">料金ページ</a></p>
     </div>
-    <a class="taflp2-cta" href="https://taf-design.com/coupon/">5,000円OFFクーポンを受け取る<small>(取得から１年有効)</small></a>
-    <p class="taflp2-cta-note">登録30秒/1年間有効/営業なし</p>
-    <p class="taflp2-soudan">じっくり相談したい方はこちら → <a href="https://taf-design.com/offer/">無料相談</a></p>
-    <p class="taflp2-footlinks">
-      <a href="https://taf-design.com/tokutei/">特定商取引法に基づく表記</a>
-      <a href="https://taf-design.com/privacy/">プライバシーポリシー</a>
-    </p>
   </section>
 
+</main>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-name">ティーチ&ファネルDesign(株式会社シュアリーワーク)</p>
+    <ul class="footer-links">
+      <li><a href="https://taf-design.com/price/" target="_blank" rel="noopener">料金ページ</a></li>
+      <li><a href="https://taf-design.com/kiyaku/" target="_blank" rel="noopener">利用規約</a></li>
+      <li><a href="https://taf-design.com/tokushoho/" target="_blank" rel="noopener">特定商取引法に基づく表記</a></li>
+      <li><a href="https://taf-design.com/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a></li>
+    </ul>
+    <p class="footer-copy">&copy; TAF Design / Surelywork Inc.</p>
+  </div>
+</footer>
+
+<!-- 追従CTAバー -->
+<div class="stickybar" id="stickybar">
+  <a href="https://taf-design.com/offer/">相談・資料ダウンロード(無料)</a>
 </div>
 
-<!-- 追従フッターバー -->
-<div class="taflp2-stickybar" id="taflp-sticky">
-  <a href="https://taf-design.com/coupon/">🎁 5,000円OFFクーポンを受け取る</a>
-</div>
-
-<script>
-(function () {
-  document.querySelectorAll('.taflp img, .taflp2 img').forEach(function (img) {
-    img.addEventListener('error', function () { img.style.display = 'none'; });
-    if (img.complete && img.naturalWidth === 0) { img.style.display = 'none'; }
-  });
-
-  var sticky = document.getElementById('taflp-sticky');
-  var fv = document.getElementById('taflp-fv');
-  if (!sticky) return;
-
-  var fvVisible = true;
-
-  function update() {
-    if (fvVisible) {
-      sticky.classList.remove('is-visible');
-    } else {
-      sticky.classList.add('is-visible');
-    }
-  }
-
-  if ('IntersectionObserver' in window) {
-    if (fv) {
-      new IntersectionObserver(function (entries) {
-        fvVisible = entries[0].isIntersecting;
-        update();
-      }, { threshold: 0.1 }).observe(fv);
-    }
-  } else {
-    sticky.classList.add('is-visible');
-  }
-})();
-</script>
-<!-- 上に戻るボタン -->
-<button type="button" class="taflp-totop" id="taflp-totop" aria-label="ページ上部へ戻る">▲</button>
-</div>
-
-<button type="button" class="taflp-totop" id="taflp-totop" aria-label="ページ上部へ戻る">▲</button>
-
-<script>
-(function () {
-  document.querySelectorAll('.taflp img, .taflp2 img').forEach(function (img) {
-    img.addEventListener('error', function () { img.style.display = 'none'; });
-    if (img.complete && img.naturalWidth === 0) { img.style.display = 'none'; }
-  });
-
-  var toTop = document.getElementById('taflp-totop');
-  if (toTop) {
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 500) { toTop.classList.add('is-visible'); }
-      else { toTop.classList.remove('is-visible'); }
-    }, { passive: true });
-    toTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-})();
-</script>
-
+<script src="js/main.js"></script>
 </body>
 </html>
