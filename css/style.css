@@ -1010,27 +1010,6 @@ a { color: var(--color-blue); }
 .cv .deco-ring { top: 30px; left: -50px; border-color: var(--color-blue); opacity: 0.25; }
 .cv .deco-dots { bottom: 60px; right: 4%; }
 
-/* CV 立ち姿キャラクター: カードの上に2人(足元はカード縁に少し隠す) */
-.cv { padding-top: calc(var(--section-space) + 175px); }
-.cv-char {
-  position: absolute; z-index: 0;
-  top: calc(var(--section-space) - 40px);
-  height: 240px; width: auto;
-  pointer-events: none; user-select: none;
-  filter: drop-shadow(0 10px 18px rgba(30,50,70,.12));
-}
-.cv-char--girl { right: calc(50% + 150px); }
-.cv-char--boy  { left: calc(50% + 150px); }
-@media (max-width: 700px) {
-  .cv { padding-top: calc(var(--section-space) + 118px); }
-  .cv-char {
-    height: 150px;
-    top: calc(var(--section-space) - 26px);
-  }
-  .cv-char--girl { right: calc(50% + 10px); }
-  .cv-char--boy  { left: calc(50% + 10px); }
-}
-
 /* ===== FAQ ===== */
 .faq { max-width: 760px; margin-inline: auto; }
 .faq details {

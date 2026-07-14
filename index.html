@@ -25,6 +25,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 
+<!-- CVキャラ配置(このファイル単体で完結・style.cssの新旧に依存しない) -->
+<style>
+.cv { padding-top: calc(var(--section-space) + 175px) !important; }
+.cv-char {
+  position: absolute; z-index: 0;
+  top: calc(var(--section-space) - 40px); bottom: auto;
+  height: 240px; width: auto; max-width: none;
+  pointer-events: none; user-select: none;
+  filter: drop-shadow(0 10px 18px rgba(30,50,70,.12));
+}
+/* PC: カードの両端の上に立つ(カード幅720px・端から少し内側) */
+.cv-char--girl { right: calc(50% + 218px); left: auto; }
+.cv-char--boy  { left: calc(50% + 218px); right: auto; }
+@media (max-width: 700px) {
+  .cv { padding-top: calc(var(--section-space) + 118px) !important; }
+  .cv-char { height: 150px; top: calc(var(--section-space) - 26px); }
+  .cv-char--girl { right: calc(50% + 10px); }
+  .cv-char--boy  { left: calc(50% + 10px); }
+}
+</style>
+
 <!-- ▼▼ Meta Pixel(広告配信時に正式なPixelコードへ差し替えてください) ▼▼ -->
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1427280391720324&ev=PageView&noscript=1"
