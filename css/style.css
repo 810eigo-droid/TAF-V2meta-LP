@@ -1025,7 +1025,14 @@ a { color: var(--color-blue); }
   .cv-char--boy  { right: -12px; }
 }
 @media (max-width: 700px) {
-  .cv-char { display: none; }
+  /* スマホ: 2人をカードの上に立たせる(足元はカード縁に少し隠す) */
+  .cv { padding-top: calc(var(--section-space) + 118px); }
+  .cv-char {
+    height: 150px; bottom: auto;
+    top: calc(var(--section-space) - 26px);
+  }
+  .cv-char--girl { left: auto; right: calc(50% + 10px); }
+  .cv-char--boy  { right: auto; left: calc(50% + 10px); }
 }
 
 /* ===== FAQ ===== */
