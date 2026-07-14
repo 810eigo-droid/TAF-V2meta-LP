@@ -215,12 +215,22 @@ a { color: var(--color-blue); }
   justify-content: space-between;
 }
 .header-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-weight: 900;
   font-size: 17px;
   letter-spacing: 0.02em;
   color: var(--color-text);
   text-decoration: none;
   line-height: 1;
+}
+.header-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
 }
 .header-cta {
   display: inline-flex;
@@ -1023,6 +1033,14 @@ a { color: var(--color-blue); }
 
 /* ===== 最終CTA ===== */
 .final { text-align: center; }
+.final-logo-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: block;
+  margin: 0 auto 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
 .final-logo {
   font-weight: 900;
   font-size: 20px;
@@ -1199,7 +1217,8 @@ a { color: var(--color-blue); }
 
   .fv .deco-ring { width: 90px; border-width: 13px; top: -26px; right: -30px; }
   .site-header { height: 50px; }
-  .header-logo { font-size: 15px; }
+  .header-logo { font-size: 15px; gap: 7px; }
+  .header-logo-icon { width: 28px; height: 28px; border-radius: 7px; }
   .header-cta { padding: 0 13px; font-size: 12px; height: 36px; }
 
   /* --- スマホFV:CTAをファーストビュー内に収めるための余白圧縮 --- */
