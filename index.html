@@ -47,6 +47,28 @@
   .fv-visual .phone { display: block !important; margin: 30px auto 0; }
 }
 
+/* チャット吹き出しを順番にぷちっと表示 */
+.phone.chat-init .chat-body > * { opacity: 0; }
+.phone.chat-play .chat-body > * {
+  animation: chatPop .5s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+.phone.chat-play .chat-body > *:nth-child(1) { animation-delay: .3s; }
+.phone.chat-play .chat-body > *:nth-child(2) { animation-delay: 1.1s; }
+.phone.chat-play .chat-body > *:nth-child(3) { animation-delay: 1.9s; }
+.phone.chat-play .chat-body > *:nth-child(4) { animation-delay: 2.7s; }
+.phone.chat-play .chat-body > *:nth-child(5) { animation-delay: 3.6s; }
+.chat-body .bubble--user { transform-origin: left bottom; }
+.chat-body .bubble--taf  { transform-origin: right bottom; }
+.chat-body .chat-card    { transform-origin: center bottom; }
+@keyframes chatPop {
+  0%   { opacity: 0; transform: scale(.5) translateY(10px); }
+  70%  { opacity: 1; transform: scale(1.07) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone.chat-init .chat-body > * { opacity: 1; animation: none !important; }
+}
+
 @media (max-width: 700px) {
   /* スマホ: カード左右の縁に重ねて(カードの手前)、頭を上端から出す */
   .cv { padding-top: calc(var(--section-space) + 70px) !important; }
@@ -435,5 +457,19 @@ src="https://www.facebook.com/tr?id=1427280391720324&ev=PageView&noscript=1"
 </div>
 
 <script src="js/main.js"></script>
+<script>
+/* チャット吹き出しの順次アニメーション(画面に入るたびに再生) */
+(function(){
+  var phone = document.querySelector('.phone');
+  if(!phone || !('IntersectionObserver' in window)) return;
+  phone.classList.add('chat-init');
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ phone.classList.add('chat-play'); }
+      else { phone.classList.remove('chat-play'); }
+    });
+  }, { threshold: 0.35 }).observe(phone);
+})();
+</script>
 </body>
 </html>
