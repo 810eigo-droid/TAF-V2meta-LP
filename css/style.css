@@ -1010,6 +1010,24 @@ a { color: var(--color-blue); }
 .cv .deco-ring { top: 30px; left: -50px; border-color: var(--color-blue); opacity: 0.25; }
 .cv .deco-dots { bottom: 60px; right: 4%; }
 
+/* CV 立ち姿キャラクター(左右) */
+.cv-char {
+  position: absolute; bottom: 0; z-index: 0;
+  height: clamp(280px, 30vw, 440px); width: auto;
+  pointer-events: none; user-select: none;
+  filter: drop-shadow(0 10px 18px rgba(30,50,70,.12));
+}
+.cv-char--girl { left: clamp(0px, 4vw, 80px); }
+.cv-char--boy  { right: clamp(0px, 4vw, 80px); }
+@media (max-width: 1024px) {
+  .cv-char { height: 220px; }
+  .cv-char--girl { left: -12px; }
+  .cv-char--boy  { right: -12px; }
+}
+@media (max-width: 700px) {
+  .cv-char { display: none; }
+}
+
 /* ===== FAQ ===== */
 .faq { max-width: 760px; margin-inline: auto; }
 .faq details {
