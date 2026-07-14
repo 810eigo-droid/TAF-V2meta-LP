@@ -11,7 +11,7 @@
     --bg:#F5F7FA; --line:#E5E8EC; --white:#fff;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;scroll-behavior:smooth;}
   body{
     font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
     color:var(--ink); background:#dfe4ea; line-height:1.75;
@@ -318,21 +318,21 @@
     <h2 class="sec">目次</h2>
     <p class="lead">「まず料金が知りたい」という方は、<b style="color:#F6AC0E;">6ページ</b>の料金プランへどうぞ。</p>
     <div class="toc-list">
-      <div class="toc-item"><span class="toc-num">01</span><span class="toc-tt">私たちについて<small>選ばれる理由・実績</small></span><span class="toc-pg">03</span></div>
-      <div class="toc-item"><span class="toc-num">02</span><span class="toc-tt">対応できるサービス<small>Web制作だけではありません</small></span><span class="toc-pg">04</span></div>
-      <div class="toc-item"><span class="toc-num">03</span><span class="toc-tt">なぜ&ldquo;買い切り&rdquo;なのか<small>月額制との比較</small></span><span class="toc-pg">05</span></div>
-      <div class="toc-item hot"><span class="toc-num">04</span><span class="toc-tt">料金プラン<span class="toc-badge">よく見られています</span><small>基本料金・オプション・お支払い例</small></span><span class="toc-pg">06</span></div>
-      <div class="toc-item"><span class="toc-num">05</span><span class="toc-tt">ご依頼から納品までの流れ<small>お申し込み〜納品</small></span><span class="toc-pg">07</span></div>
-      <div class="toc-item"><span class="toc-num">06</span><span class="toc-tt">制作実績<small>業種別の事例</small></span><span class="toc-pg">08</span></div>
-      <div class="toc-item"><span class="toc-num">07</span><span class="toc-tt">お客様の声<small>ココナラ全レビュー星5</small></span><span class="toc-pg">09</span></div>
-      <div class="toc-item"><span class="toc-num">08</span><span class="toc-tt">よくあるご質問・お申し込み<small>FAQ・お問い合わせ先</small></span><span class="toc-pg">10</span></div>
+      <a class="toc-item" href="#p-about"><span class="toc-num">01</span><span class="toc-tt">私たちについて<small>選ばれる理由・実績</small></span><span class="toc-pg">03</span></a>
+      <a class="toc-item" href="#p-services"><span class="toc-num">02</span><span class="toc-tt">対応できるサービス<small>Web制作だけではありません</small></span><span class="toc-pg">04</span></a>
+      <a class="toc-item" href="#p-why"><span class="toc-num">03</span><span class="toc-tt">なぜ&ldquo;買い切り&rdquo;なのか<small>月額制との比較</small></span><span class="toc-pg">05</span></a>
+      <a class="toc-item hot" href="#p-price"><span class="toc-num">04</span><span class="toc-tt">料金プラン<span class="toc-badge">よく見られています</span><small>基本料金・オプション・お支払い例</small></span><span class="toc-pg">06</span></a>
+      <a class="toc-item" href="#p-flow"><span class="toc-num">05</span><span class="toc-tt">ご依頼から納品までの流れ<small>お申し込み〜納品</small></span><span class="toc-pg">07</span></a>
+      <a class="toc-item" href="#p-works"><span class="toc-num">06</span><span class="toc-tt">制作実績<small>業種別の事例</small></span><span class="toc-pg">08</span></a>
+      <a class="toc-item" href="#p-voice"><span class="toc-num">07</span><span class="toc-tt">お客様の声<small>ココナラ全レビュー星5</small></span><span class="toc-pg">09</span></a>
+      <a class="toc-item" href="#p-faq"><span class="toc-num">08</span><span class="toc-tt">よくあるご質問・お申し込み<small>FAQ・お問い合わせ先</small></span><span class="toc-pg">10</span></a>
     </div>
   </div>
   <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>02</div></div>
 </section>
 
 <!-- ============================ PAGE 3 : GREETING ============================ -->
-<section class="page">
+<section class="page" id="p-about">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
     <div class="eyebrow">ABOUT US</div>
@@ -359,7 +359,7 @@
 </section>
 
 <!-- ============================ PAGE 4 : 対応できるサービス ============================ -->
-<section class="page">
+<section class="page" id="p-services">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
     <div class="eyebrow">SERVICES</div>
@@ -383,7 +383,7 @@
 </section>
 
 <!-- ============================ PAGE 5 : WHY KAIKIRI ============================ -->
-<section class="page">
+<section class="page" id="p-why">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
     <div class="eyebrow pink">STORY</div>
@@ -414,7 +414,7 @@
 </section>
 
 <!-- ============================ PAGE 4 : PRICE ============================ -->
-<section class="page">
+<section class="page" id="p-price">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
     <div class="eyebrow orange">PRICE</div>
@@ -464,7 +464,7 @@
 </section>
 
 <!-- ============================ PAGE 5 : FLOW ============================ -->
-<section class="page">
+<section class="page" id="p-flow">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
     <div class="eyebrow">FLOW</div>
@@ -484,7 +484,7 @@
 </section>
 
 <!-- ============================ PAGE 6 : WORKS + VOICE ============================ -->
-<section class="page">
+<section class="page" id="p-works">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
     <div class="eyebrow">WORKS</div>
@@ -508,7 +508,7 @@
 </section>
 
 <!-- ============================ PAGE 7 : VOICE ============================ -->
-<section class="page">
+<section class="page" id="p-voice">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content vcenter">
     <div class="eyebrow pink">VOICE</div>
@@ -530,7 +530,7 @@
 </section>
 
 <!-- ============================ PAGE 8 : FAQ + CONTACT ============================ -->
-<section class="page">
+<section class="page" id="p-faq">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
     <div class="eyebrow">FAQ</div>
