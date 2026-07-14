@@ -42,6 +42,11 @@
   .cv-char--girl { right: calc(50% + 225px); }
   .cv-char--boy  { left: calc(50% + 225px); }
 }
+/* スマホ: FVのチャットUIをスライダーの下に表示 */
+@media (max-width: 960px) {
+  .fv-visual .phone { display: block !important; margin: 30px auto 0; }
+}
+
 @media (max-width: 700px) {
   /* スマホ: カード左右の縁に重ねて(カードの手前)、頭を上端から出す */
   .cv { padding-top: calc(var(--section-space) + 70px) !important; }
@@ -128,8 +133,8 @@ src="https://www.facebook.com/tr?id=1427280391720324&ev=PageView&noscript=1"
                 <div class="bubble bubble--user">維持費はかからないんですか?</div>
                 <div class="bubble bubble--taf">かかりません。サイトはずっとあなたのものです</div>
                 <div class="chat-card">
-                  <p>まずは資料をご覧ください</p>
-                  <span>無料ダウンロード</span>
+                  <p>面倒なWebまわりは、ぜんぶお任せ。</p>
+                  <span>あなたはビジネスに集中してください</span>
                 </div>
               </div>
             </div>
