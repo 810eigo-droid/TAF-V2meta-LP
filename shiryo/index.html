@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TAF Design｜サービスのご案内</title>
+<style>
+  :root{
+    --ink:#111111; --sub:#555A62; --blue:#00A2DE; --blue-l:#D8E9F2;
+    --blue-bg:#ECF4F9; --orange:#F6AC0E; --pink:#E82E6C;
+    --bg:#F5F7FA; --line:#E5E8EC; --white:#fff;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--ink); background:#dfe4ea; line-height:1.75;
+    font-feature-settings:"palt"; -webkit-font-smoothing:antialiased;
+  }
+  @page{ size:A4; margin:0; }
+  .page{
+    position:relative; width:210mm; height:297mm; margin:0 auto; background:var(--white);
+    padding:17mm 16mm 15mm; overflow:hidden; page-break-after:always;
+  }
+  .page:last-child{page-break-after:auto;}
+  @media screen{ .page{ margin:10px auto; box-shadow:0 6px 24px rgba(0,0,0,.18);} }
+
+  /* ---- shared bits ---- */
+  .brandbar{ position:absolute; top:9mm; left:16mm; right:16mm;
+    display:flex; align-items:center; justify-content:space-between;
+    font-size:11px; color:var(--sub); letter-spacing:.04em;}
+  .brandbar .b-logo{display:flex;align-items:center;gap:6px;font-weight:800;color:var(--ink);letter-spacing:.02em;font-size:12px;}
+  .brandbar .b-logo img{width:18px;height:18px;object-fit:contain;}
+  .pagefoot{ position:absolute; bottom:9mm; left:16mm; right:16mm;
+    display:flex; align-items:center; justify-content:space-between;
+    font-size:10px; color:#9aa1ab; border-top:1px solid var(--line); padding-top:6px;}
+
+  .eyebrow{ display:inline-block; font:800 12px/1 "Roboto Mono",monospace;
+    letter-spacing:.22em; color:var(--blue); margin-bottom:10px;}
+  .eyebrow.pink{color:var(--pink);} .eyebrow.orange{color:var(--orange);}
+  h2.sec{ font-size:26px; font-weight:900; letter-spacing:.01em; line-height:1.35; margin-bottom:6px;}
+  h2.sec .bl{color:var(--blue);} h2.sec .pk{color:var(--pink);} h2.sec .or{color:var(--orange);}
+  .lead{ font-size:13.5px; color:var(--sub); line-height:1.85; margin:10px 0 22px; max-width:150mm;}
+  p{font-size:13px;}
+  .em-pink{color:var(--pink);font-weight:700;}
+  .strong{font-weight:700;}
+
+  /* ============ P1 COVER ============ */
+  .cover{ padding:0; background:
+      radial-gradient(120% 80% at 100% 0%, #dbeefb 0%, rgba(219,238,251,0) 55%),
+      linear-gradient(160deg,#f2f8fc 0%, #eaf3fa 40%, #ffffff 100%);}
+  .cover-inner{ position:absolute; inset:0; padding:22mm 18mm; display:flex; flex-direction:column;}
+  .cover-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px;letter-spacing:.02em;}
+  .cover-logo img{width:26px;height:26px;object-fit:contain;}
+  .cover-mid{margin-top:26mm;}
+  .cover-eyebrow{font:800 13px/1 "Roboto Mono",monospace;letter-spacing:.3em;color:var(--blue);}
+  .cover h1{ font-size:41px; font-weight:900; line-height:1.42; letter-spacing:.01em; margin:16px 0 0;}
+  .cover h1 .bl{color:var(--blue);}
+  .cover-sub{ font-size:16px; color:var(--sub); margin-top:20px; line-height:1.9; font-weight:500;}
+  .cover-sub b{color:var(--ink);}
+  .cover-badges{display:flex;gap:9px;margin-top:22px;flex-wrap:wrap;}
+  .cover-badges span{ background:var(--white); border:1.5px solid var(--blue-l); color:var(--blue);
+    font-size:12.5px; font-weight:700; padding:7px 15px; border-radius:999px;
+    box-shadow:0 6px 16px rgba(30,60,90,.06);}
+  .cover-illust{ position:absolute; right:0; bottom:64mm; width:118mm; opacity:.96;}
+  .cover-illust img{width:100%;display:block;border-radius:16px 0 0 16px;
+    box-shadow:0 20px 50px rgba(30,60,90,.16);}
+  .cover-foot{ margin-top:auto; display:flex; align-items:flex-end; justify-content:space-between;
+    border-top:1.5px solid rgba(0,162,222,.25); padding-top:14px;}
+  .cover-foot .co{font-weight:800;font-size:14px;letter-spacing:.02em;}
+  .cover-foot .co span{display:block;font-size:10px;color:var(--sub);letter-spacing:.18em;font-weight:600;margin-top:3px;}
+  .cover-foot .meta{text-align:right;font-size:11px;color:var(--sub);line-height:1.8;}
+
+  /* ============ generic content ============ */
+  .content{padding-top:4mm;}
+
+  /* profile / P2 */
+  .greet{ display:grid; grid-template-columns:38mm 1fr; gap:11mm; align-items:start; margin-top:8px;}
+  .greet-photo img{width:100%;border-radius:14px;box-shadow:0 12px 30px rgba(30,50,70,.13);display:block;}
+  .greet-photo .cap{font-size:11px;color:var(--sub);text-align:center;margin-top:8px;line-height:1.6;}
+  .greet-body p{font-size:13px;color:#2c3038;line-height:1.95;margin-bottom:12px;}
+  .greet-body p b{color:var(--ink);}
+  .reasons{margin-top:12px;display:grid;gap:11px;}
+  .reason{ display:grid; grid-template-columns:34px 1fr; gap:13px; align-items:start;
+    background:var(--bg); border:1px solid var(--line); border-radius:13px; padding:14px 16px;}
+  .reason .n{ width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;
+    font:800 14px/34px "Roboto Mono",monospace;text-align:center;}
+  .reason h4{font-size:14px;font-weight:800;margin-bottom:3px;}
+  .reason p{font-size:12px;color:var(--sub);line-height:1.7;}
+
+  /* story / P3 */
+  .story-body p{font-size:13px;color:#2c3038;line-height:1.95;margin-bottom:13px;}
+  .story-body p b{color:var(--ink);}
+  .callout{ background:linear-gradient(100deg,#fff5f8,#fdeef3); border:1.5px solid #f6cdda;
+    border-radius:14px; padding:16px 20px; margin:6px 0 20px; display:flex; gap:14px; align-items:center;}
+  .callout .cl-lb{font:800 11px/1 "Roboto Mono",monospace;letter-spacing:.16em;color:var(--pink);
+    border:1.5px solid var(--pink);border-radius:999px;padding:6px 11px;white-space:nowrap;}
+  .callout p{font-size:14px;font-weight:700;line-height:1.7;}
+  table.cmp{width:100%;border-collapse:separate;border-spacing:0;margin-top:6px;font-size:13px;
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  table.cmp th,table.cmp td{padding:12px 14px;text-align:center;border-bottom:1px solid var(--line);}
+  table.cmp thead th{background:var(--bg);font-size:12px;color:var(--sub);font-weight:700;}
+  table.cmp thead th.taf{background:var(--blue);color:#fff;font-size:13px;}
+  table.cmp tbody th{text-align:left;background:#fafbfc;font-weight:700;font-size:12.5px;width:34mm;}
+  table.cmp td.sub{color:var(--sub);}
+  table.cmp td.taf{background:#f2fafd;font-weight:700;color:var(--ink);}
+  table.cmp td.taf .big{color:var(--blue);font-size:17px;font-weight:900;}
+  table.cmp tr:last-child th,table.cmp tr:last-child td{border-bottom:none;}
+  .note-s{font-size:10.5px;color:#9aa1ab;margin-top:8px;}
+  .honest{ margin-top:16px; background:var(--blue-bg); border-left:4px solid var(--blue);
+    border-radius:0 12px 12px 0; padding:14px 18px; font-size:12.5px; line-height:1.9; color:#2c3038;}
+  .honest b{color:var(--ink);}
+
+  /* price / P4 */
+  .price-hero{ background:linear-gradient(135deg,#0093c9,#00a2de); color:#fff; border-radius:18px;
+    padding:22px 26px; display:flex; align-items:center; justify-content:space-between;
+    box-shadow:0 16px 36px rgba(0,120,170,.22); margin-top:4px;}
+  .price-hero .ph-l .tag{font-size:12px;font-weight:700;opacity:.9;letter-spacing:.04em;}
+  .price-hero .ph-l h3{font-size:19px;font-weight:800;margin-top:4px;line-height:1.4;}
+  .price-hero .ph-l p{font-size:11.5px;opacity:.9;margin-top:5px;}
+  .price-hero .ph-r{text-align:right;white-space:nowrap;}
+  .price-hero .ph-r .yen{font-size:15px;font-weight:700;vertical-align:6px;}
+  .price-hero .ph-r .num{font:900 46px/1 "Roboto Mono",monospace;letter-spacing:-.02em;}
+  .price-hero .ph-r .u{font-size:14px;font-weight:700;}
+  .price-hero .ph-r .kaikiri{display:inline-block;margin-top:6px;background:rgba(255,255,255,.2);
+    border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700;}
+  .opt-title{font-size:13px;font-weight:800;margin:20px 0 9px;display:flex;align-items:center;gap:8px;}
+  .opt-title::before{content:"";width:4px;height:16px;background:var(--orange);border-radius:2px;}
+  table.opt{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  table.opt td{padding:12px 16px;border-bottom:1px solid var(--line);}
+  table.opt tr:last-child td{border-bottom:none;}
+  table.opt td.name{font-weight:700;}
+  table.opt td.name small{display:block;font-weight:400;color:var(--sub);font-size:11px;margin-top:2px;}
+  table.opt td.val{text-align:right;white-space:nowrap;font-weight:800;color:var(--blue);font-size:15px;width:42mm;}
+  table.opt td.val .p{color:var(--sub);font-size:11px;font-weight:600;}
+  .incl{ margin-top:20px; background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:18px 20px;}
+  .incl .h{font-size:13px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .incl .h .badge{background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:999px;padding:3px 10px;}
+  .incl-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;}
+  .incl-col h5{font-size:12px;font-weight:800;color:var(--blue);margin-bottom:8px;letter-spacing:.02em;}
+  .incl-col ul{list-style:none;display:grid;gap:7px;}
+  .incl-col li{font-size:12.5px;padding-left:22px;position:relative;color:#2c3038;line-height:1.5;}
+  .incl-col li::before{content:"✓";position:absolute;left:0;top:0;color:var(--blue);font-weight:900;}
+  .price-note{font-size:10.5px;color:#9aa1ab;margin-top:12px;line-height:1.7;}
+  .price-note .chk{color:var(--pink);font-weight:700;}
+
+  /* flow / P5 */
+  .flow{display:grid;gap:13px;margin-top:8px;}
+  .flow-step{ display:grid; grid-template-columns:52px 1fr; gap:16px; align-items:stretch;
+    background:var(--white); border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+    box-shadow:0 8px 22px rgba(30,50,70,.05); position:relative;}
+  .flow-step .fn{ width:52px;height:52px;border-radius:14px;
+    background:var(--blue-bg);color:var(--blue);font:900 22px/52px "Roboto Mono",monospace;text-align:center;}
+  .flow-step.hl .fn{background:var(--blue);color:#fff;}
+  .flow-step h4{font-size:15px;font-weight:800;margin-bottom:4px;}
+  .flow-step h4 .pill{font-size:10.5px;font-weight:700;color:var(--white);background:var(--pink);
+    border-radius:999px;padding:3px 9px;margin-left:8px;vertical-align:2px;}
+  .flow-step p{font-size:12.5px;color:var(--sub);line-height:1.7;}
+  .flow-connect{height:9px;}
+  .flow-time{ margin-top:16px; background:var(--blue-bg); border-radius:12px; padding:14px 18px;
+    display:flex;align-items:center;gap:12px;font-size:13px;}
+  .flow-time b{color:var(--blue);font-size:15px;}
+  .flow-time .ic{font-size:20px;}
+
+  /* works+voice / P6 */
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:6px;}
+  .works-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block;}
+  .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;}
+  .voice-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:15px 15px 16px;}
+  .voice-card .vh{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+  .voice-card .vh img{width:44px;height:44px;border-radius:50%;object-fit:cover;}
+  .voice-card .stars{color:var(--orange);font-size:13px;letter-spacing:1px;}
+  .voice-card h4{font-size:13px;font-weight:800;margin-bottom:6px;line-height:1.45;}
+  .voice-card p{font-size:11.5px;color:var(--sub);line-height:1.7;}
+  .voice-src{font-size:10.5px;color:#9aa1ab;margin-top:10px;text-align:right;}
+
+  /* faq + contact / P7 */
+  .faq-list{display:grid;gap:10px;margin-top:6px;}
+  .faq-item{border:1px solid var(--line);border-radius:12px;padding:13px 16px;}
+  .faq-item .q{font-size:13px;font-weight:800;padding-left:26px;position:relative;line-height:1.5;}
+  .faq-item .q::before{content:"Q";position:absolute;left:0;top:-1px;color:var(--blue);font-family:"Roboto Mono",monospace;font-weight:800;font-size:15px;}
+  .faq-item .a{font-size:12px;color:var(--sub);line-height:1.7;padding-left:26px;position:relative;margin-top:6px;}
+  .faq-item .a::before{content:"A";position:absolute;left:0;top:-1px;color:var(--pink);font-family:"Roboto Mono",monospace;font-weight:800;font-size:15px;}
+  .company{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:0 24px;}
+  .company .h{grid-column:1/-1;font-size:13px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .company .h::before{content:"";width:4px;height:16px;background:var(--blue);border-radius:2px;}
+  .company dl{display:grid;grid-template-columns:26mm 1fr;font-size:12px;border-top:1px solid var(--line);}
+  .company dt{padding:9px 0;color:var(--sub);font-weight:700;border-bottom:1px solid var(--line);}
+  .company dd{padding:9px 0;border-bottom:1px solid var(--line);}
+  .chk{color:var(--pink);font-weight:700;}
+
+  .cta{ margin-top:20px; background:
+      radial-gradient(120% 130% at 0% 0%, rgba(255,255,255,.14), rgba(255,255,255,0) 60%),
+      linear-gradient(135deg,#111820,#1c2530); color:#fff; border-radius:18px; padding:24px 26px; text-align:center;}
+  .cta .lb{font:800 11px/1 "Roboto Mono",monospace;letter-spacing:.2em;color:var(--orange);}
+  .cta h3{font-size:22px;font-weight:900;margin:10px 0 6px;line-height:1.4;}
+  .cta h3 .or{color:var(--orange);}
+  .cta p{font-size:12.5px;color:#c7ccd3;line-height:1.8;}
+  .cta .btn{display:inline-block;margin-top:15px;background:#06C755;color:#fff;font-weight:800;font-size:15px;
+    padding:14px 34px;border-radius:999px;text-decoration:none;box-shadow:0 10px 26px rgba(6,199,85,.4);}
+  .cta .url{margin-top:11px;font-size:12px;color:#fff;font-family:"Roboto Mono",monospace;letter-spacing:.02em;}
+  .cta .sub2{margin-top:6px;font-size:11px;color:#8f96a0;}
+</style>
+</head>
+<body>
+
+<!-- ============================ PAGE 1 : COVER ============================ -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-logo"><img src="../images/icon.webp" alt="">TAF Design</div>
+
+    <div class="cover-mid">
+      <div class="cover-eyebrow">SERVICE GUIDE</div>
+      <h1>個人事業主・<br>小さなお店のための<br><span class="bl">Web制作サービス</span></h1>
+      <p class="cover-sub">AIの時代に、ちょうどいい価格で。<br><b>買い切り2万円から・月額0円。</b></p>
+      <div class="cover-badges"><span>買い切り</span><span>月額0円</span><span>スマホ最適化</span><span>SEO・AI検索対策</span></div>
+    </div>
+
+    <div class="cover-illust"><img src="../images/lp-fv-main.webp" alt=""></div>
+
+    <div class="cover-foot">
+      <div class="co">ティーチ&amp;ファネル Design<span>TEACH &amp; FUNNEL DESIGN</span></div>
+      <div class="meta">taf-design.com<br>Service Guide 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PAGE 2 : GREETING ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content">
+    <div class="eyebrow">ABOUT US</div>
+    <h2 class="sec">はじめまして、<span class="bl">TAF Design</span>です。</h2>
+    <div class="greet">
+      <div class="greet-photo">
+        <img src="../images/lp-daihyo.webp" alt="代表">
+        <div class="cap">少人数のチームで、ていねいに対応します</div>
+      </div>
+      <div class="greet-body">
+        <p>数ある制作サービスの中から、この資料をご覧いただきありがとうございます。私たちは、<b>個人事業主さま・小さなお店</b>のためのWeb制作を専門にする少人数チームです。</p>
+        <p>「制作会社は高そう、でも自作は不安」——そんな声にお応えするため、<b>AIを制作に活用してコストを下げ、その分を価格に還元</b>しています。だから、無理のない<b>買い切り価格</b>でご提供できます。</p>
+        <p>ホームページは、作って終わりではありません。<b>あなたの事業が伸びる土台</b>になるように、構成から文章まで一緒に考えます。まずはこの資料で、私たちのことを知っていただければ嬉しいです。</p>
+      </div>
+    </div>
+
+    <div class="reasons">
+      <div class="reason"><div class="n">1</div><div><h4>買い切りだから、月額0円。</h4><p>作ったあとに払い続ける必要はありません。サイトはずっとあなたのもの。運用サポートが必要な方にだけ、任意プランをご用意しています。</p></div></div>
+      <div class="reason"><div class="n">2</div><div><h4>オリジナルデザイン＆スマホ最適化。</h4><p>テンプレートの使い回しではなく、事業に合わせて一点ずつ制作。スマホでの見やすさも標準で最適化します。</p></div></div>
+      <div class="reason"><div class="n">3</div><div><h4>ココナラで、全レビュー星5。</h4><p>サービス開始からわずか3ヶ月でココナラ最高ランク「プラチナ」を獲得。品質は、お客様の声が証明しています。</p></div></div>
+    </div>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>02</div></div>
+</section>
+
+<!-- ============================ PAGE 3 : WHY KAIKIRI ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content">
+    <div class="eyebrow pink">STORY</div>
+    <h2 class="sec">なぜ、<span class="pk">&ldquo;買い切り&rdquo;</span>なのか。</h2>
+    <div class="story-body">
+      <p>「AIがあれば、自分でも作れる」——たしかにその通りです。でも実際にやってみると、プロンプトの試行錯誤、崩れるレイアウトの手直し、高機能なAIは<b>月額料金やトークン残量</b>を気にしながらの作業。「作れる」と「使いこなせる」は、まったく別ものです。</p>
+      <p>その学習に何十時間もかけるより、プロが仕上げた<b>買い切りのホームページ</b>を持つ方が、結局は安くて早い。そして空いた時間は、<b>あなたの事業そのものを伸ばすため</b>に使えます。</p>
+    </div>
+    <div class="callout">
+      <span class="cl-lb">POINT</span>
+      <p>AIの勉強に費やす&ldquo;何十時間&rdquo;こそ、いちばん高いコストかもしれません。</p>
+    </div>
+
+    <table class="cmp">
+      <thead><tr><th></th><th>よくある月額制</th><th class="taf">TAF Design</th></tr></thead>
+      <tbody>
+        <tr><th>初期費用</th><td class="sub">0円〜</td><td class="taf">2万円〜</td></tr>
+        <tr><th>月額</th><td class="sub">6,000〜10,000円前後</td><td class="taf"><span class="big">0円</span></td></tr>
+        <tr><th>3年間の総額</th><td class="sub">約22〜36万円</td><td class="taf"><span class="big">2万円〜</span> のまま</td></tr>
+        <tr><th>やめたら?</th><td class="sub">サイトが消えることも</td><td class="taf">買い切り。ずっとあなたのもの</td></tr>
+      </tbody>
+    </table>
+    <p class="note-s">※月額制は一般的なサービスの一例です（各社の条件により異なります）。当社比較。</p>
+
+    <div class="honest">正直に言うと、<b>月額制が悪いわけではありません</b>。ただ、AIで制作コストが下がった今、作る費用は一度きりでいい——それが私たちの考えです。保守やサポートが必要な方にだけ、任意のプラン（月5,500円）を別途ご用意しています。</div>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>03</div></div>
+</section>
+
+<!-- ============================ PAGE 4 : PRICE ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content">
+    <div class="eyebrow orange">PRICE</div>
+    <h2 class="sec">料金プラン</h2>
+    <p class="lead">シンプルな1枚ものから、複数ページ・SEO対策・WordPress組み込みまで。必要な分だけを、買い切りで。</p>
+
+    <div class="price-hero">
+      <div class="ph-l">
+        <div class="tag">基本プラン ｜ HP・LP制作</div>
+        <h3>1枚もの（3〜5セクション程度）</h3>
+        <p>トップページ完結型のホームページ／ランディングページ</p>
+      </div>
+      <div class="ph-r">
+        <div><span class="yen">¥</span><span class="num">20,000</span><span class="u">〜</span></div>
+        <span class="kaikiri">買い切り・月額0円</span>
+      </div>
+    </div>
+
+    <div class="opt-title">オプション（必要な分だけ追加）</div>
+    <table class="opt">
+      <tr><td class="name">ページ追加<small>2ページ目以降、1枚ごと</small></td><td class="val">+¥3,000<span class="p">〜5,000</span></td></tr>
+      <tr><td class="name">SEO・AI検索対策<small>検索・AI検索で見つけてもらう対策</small></td><td class="val">+¥5,000<span class="p">〜10,000</span></td></tr>
+      <tr><td class="name">WordPress組み込み<small>ご自身で更新できる仕組みに</small></td><td class="val">+¥10,000</td></tr>
+    </table>
+
+    <div class="incl">
+      <div class="h"><span class="badge">全プラン共通</span>以下はすべて、基本料金に含まれます。</div>
+      <div class="incl-cols">
+        <div class="incl-col">
+          <h5>制作</h5>
+          <ul><li>オリジナルデザイン</li><li>スマホ最適化</li><li>文章作成サポート</li></ul>
+        </div>
+        <div class="incl-col">
+          <h5>運用</h5>
+          <ul><li>格安で修正・ページ追加（1回2,500円程度）</li><li>チャットで相談受付</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="price-note">※金額はすべて目安です。内容・ボリュームによって変動する場合があります。正確なお見積りは無料相談でご案内します。<br>※<span class="chk">【要確認】</span>税込／税別の表記、お支払い方法・タイミングをこちらに記載します。</p>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>04</div></div>
+</section>
+
+<!-- ============================ PAGE 5 : FLOW ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content">
+    <div class="eyebrow">FLOW</div>
+    <h2 class="sec">ご依頼から納品までの<span class="bl">流れ</span></h2>
+    <p class="lead">むずかしい準備は要りません。フォームからのお申し込み後は、公式LINEでやりとりしながら進めます。</p>
+
+    <div class="flow">
+      <div class="flow-step"><div class="fn">01</div><div><h4>フォームから申し込み</h4><p>お名前とメールアドレスの入力だけ、約30秒で完了。この時点で費用は一切かかりません。</p></div></div>
+      <div class="flow-step"><div class="fn">02</div><div><h4>資料が届く・無料相談</h4><p>この資料をお届けします。ご相談もフォームで受け付け、内容にしっかりお答えします。検討だけで終わってもOKです。</p></div></div>
+      <div class="flow-step hl"><div class="fn">03</div><div><h4>公式LINEで制作スタート<span class="pill">ここから制作</span></h4><p>進める際は公式LINEへ。ヒアリングしながら、構成・デザイン・文章をプロが組み立てます。専門知識は不要です。</p></div></div>
+      <div class="flow-step"><div class="fn">04</div><div><h4>確認・納品</h4><p>仕上がりをご確認いただき、修正のうえ納品。買い切りなので、データも含めてすべてあなたのものになります。</p></div></div>
+    </div>
+
+    <div class="flow-time"><span class="ic">🗓️</span><div>制作期間の目安：<b><span class="chk">【要確認】</span>最短1週間〜</b>（ボリュームやご確認のペースにより変動します）</div></div>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>05</div></div>
+</section>
+
+<!-- ============================ PAGE 6 : WORKS + VOICE ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content">
+    <div class="eyebrow">WORKS</div>
+    <h2 class="sec">制作実績</h2>
+    <p class="lead">業種・目的に合わせて一点ずつ制作しています。実績の一部をご紹介します。</p>
+    <div class="works-grid">
+      <img src="../images/work-01.jpg" alt=""><img src="../images/work-02.jpg" alt=""><img src="../images/work-03.jpg" alt="">
+      <img src="../images/work-04.jpg" alt=""><img src="../images/work-05.jpg" alt=""><img src="../images/work-06.jpg" alt="">
+    </div>
+
+    <div class="eyebrow pink" style="margin-top:26px;">VOICE</div>
+    <h2 class="sec">お客様の声 <span class="pk" style="font-size:18px;">— 全レビュー星5</span></h2>
+    <div class="voice-grid">
+      <div class="voice-card"><div class="vh"><img src="../images/lp-voice-01.webp" alt=""><span class="stars">★★★★★</span></div><h4>すべて金額以上でした</h4><p>細かな対応、スピード、デザイン、気遣いなど全て金額以上でした。また是非お世話になろうと思えます。</p></div>
+      <div class="voice-card"><div class="vh"><img src="../images/lp-voice-02.webp" alt=""><span class="stars">★★★★★</span></div><h4>初めてでも安心・美しい仕上がり</h4><p>終始丁寧にご対応いただき、大変感謝しております。仕上がりもとても美しく、大変満足しております。</p></div>
+      <div class="voice-card"><div class="vh"><img src="../images/lp-voice-03.webp" alt=""><span class="stars">★★★★★</span></div><h4>マーケの土台づくりに満足</h4><p>スピード感、クオリティ、アドバイス、行間を読み取る力、全て申し分ないです。</p></div>
+    </div>
+    <p class="voice-src">※ココナラでのお取引レビューより（原文抜粋）</p>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>06</div></div>
+</section>
+
+<!-- ============================ PAGE 7 : FAQ + CONTACT ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="sec">よくある<span class="bl">ご質問</span></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="q">月額費用はかかりますか？</div><div class="a">制作費は買い切りです。月額の縛りはありません。ご希望の方にだけ、運用サポートプラン（任意・月5,500円）を別途ご用意しています。</div></div>
+      <div class="faq-item"><div class="q">Web初心者でも大丈夫ですか？</div><div class="a">むしろ歓迎です。専門知識は不要。こちらの質問に答えていただくだけで、構成も文章もプロが組み立てます。</div></div>
+      <div class="faq-item"><div class="q">相談したら、依頼しないとダメですか？</div><div class="a">いいえ。お話を伺って、検討だけで終わっても大丈夫です。しつこい営業は一切しません。</div></div>
+      <div class="faq-item"><div class="q">納品後の修正はできますか？</div><div class="a">はい。1回2,500円程度から、格安で修正・ページ追加を承ります。チャットでいつでもご相談ください。</div></div>
+    </div>
+
+    <div class="company">
+      <div class="h">会社概要・お問い合わせ</div>
+      <dl>
+        <dt>屋号</dt><dd>ティーチ&amp;ファネル Design</dd>
+        <dt>代表</dt><dd><span class="chk">【要確認】</span></dd>
+        <dt>所在地</dt><dd><span class="chk">【要確認】</span></dd>
+      </dl>
+      <dl>
+        <dt>事業内容</dt><dd>HP・LP制作／Webマーケティング支援</dd>
+        <dt>Web</dt><dd>taf-design.com</dd>
+        <dt>お問い合わせ</dt><dd>公式LINE</dd>
+      </dl>
+    </div>
+
+    <div class="cta">
+      <div class="lb">CONTACT</div>
+      <h3>まずは、<span class="or">公式LINE</span>から。</h3>
+      <p>今すぐ決めなくて大丈夫。ご相談・お見積りは無料です。<br>「話を聞いてみたい」だけでも、お気軽にどうぞ。</p>
+      <a class="btn" href="https://lin.ee/pqfXTUJ">友だち追加して相談する</a>
+      <div class="url">https://lin.ee/pqfXTUJ</div>
+      <div class="sub2">相談は無料 ／ 約30秒で申込完了 ／ しつこい営業はしません</div>
+    </div>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>07</div></div>
+</section>
+
+</body>
+</html>
