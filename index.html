@@ -27,20 +27,25 @@
 
 <!-- CVキャラ配置(このファイル単体で完結・style.cssの新旧に依存しない) -->
 <style>
-.cv { padding-top: calc(var(--section-space) + 175px) !important; }
+/* PC: カードの左右の縁に重なって立つ(カードの手前・下寄り) */
 .cv-char {
-  position: absolute; z-index: 0;
-  top: calc(var(--section-space) - 40px); bottom: auto;
-  height: 240px; width: auto; max-width: none;
+  position: absolute; z-index: 2;
+  bottom: calc(var(--section-space) - 12px); top: auto;
+  height: 280px; width: auto; max-width: none;
   pointer-events: none; user-select: none;
-  filter: drop-shadow(0 10px 18px rgba(30,50,70,.12));
+  filter: drop-shadow(0 10px 18px rgba(30,50,70,.14));
 }
-/* PC: カードの両端の上に立つ(カード幅720px・端から少し内側) */
-.cv-char--girl { right: calc(50% + 218px); left: auto; }
-.cv-char--boy  { left: calc(50% + 218px); right: auto; }
+.cv-char--girl { right: calc(50% + 283px); left: auto; }
+.cv-char--boy  { left: calc(50% + 283px); right: auto; }
+@media (max-width: 860px) and (min-width: 701px) {
+  .cv-char { height: 230px; }
+  .cv-char--girl { right: calc(50% + 225px); }
+  .cv-char--boy  { left: calc(50% + 225px); }
+}
 @media (max-width: 700px) {
+  /* スマホ: カードの上に2人(足元をカード縁に重ねる) */
   .cv { padding-top: calc(var(--section-space) + 118px) !important; }
-  .cv-char { height: 150px; top: calc(var(--section-space) - 26px); }
+  .cv-char { height: 150px; top: calc(var(--section-space) - 26px); bottom: auto; z-index: 0; }
   .cv-char--girl { right: calc(50% + 10px); }
   .cv-char--boy  { left: calc(50% + 10px); }
 }
