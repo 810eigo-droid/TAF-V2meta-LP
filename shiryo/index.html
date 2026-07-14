@@ -124,6 +124,10 @@
   .price-hero .ph-r .u{font-size:14px;font-weight:700;}
   .price-hero .ph-r .kaikiri{display:inline-block;margin-top:6px;background:rgba(255,255,255,.2);
     border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700;}
+  .price-hero .ph-r .taxnote{font-size:11px;opacity:.9;margin-top:6px;font-weight:600;}
+  .pay-ex{ margin-top:14px; background:var(--blue-bg); border:1px solid #cfe4f2; border-radius:12px;
+    padding:12px 18px; font-size:12.5px; color:#2c3038; display:flex; align-items:center; gap:6px; flex-wrap:wrap;}
+  .pay-ex b{color:var(--ink);} .pay-ex .big{color:var(--blue);font-weight:900;font-size:16px;}
   .opt-title{font-size:13px;font-weight:800;margin:20px 0 9px;display:flex;align-items:center;gap:8px;}
   .opt-title::before{content:"";width:4px;height:16px;background:var(--orange);border-radius:2px;}
   table.opt{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;
@@ -299,17 +303,20 @@
         <p>トップページ完結型のホームページ／ランディングページ</p>
       </div>
       <div class="ph-r">
-        <div><span class="yen">¥</span><span class="num">20,000</span><span class="u">〜</span></div>
+        <div><span class="yen">¥</span><span class="num">22,000</span><span class="u">〜</span></div>
         <span class="kaikiri">買い切り・月額0円</span>
+        <div class="taxnote">税込・前払い</div>
       </div>
     </div>
 
     <div class="opt-title">オプション（必要な分だけ追加）</div>
     <table class="opt">
-      <tr><td class="name">ページ追加<small>2ページ目以降、1枚ごと</small></td><td class="val">+¥3,000<span class="p">〜5,000</span></td></tr>
-      <tr><td class="name">SEO・AI検索対策<small>検索・AI検索で見つけてもらう対策</small></td><td class="val">+¥5,000<span class="p">〜10,000</span></td></tr>
-      <tr><td class="name">WordPress組み込み<small>ご自身で更新できる仕組みに</small></td><td class="val">+¥10,000</td></tr>
+      <tr><td class="name">ページ追加<small>2ページ目以降、1枚ごと</small></td><td class="val">+¥3,300<span class="p">〜5,500</span></td></tr>
+      <tr><td class="name">SEO・AI検索対策<small>検索・AI検索で見つけてもらう対策</small></td><td class="val">+¥5,500<span class="p">〜11,000</span></td></tr>
+      <tr><td class="name">WordPress組み込み<small>ご自身で更新できる仕組みに</small></td><td class="val">+¥11,000</td></tr>
     </table>
+
+    <div class="pay-ex"><b>お支払い例）</b>1枚もの＋WordPress組み込み ＝ <span class="big">33,000円</span>（税込・前払い）</div>
 
     <div class="incl">
       <div class="h"><span class="badge">全プラン共通</span>以下はすべて、基本料金に含まれます。</div>
@@ -320,12 +327,12 @@
         </div>
         <div class="incl-col">
           <h5>運用</h5>
-          <ul><li>格安で修正・ページ追加（1回2,500円程度）</li><li>チャットで相談受付</li></ul>
+          <ul><li>格安で修正・ページ追加（1回2,750円程度）</li><li>チャットで相談受付</li></ul>
         </div>
       </div>
     </div>
 
-    <p class="price-note">※金額はすべて目安です。内容・ボリュームによって変動する場合があります。正確なお見積りは無料相談でご案内します。<br>※<span class="chk">【要確認】</span>税込／税別の表記、お支払い方法・タイミングをこちらに記載します。</p>
+    <p class="price-note">※表示価格はすべて<b style="color:#2c3038;">税込・前払い</b>です。内容・ボリュームによって変動する場合があります。正確なお見積りは無料相談でご案内します。</p>
   </div>
   <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>04</div></div>
 </section>
@@ -345,7 +352,7 @@
       <div class="flow-step"><div class="fn">04</div><div><h4>確認・納品</h4><p>仕上がりをご確認いただき、修正のうえ納品。買い切りなので、データも含めてすべてあなたのものになります。</p></div></div>
     </div>
 
-    <div class="flow-time"><span class="ic">🗓️</span><div>制作期間の目安：<b><span class="chk">【要確認】</span>最短1週間〜</b>（ボリュームやご確認のペースにより変動します）</div></div>
+    <div class="flow-time"><span class="ic">🗓️</span><div>制作期間の目安：<b>最短1週間〜</b>（ボリュームやご確認のペースにより変動します）</div></div>
   </div>
   <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>05</div></div>
 </section>
@@ -384,20 +391,18 @@
       <div class="faq-item"><div class="q">月額費用はかかりますか？</div><div class="a">制作費は買い切りです。月額の縛りはありません。ご希望の方にだけ、運用サポートプラン（任意・月5,500円）を別途ご用意しています。</div></div>
       <div class="faq-item"><div class="q">Web初心者でも大丈夫ですか？</div><div class="a">むしろ歓迎です。専門知識は不要。こちらの質問に答えていただくだけで、構成も文章もプロが組み立てます。</div></div>
       <div class="faq-item"><div class="q">相談したら、依頼しないとダメですか？</div><div class="a">いいえ。お話を伺って、検討だけで終わっても大丈夫です。しつこい営業は一切しません。</div></div>
-      <div class="faq-item"><div class="q">納品後の修正はできますか？</div><div class="a">はい。1回2,500円程度から、格安で修正・ページ追加を承ります。チャットでいつでもご相談ください。</div></div>
+      <div class="faq-item"><div class="q">納品後の修正はできますか？</div><div class="a">はい。1回2,750円程度（税込）から、格安で修正・ページ追加を承ります。チャットでいつでもご相談ください。</div></div>
     </div>
 
     <div class="company">
-      <div class="h">会社概要・お問い合わせ</div>
+      <div class="h">サービス概要・お問い合わせ</div>
       <dl>
         <dt>屋号</dt><dd>ティーチ&amp;ファネル Design</dd>
-        <dt>代表</dt><dd><span class="chk">【要確認】</span></dd>
-        <dt>所在地</dt><dd><span class="chk">【要確認】</span></dd>
+        <dt>事業内容</dt><dd>HP・LP制作／Webマーケティング支援</dd>
       </dl>
       <dl>
-        <dt>事業内容</dt><dd>HP・LP制作／Webマーケティング支援</dd>
         <dt>Web</dt><dd>taf-design.com</dd>
-        <dt>お問い合わせ</dt><dd>公式LINE</dd>
+        <dt>お問い合わせ</dt><dd>公式LINE（下記より）</dd>
       </dl>
     </div>
 
