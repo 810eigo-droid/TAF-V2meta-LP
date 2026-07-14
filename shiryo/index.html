@@ -62,7 +62,7 @@
   .cover-badges span{ background:var(--white); border:1.5px solid var(--blue-l); color:var(--blue);
     font-size:12.5px; font-weight:700; padding:7px 15px; border-radius:999px;
     box-shadow:0 6px 16px rgba(30,60,90,.06);}
-  .cover-illust{ position:absolute; right:0; bottom:64mm; width:118mm; opacity:.96;}
+  .cover-illust{ position:absolute; right:0; bottom:48mm; width:108mm; opacity:.96;}
   .cover-illust img{width:100%;display:block;border-radius:16px 0 0 16px;
     box-shadow:0 20px 50px rgba(30,60,90,.16);}
   .cover-foot{ margin-top:auto; display:flex; align-items:flex-end; justify-content:space-between;
@@ -234,6 +234,40 @@
   .cta .sub2{margin-top:6px;font-size:11px;color:#8f96a0;}
   .cta .alt-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:11.5px;color:#c7ccd3;}
   .cta .alt-contact a{color:#4fc3f7;font-weight:700;text-decoration:underline;}
+
+  /* ===== 目次 ===== */
+  .toc-list{display:grid;gap:10px;margin-top:14px;}
+  .toc-item{display:flex;align-items:center;gap:14px;padding:13px 18px;border:1px solid var(--line);border-radius:13px;background:var(--white);text-decoration:none;color:var(--ink);}
+  .toc-item.hot{border-color:var(--orange);background:#fffaf0;box-shadow:0 6px 18px rgba(246,172,14,.12);}
+  .toc-num{width:30px;height:30px;flex:none;border-radius:8px;background:var(--blue-bg);color:var(--blue);font:800 13px/30px "Roboto Mono",monospace;text-align:center;}
+  .toc-item.hot .toc-num{background:var(--orange);color:#fff;}
+  .toc-tt{flex:1;font-size:14.5px;font-weight:800;}
+  .toc-tt small{display:block;font-size:11px;font-weight:500;color:var(--sub);margin-top:2px;}
+  .toc-badge{display:inline-block;background:var(--orange);color:#fff;font-size:10px;font-weight:800;border-radius:5px;padding:2px 8px;margin-left:8px;vertical-align:1px;}
+  .toc-pg{font:800 15px/1 "Roboto Mono",monospace;color:var(--sub);}
+  .toc-item.hot .toc-pg{color:var(--orange);}
+
+  /* ===== 対応できるサービス ===== */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:6px;}
+  .svc-card{border:1px solid var(--line);border-radius:13px;padding:14px 16px;background:var(--white);}
+  .svc-card h4{font-size:13.5px;font-weight:800;margin:0 0 4px;display:flex;align-items:center;gap:7px;}
+  .svc-card h4 .ic{font-size:16px;}
+  .svc-card p{font-size:11px;color:var(--sub);line-height:1.6;}
+  .svc-more{margin-top:14px;background:var(--blue-bg);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:14px 18px;font-size:12.5px;color:#2c3038;line-height:1.85;}
+  .svc-more b{color:var(--ink);}
+
+  /* ===== 料金表ボタン ===== */
+  .price-cta-link{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;background:linear-gradient(135deg,#0093c9,#00a2de);color:#fff;font-weight:800;font-size:13.5px;padding:14px;border-radius:12px;text-decoration:none;box-shadow:0 10px 24px rgba(0,120,170,.22);}
+  .price-cta-link .arw{font-family:"Roboto Mono",monospace;}
+
+  /* ===== お申し込み(電話/フォーム/LINE) ===== */
+  .cta .btn-apply{background:linear-gradient(135deg,#f5a30a,#f6b52e);box-shadow:0 12px 28px rgba(246,172,14,.4);}
+  .apply-row{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px;}
+  .apply-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:13px;padding:14px 12px;text-align:center;}
+  .apply-box .al{font:800 10px/1 "Roboto Mono",monospace;letter-spacing:.12em;color:#8f96a0;}
+  .apply-box .av{font-size:16px;font-weight:800;color:#fff;margin-top:7px;letter-spacing:.02em;}
+  .apply-box .av.sm{font-size:13.5px;}
+  .apply-box .as{font-size:10.5px;color:#9aa1ab;margin-top:5px;}
 </style>
 </head>
 <body>
@@ -245,7 +279,7 @@
 
     <div class="cover-mid">
       <div class="cover-eyebrow">SERVICE GUIDE</div>
-      <h1>個人事業主・<br>小さなお店のための<br><span class="bl">Web制作サービス</span></h1>
+      <h1>個人事業主・<br>副業オーナーのための<br><span class="bl">Web制作サービス</span></h1>
       <p class="cover-sub">AIの時代に、ちょうどいい価格で。<br><b>買い切り2万円から・月額0円。</b></p>
       <div class="cover-badges"><span>買い切り</span><span>月額0円</span><span>スマホ最適化</span><span>SEO・AI検索対策</span></div>
     </div>
@@ -259,7 +293,28 @@
   </div>
 </section>
 
-<!-- ============================ PAGE 2 : GREETING ============================ -->
+<!-- ============================ PAGE 2 : 目次 ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content">
+    <div class="eyebrow">CONTENTS</div>
+    <h2 class="sec">目次</h2>
+    <p class="lead">「まず料金が知りたい」という方は、<b style="color:#F6AC0E;">6ページ</b>の料金プランへどうぞ。</p>
+    <div class="toc-list">
+      <div class="toc-item"><span class="toc-num">01</span><span class="toc-tt">私たちについて<small>選ばれる理由・実績</small></span><span class="toc-pg">03</span></div>
+      <div class="toc-item"><span class="toc-num">02</span><span class="toc-tt">対応できるサービス<small>Web制作だけではありません</small></span><span class="toc-pg">04</span></div>
+      <div class="toc-item"><span class="toc-num">03</span><span class="toc-tt">なぜ&ldquo;買い切り&rdquo;なのか<small>月額制との比較</small></span><span class="toc-pg">05</span></div>
+      <div class="toc-item hot"><span class="toc-num">04</span><span class="toc-tt">料金プラン<span class="toc-badge">よく見られています</span><small>基本料金・オプション・お支払い例</small></span><span class="toc-pg">06</span></div>
+      <div class="toc-item"><span class="toc-num">05</span><span class="toc-tt">ご依頼から納品までの流れ<small>お申し込み〜納品</small></span><span class="toc-pg">07</span></div>
+      <div class="toc-item"><span class="toc-num">06</span><span class="toc-tt">制作実績<small>業種別の事例</small></span><span class="toc-pg">08</span></div>
+      <div class="toc-item"><span class="toc-num">07</span><span class="toc-tt">お客様の声<small>ココナラ全レビュー星5</small></span><span class="toc-pg">09</span></div>
+      <div class="toc-item"><span class="toc-num">08</span><span class="toc-tt">よくあるご質問・お申し込み<small>FAQ・お問い合わせ先</small></span><span class="toc-pg">10</span></div>
+    </div>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>02</div></div>
+</section>
+
+<!-- ============================ PAGE 3 : GREETING ============================ -->
 <section class="page">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
@@ -271,7 +326,7 @@
         <div class="cap">少人数のチームで、ていねいに対応します</div>
       </div>
       <div class="greet-body">
-        <p>数ある制作サービスの中から、この資料をご覧いただきありがとうございます。私たちは、<b>個人事業主さま・小さなお店</b>のためのWeb制作を専門にする少人数チームです。</p>
+        <p>数ある制作サービスの中から、この資料をご覧いただきありがとうございます。私たちは、<b>個人事業主さま・副業オーナー</b>のためのWeb制作・集客支援を専門にする少人数チームです。</p>
         <p>「制作会社は高そう、でも自作は不安」——そんな声にお応えするため、<b>AIを制作に活用してコストを下げ、その分を価格に還元</b>しています。だから、無理のない<b>買い切り価格</b>でご提供できます。</p>
         <p>ホームページは、作って終わりではありません。<b>あなたの事業が伸びる土台</b>になるように、構成から文章まで一緒に考えます。まずはこの資料で、私たちのことを知っていただければ嬉しいです。</p>
       </div>
@@ -283,10 +338,34 @@
       <div class="reason"><div class="n">3</div><div><h4>ココナラで、全レビュー星5。</h4><p>サービス開始からわずか3ヶ月でココナラ最高ランク「プラチナ」を獲得。品質は、お客様の声が証明しています。</p></div></div>
     </div>
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>02</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>03</div></div>
 </section>
 
-<!-- ============================ PAGE 3 : WHY KAIKIRI ============================ -->
+<!-- ============================ PAGE 4 : 対応できるサービス ============================ -->
+<section class="page">
+  <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
+  <div class="content">
+    <div class="eyebrow">SERVICES</div>
+    <h2 class="sec">Web制作だけでは、<span class="bl">ありません。</span></h2>
+    <p class="lead">「サイトを作って終わり」ではなく、集客・自動化・システムまで一気通貫でご相談いただけます。必要なものだけ、組み合わせて依頼できます。</p>
+    <div class="svc-grid">
+      <div class="svc-card"><h4><span class="ic">🖥️</span>HP・LP制作</h4><p>トップページ完結型から複数ページまで。買い切りで制作します。</p></div>
+      <div class="svc-card"><h4><span class="ic">🔍</span>SEO・AI検索対策</h4><p>検索エンジンとAI検索の両方で、見つけてもらう対策を行います。</p></div>
+      <div class="svc-card"><h4><span class="ic">🎯</span>セールスファネル</h4><p>集客から成約までの導線を設計し、売上につなげます。</p></div>
+      <div class="svc-card"><h4><span class="ic">📈</span>マーケティング全般</h4><p>広告・訴求・改善まで、集客まわりを幅広くご相談いただけます。</p></div>
+      <div class="svc-card"><h4><span class="ic">📱</span>SNS連携</h4><p>各種SNS・公式LINEとサイトを連携し、接点を増やします。</p></div>
+      <div class="svc-card"><h4><span class="ic">🤖</span>AIボット</h4><p>問い合わせ対応や接客を自動化するチャットボットを構築します。</p></div>
+      <div class="svc-card"><h4><span class="ic">🧩</span>機能追加</h4><p>予約・決済・会員機能など、必要な機能を後から追加できます。</p></div>
+      <div class="svc-card"><h4><span class="ic">⚙️</span>UTAGE・マイスピー対応</h4><p>ファネル／メール配信ツールの構築・設定に対応します。</p></div>
+      <div class="svc-card"><h4><span class="ic">🔌</span>プラグイン追加</h4><p>WordPressの機能拡張・カスタマイズを承ります。</p></div>
+      <div class="svc-card"><h4><span class="ic">🛠️</span>システム開発</h4><p>独自の仕組みや業務の自動化など、開発案件にも対応します。</p></div>
+    </div>
+    <div class="svc-more">上記はすべて、<b>まとめて一社にご相談</b>いただけます。「何が必要か分からない」段階でも大丈夫。ご予算・目的に合わせて、最適な組み合わせをご提案します。</div>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>04</div></div>
+</section>
+
+<!-- ============================ PAGE 5 : WHY KAIKIRI ============================ -->
 <section class="page">
   <div class="brandbar"><div class="b-logo"><img src="../images/icon.webp" alt="">TAF Design</div><div>SERVICE GUIDE</div></div>
   <div class="content">
@@ -314,7 +393,7 @@
 
     <div class="honest">正直に言うと、<b>月額制が悪いわけではありません</b>。ただ、AIで制作コストが下がった今、作る費用は一度きりでいい——それが私たちの考えです。保守やサポートが必要な方にだけ、任意のプラン（月5,500円）を別途ご用意しています。</div>
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>03</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>05</div></div>
 </section>
 
 <!-- ============================ PAGE 4 : PRICE ============================ -->
@@ -362,8 +441,9 @@
     </div>
 
     <p class="price-note">※表示価格はすべて<b style="color:#2c3038;">税込</b>です。内容・ボリュームによって変動する場合があります。正確なお見積りは無料相談でご案内します。</p>
+    <a class="price-cta-link" href="https://taf-design.com/price/"><span class="arw">▶</span> 最新の詳しい料金表を見る： taf-design.com/price/</a>
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>04</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>06</div></div>
 </section>
 
 <!-- ============================ PAGE 5 : FLOW ============================ -->
@@ -383,7 +463,7 @@
 
     <div class="flow-time"><span class="ic">🗓️</span><div>制作期間の目安：<b>通常1週間〜10日程度</b>（ボリュームやご確認のペースにより変動します）</div></div>
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>05</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>07</div></div>
 </section>
 
 <!-- ============================ PAGE 6 : WORKS + VOICE ============================ -->
@@ -407,7 +487,7 @@
     </div>
 
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>06</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>08</div></div>
 </section>
 
 <!-- ============================ PAGE 7 : VOICE ============================ -->
@@ -429,7 +509,7 @@
       <div><b>ココナラ プラチナランク獲得</b><span>全レビュー星5／サービス開始3ヶ月で最高ランクに到達しました。</span></div>
     </div>
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>07</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>09</div></div>
 </section>
 
 <!-- ============================ PAGE 8 : FAQ + CONTACT ============================ -->
@@ -453,21 +533,24 @@
       </dl>
       <dl>
         <dt>Web</dt><dd>taf-design.com</dd>
-        <dt>お問い合わせ</dt><dd>LINE（下記より）</dd>
+        <dt>お問い合わせ</dt><dd>フォーム・LINE・お電話（下記）</dd>
       </dl>
     </div>
 
     <div class="cta">
       <div class="lb">CONTACT</div>
-      <h3>まずは、<span class="or">LINE</span>から。</h3>
-      <p>今すぐ決めなくて大丈夫。ご相談・お見積りは無料です。<br>「話を聞いてみたい」だけでも、お気軽にどうぞ。</p>
-      <a class="btn" href="https://lin.ee/pqfXTUJ">友だち追加して相談する</a>
-      <div class="url">https://lin.ee/pqfXTUJ</div>
-      <div class="sub2">相談は無料 ／ 約30秒で申込完了 ／ しつこい営業はしません</div>
-      <div class="alt-contact">LINEをお使いでない方は <a href="https://taf-design.com/offer2/">お問い合わせフォーム</a> からどうぞ。</div>
+      <h3>お申し込み・<span class="or">無料相談</span></h3>
+      <p>今すぐ決めなくて大丈夫。ご相談・お見積り・資料請求は無料です。<br>ご都合のよい方法で、お気軽にどうぞ。</p>
+      <a class="btn btn-apply" href="https://taf-design.com/offer2/">お申し込み・無料相談フォーム</a>
+      <div class="url">https://taf-design.com/offer2/</div>
+      <div class="apply-row">
+        <div class="apply-box"><div class="al">LINE</div><div class="av sm">友だち追加して相談</div><div class="as">lin.ee/pqfXTUJ</div></div>
+        <div class="apply-box"><div class="al">PHONE / SMS</div><div class="av">090-2514-6064</div><div class="as">ショートメール(SMS)も可</div></div>
+      </div>
+      <div class="sub2">相談は無料 ／ しつこい営業はしません</div>
     </div>
   </div>
-  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>08</div></div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div>10</div></div>
 </section>
 
 </body>
