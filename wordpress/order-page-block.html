@@ -75,6 +75,9 @@
   }
   .taf-order .to-btn-mail:hover{border-color:var(--to-sub);}
   .taf-order .to-note{font-size:11.5px;color:var(--to-sub);margin-top:14px;}
+  .taf-order .to-dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:1px solid rgba(0,0,0,.18);}
+  .taf-order .to-date-row{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:12.5px;color:var(--to-sub);flex-wrap:wrap;}
+  .taf-order input.to-date{width:auto;max-width:200px;padding:8px 12px;font-size:13.5px;}
   .taf-order .to-hint{font-size:11.5px;color:var(--to-sub);margin:10px 0 0;line-height:1.7;background:var(--to-bg);border-radius:10px;padding:10px 14px;}
   .taf-order .to-hint b{color:var(--to-ink);}
   .taf-order .to-error{display:none;color:var(--to-pink);font-weight:700;font-size:13px;margin-top:12px;}
@@ -129,6 +132,20 @@
       </div>
     </div>
 
+    <div id="to-pages-wrap" style="display:none">
+      <div class="to-q">
+        <div class="to-q-label">下層ページ数(TOPページ以外) <span class="to-req">必須</span></div>
+        <div class="to-pills" id="to-pages">
+          <input type="radio" name="to-pages" id="to-p1" value="なし(TOPページのみ)"><label for="to-p1">なし(TOPのみ)</label>
+          <input type="radio" name="to-pages" id="to-p2" value="1〜3ページ"><label for="to-p2">1〜3ページ</label>
+          <input type="radio" name="to-pages" id="to-p3" value="4〜7ページ"><label for="to-p3">4〜7ページ</label>
+          <input type="radio" name="to-pages" id="to-p4" value="8ページ以上"><label for="to-p4">8ページ以上</label>
+          <input type="radio" name="to-pages" id="to-p5" value="まだわからない・相談したい"><label for="to-p5">まだわからない</label>
+        </div>
+        <p class="to-hint">※例:「会社概要」「サービス紹介」「お問い合わせ」なら下層3ページです。</p>
+      </div>
+    </div>
+
     <div id="to-scale-wrap" style="display:none">
       <div class="to-q">
         <div class="to-q-label">ページの長さ・分量のイメージ <span class="to-req">必須</span></div>
@@ -152,12 +169,54 @@
       </div>
     </div>
 
+    <div id="to-design-wrap" style="display:none">
+      <div class="to-q">
+        <div class="to-q-label">好きな色・使いたい色(4つまで) <span class="to-opt">任意</span></div>
+        <div class="to-pills" id="to-color">
+          <input type="checkbox" name="to-color" id="to-col1" value="赤"><label for="to-col1"><span class="to-dot" style="background:#E53935"></span>赤</label>
+          <input type="checkbox" name="to-color" id="to-col2" value="オレンジ"><label for="to-col2"><span class="to-dot" style="background:#F6AC0E"></span>オレンジ</label>
+          <input type="checkbox" name="to-color" id="to-col3" value="黄"><label for="to-col3"><span class="to-dot" style="background:#FDD835"></span>黄</label>
+          <input type="checkbox" name="to-color" id="to-col4" value="緑"><label for="to-col4"><span class="to-dot" style="background:#43A047"></span>緑</label>
+          <input type="checkbox" name="to-color" id="to-col5" value="水色"><label for="to-col5"><span class="to-dot" style="background:#29B6F6"></span>水色</label>
+          <input type="checkbox" name="to-color" id="to-col6" value="青・紺"><label for="to-col6"><span class="to-dot" style="background:#1A46A0"></span>青・紺</label>
+          <input type="checkbox" name="to-color" id="to-col7" value="紫"><label for="to-col7"><span class="to-dot" style="background:#8E24AA"></span>紫</label>
+          <input type="checkbox" name="to-color" id="to-col8" value="ピンク"><label for="to-col8"><span class="to-dot" style="background:#EC407A"></span>ピンク</label>
+          <input type="checkbox" name="to-color" id="to-col9" value="茶・ベージュ"><label for="to-col9"><span class="to-dot" style="background:#A1887F"></span>茶・ベージュ</label>
+          <input type="checkbox" name="to-color" id="to-col10" value="黒"><label for="to-col10"><span class="to-dot" style="background:#111111"></span>黒</label>
+          <input type="checkbox" name="to-color" id="to-col11" value="白・グレー"><label for="to-col11"><span class="to-dot" style="background:#ECEFF1"></span>白・グレー</label>
+          <input type="checkbox" name="to-color" id="to-col12" value="ゴールド"><label for="to-col12"><span class="to-dot" style="background:#C5A059"></span>ゴールド</label>
+          <input type="checkbox" name="to-color" id="to-col13" value="おまかせ"><label for="to-col13">おまかせ</label>
+        </div>
+        <p class="to-error" id="to-color-limit">色は4つまでで選んでください。</p>
+      </div>
+
+      <div class="to-q">
+        <div class="to-q-label">雰囲気のイメージ(複数OK) <span class="to-opt">任意</span></div>
+        <div class="to-pills" id="to-mood">
+          <input type="checkbox" name="to-mood" id="to-m1" value="高級感"><label for="to-m1">高級感</label>
+          <input type="checkbox" name="to-mood" id="to-m2" value="誠実・信頼感"><label for="to-m2">誠実・信頼感</label>
+          <input type="checkbox" name="to-mood" id="to-m3" value="親しみやすい"><label for="to-m3">親しみやすい</label>
+          <input type="checkbox" name="to-mood" id="to-m4" value="シンプル・洗練"><label for="to-m4">シンプル・洗練</label>
+          <input type="checkbox" name="to-mood" id="to-m5" value="ポップ・元気"><label for="to-m5">ポップ・元気</label>
+          <input type="checkbox" name="to-mood" id="to-m6" value="かわいい"><label for="to-m6">かわいい</label>
+          <input type="checkbox" name="to-mood" id="to-m7" value="かっこいい"><label for="to-m7">かっこいい</label>
+          <input type="checkbox" name="to-mood" id="to-m8" value="ナチュラル・癒し"><label for="to-m8">ナチュラル・癒し</label>
+          <input type="checkbox" name="to-mood" id="to-m9" value="和風・伝統"><label for="to-m9">和風・伝統</label>
+          <input type="checkbox" name="to-mood" id="to-m10" value="おまかせ"><label for="to-m10">おまかせ</label>
+        </div>
+      </div>
+    </div>
+
     <div class="to-q">
       <div class="to-q-label">希望納期 <span class="to-opt">任意</span></div>
       <div class="to-pills" id="to-when">
         <input type="radio" name="to-when" id="to-when1" value="お急ぎ(〜2週間)"><label for="to-when1">お急ぎ(〜2週間)</label>
         <input type="radio" name="to-when" id="to-when2" value="1ヶ月以内"><label for="to-when2">1ヶ月以内</label>
         <input type="radio" name="to-when" id="to-when3" value="特に決まっていない"><label for="to-when3">特に決まっていない</label>
+      </div>
+      <div class="to-date-row">
+        <span>具体的な希望日があれば:</span>
+        <input type="date" class="to-input to-date" id="to-date">
       </div>
     </div>
 
@@ -173,8 +232,14 @@
     </div>
 
     <div class="to-q">
-      <div class="to-q-label">現在のサイト・参考にしたいサイトのURL <span class="to-opt">任意</span></div>
+      <div class="to-q-label">現在のサイトURL(あれば) <span class="to-opt">任意</span></div>
       <input type="text" class="to-input" id="to-url" placeholder="https:// …(なければ空欄でOK)">
+    </div>
+
+    <div class="to-q">
+      <div class="to-q-label">参考にしたいサイト・好きなデザインのURL(2つまで) <span class="to-opt">任意</span></div>
+      <input type="text" class="to-input" id="to-ref1" placeholder="参考サイト① https:// …">
+      <input type="text" class="to-input" id="to-ref2" placeholder="参考サイト② https:// …" style="margin-top:8px">
     </div>
 
     <div class="to-q">
@@ -223,24 +288,51 @@
     var el = document.getElementById(id);
     return (el && el.value.trim()) ? el.value.trim() : '(未記入)';
   }
-  function isBuildSelected(){
-    var t1 = document.getElementById('to-type1');
-    var t2 = document.getElementById('to-type2');
-    return (t1 && t1.checked) || (t2 && t2.checked);
+  function typeChecked(id){
+    var el = document.getElementById(id);
+    return !!(el && el.checked);
+  }
+  function isHpSelected(){ return typeChecked('to-type1'); }
+  function isBuildSelected(){ return typeChecked('to-type1') || typeChecked('to-type2'); }
+  function isDesignSelected(){ return isBuildSelected() || typeChecked('to-type4'); }
+
+  function deadlineText(){
+    var base = picked('to-when');
+    var d = document.getElementById('to-date').value;
+    if (!d) return base;
+    var p = d.split('-');
+    var ds = p[0] + '/' + p[1] + '/' + p[2];
+    return (base === '(未選択)') ? ('希望日 ' + ds) : (base + ' (希望日 ' + ds + ')');
+  }
+  function refsText(){
+    var refs = [];
+    var r1 = document.getElementById('to-ref1').value.trim();
+    var r2 = document.getElementById('to-ref2').value.trim();
+    if (r1) refs.push(r1);
+    if (r2) refs.push(r2);
+    return refs.length ? refs.join(' / ') : '(未記入)';
   }
   function buildMessage(){
     var lines = [
       '【お見積り依頼】※資料ページより',
       '■ご相談内容: ' + pickedAll('to-type')
     ];
+    if (isHpSelected()){
+      lines.push('■下層ページ数: ' + picked('to-pages'));
+    }
     if (isBuildSelected()){
       lines.push('■ページの分量: ' + picked('to-volume'));
       lines.push('■原稿・写真: ' + picked('to-copy'));
     }
+    if (isDesignSelected()){
+      lines.push('■好きな色: ' + pickedAll('to-color'));
+      lines.push('■雰囲気: ' + pickedAll('to-mood'));
+    }
     lines.push(
-      '■希望納期: ' + picked('to-when'),
+      '■希望納期: ' + deadlineText(),
       '■ご予算感: ' + picked('to-budget'),
-      '■サイトURL: ' + val('to-url'),
+      '■現在のサイト: ' + val('to-url'),
+      '■参考サイト: ' + refsText(),
       '■お名前: ' + val('to-name'),
       '■ご要望:',
       val('to-detail')
@@ -254,6 +346,11 @@
       err.classList.add('show');
       return false;
     }
+    if (isHpSelected() && !document.querySelector('.taf-order input[name="to-pages"]:checked')){
+      err.textContent = '「下層ページ数」を選んでください(お見積りに必要です)。';
+      err.classList.add('show');
+      return false;
+    }
     if (isBuildSelected() && !document.querySelector('.taf-order input[name="to-volume"]:checked')){
       err.textContent = '「ページの長さ・分量のイメージ」を選んでください(お見積りに必要です)。';
       err.classList.add('show');
@@ -263,11 +360,29 @@
     return true;
   }
 
-  /* HP制作・LP制作を選んだときだけ分量・原稿の質問を表示 */
-  var scaleWrap = document.getElementById('to-scale-wrap');
+  /* 選んだ内容に応じて追加の質問を表示 */
+  var pagesWrap  = document.getElementById('to-pages-wrap');
+  var scaleWrap  = document.getElementById('to-scale-wrap');
+  var designWrap = document.getElementById('to-design-wrap');
+  function updateWraps(){
+    pagesWrap.style.display  = isHpSelected()     ? '' : 'none';
+    scaleWrap.style.display  = isBuildSelected()  ? '' : 'none';
+    designWrap.style.display = isDesignSelected() ? '' : 'none';
+  }
   document.querySelectorAll('.taf-order input[name="to-type"]').forEach(function(cb){
+    cb.addEventListener('change', updateWraps);
+  });
+
+  /* 好きな色は4つまで */
+  var colorLimitMsg = document.getElementById('to-color-limit');
+  document.querySelectorAll('.taf-order input[name="to-color"]').forEach(function(cb){
     cb.addEventListener('change', function(){
-      scaleWrap.style.display = isBuildSelected() ? '' : 'none';
+      var count = document.querySelectorAll('.taf-order input[name="to-color"]:checked').length;
+      if (count > 4){
+        cb.checked = false;
+        colorLimitMsg.classList.add('show');
+        setTimeout(function(){ colorLimitMsg.classList.remove('show'); }, 2500);
+      }
     });
   });
   function copyText(text, done){
