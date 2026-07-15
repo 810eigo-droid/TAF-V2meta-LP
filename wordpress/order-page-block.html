@@ -104,7 +104,7 @@
   </p>
 
   <ol class="to-steps">
-    <li><b>内容を選ぶ</b>ぴったり合う項目がなくても大丈夫。ざっくりでOKです。</li>
+    <li><b>内容を選ぶ</b>複数選択OK。ぴったり合う項目がなくても、ざっくりでOKです。</li>
     <li><b>LINEで送る</b>ボタンを押すと依頼文ができあがります。貼り付けて送信。</li>
     <li><b>見積りが届く</b>24時間以内にご返信。追加費用は事前に必ずご相談します。</li>
   </ol>
@@ -112,13 +112,18 @@
   <div class="to-card">
 
     <div class="to-q">
-      <div class="to-q-label">作りたいもの <span class="to-req">必須</span></div>
+      <div class="to-q-label">ご相談内容(複数選択OK) <span class="to-req">必須</span></div>
       <div class="to-pills" id="to-type">
-        <input type="radio" name="to-type" id="to-type1" value="新規ホームページ"><label for="to-type1">新規ホームページ</label>
-        <input type="radio" name="to-type" id="to-type2" value="新規LP(1ページ)"><label for="to-type2">新規LP(1ページ)</label>
-        <input type="radio" name="to-type" id="to-type3" value="既存サイトの修正・ページ追加"><label for="to-type3">既存サイトの修正・追加</label>
-        <input type="radio" name="to-type" id="to-type4" value="ロゴ・バナーなどデザイン"><label for="to-type4">ロゴ・バナー</label>
-        <input type="radio" name="to-type" id="to-type5" value="その他・相談して決めたい"><label for="to-type5">その他・相談したい</label>
+        <input type="checkbox" name="to-type" id="to-type1" value="ホームページ制作(新規)"><label for="to-type1">ホームページ制作</label>
+        <input type="checkbox" name="to-type" id="to-type2" value="LP制作(新規・1ページ)"><label for="to-type2">LP制作(1ページ)</label>
+        <input type="checkbox" name="to-type" id="to-type3" value="既存サイトの修正・機能追加(プラグイン等)"><label for="to-type3">既存サイトの修正・機能追加</label>
+        <input type="checkbox" name="to-type" id="to-type4" value="ロゴ・バナーなどデザイン"><label for="to-type4">ロゴ・バナー</label>
+        <input type="checkbox" name="to-type" id="to-type5" value="広告運用(YouTube・Google・Meta)"><label for="to-type5">広告運用(YouTube・Google等)</label>
+        <input type="checkbox" name="to-type" id="to-type6" value="SNS・公式LINE運用(インスタ更新等)"><label for="to-type6">SNS・公式LINE運用</label>
+        <input type="checkbox" name="to-type" id="to-type7" value="セールスファネル構築(UTAGE・コネクティッドワン・マイスピー)"><label for="to-type7">セールスファネル(UTAGE等)</label>
+        <input type="checkbox" name="to-type" id="to-type8" value="SEO・AI検索対策"><label for="to-type8">SEO・AI検索対策</label>
+        <input type="checkbox" name="to-type" id="to-type9" value="AI導入・チャットボット"><label for="to-type9">AI導入・ボット</label>
+        <input type="checkbox" name="to-type" id="to-type10" value="その他・相談して決めたい"><label for="to-type10">その他・相談したい</label>
       </div>
     </div>
 
@@ -158,7 +163,7 @@
     </div>
 
     <div class="to-actions">
-      <p class="to-error" id="to-error">「作りたいもの」を1つ選んでください。</p>
+      <p class="to-error" id="to-error">「ご相談内容」を1つ以上選んでください。</p>
       <button type="button" class="to-btn to-btn-line" id="to-send-line">LINEで送って見積りをもらう(無料)</button>
       <div class="to-copied" id="to-copied">
         <b>依頼文をコピーしました。</b>このあと開くLINEの友だち追加→トーク画面で、<b>長押し→貼り付け</b>して送信してください。
@@ -169,7 +174,8 @@
   </div>
 
   <div class="to-trust">
-    <span>お見積り後のキャンセル可</span>
+    <span>すべて低価格・お見積り後のキャンセル可</span>
+    <span>スマホ最適化は全案件標準</span>
     <span>追加費用は事前に文書でご相談</span>
     <span>全国対応(オンライン完結)</span>
   </div>
@@ -183,6 +189,11 @@
     var el = document.querySelector('.taf-order input[name="'+name+'"]:checked');
     return el ? el.value : '(未選択)';
   }
+  function pickedAll(name){
+    var els = document.querySelectorAll('.taf-order input[name="'+name+'"]:checked');
+    if (!els.length) return '(未選択)';
+    return Array.prototype.map.call(els, function(el){ return el.value; }).join('、');
+  }
   function val(id){
     var el = document.getElementById(id);
     return (el && el.value.trim()) ? el.value.trim() : '(未記入)';
@@ -190,7 +201,7 @@
   function buildMessage(){
     return [
       '【お見積り依頼】※資料ページより',
-      '■作りたいもの: ' + picked('to-type'),
+      '■ご相談内容: ' + pickedAll('to-type'),
       '■希望納期: ' + picked('to-when'),
       '■ご予算感: ' + picked('to-budget'),
       '■サイトURL: ' + val('to-url'),
