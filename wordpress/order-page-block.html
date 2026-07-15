@@ -75,6 +75,8 @@
   }
   .taf-order .to-btn-mail:hover{border-color:var(--to-sub);}
   .taf-order .to-note{font-size:11.5px;color:var(--to-sub);margin-top:14px;}
+  .taf-order .to-hint{font-size:11.5px;color:var(--to-sub);margin:10px 0 0;line-height:1.7;background:var(--to-bg);border-radius:10px;padding:10px 14px;}
+  .taf-order .to-hint b{color:var(--to-ink);}
   .taf-order .to-error{display:none;color:var(--to-pink);font-weight:700;font-size:13px;margin-top:12px;}
   .taf-order .to-error.show{display:block;}
   .taf-order .to-copied{
@@ -124,6 +126,29 @@
         <input type="checkbox" name="to-type" id="to-type8" value="SEO・AI検索対策"><label for="to-type8">SEO・AI検索対策</label>
         <input type="checkbox" name="to-type" id="to-type9" value="AI導入・チャットボット"><label for="to-type9">AI導入・ボット</label>
         <input type="checkbox" name="to-type" id="to-type10" value="その他・相談して決めたい"><label for="to-type10">その他・相談したい</label>
+      </div>
+    </div>
+
+    <div id="to-scale-wrap" style="display:none">
+      <div class="to-q">
+        <div class="to-q-label">ページの長さ・分量のイメージ <span class="to-req">必須</span></div>
+        <div class="to-pills" id="to-volume">
+          <input type="radio" name="to-volume" id="to-v1" value="コンパクト(5セクション前後)"><label for="to-v1">コンパクト(5セクション前後)</label>
+          <input type="radio" name="to-volume" id="to-v2" value="長め(6〜10セクション)"><label for="to-v2">長め(6〜10セクション)</label>
+          <input type="radio" name="to-volume" id="to-v3" value="かなり長い(10セクション以上・文章多め)"><label for="to-v3">かなり長い(10以上・文章多め)</label>
+          <input type="radio" name="to-volume" id="to-v4" value="まだわからない・相談したい"><label for="to-v4">まだわからない</label>
+        </div>
+        <p class="to-hint">※セクション=「お客様の声」「料金」など、ブロック1つ分のこと。<br>
+        💡 <b>2万円プランは「コンパクト」が基準</b>です。それより長い場合も低価格のまま、分量に応じて<b>事前に明朗なお見積り</b>をお出しします。</p>
+      </div>
+
+      <div class="to-q">
+        <div class="to-q-label">文章(原稿)・写真のご用意 <span class="to-opt">任意</span></div>
+        <div class="to-pills" id="to-copy">
+          <input type="radio" name="to-copy" id="to-c1" value="用意できている"><label for="to-c1">用意できている</label>
+          <input type="radio" name="to-copy" id="to-c2" value="一部だけある"><label for="to-c2">一部だけある</label>
+          <input type="radio" name="to-copy" id="to-c3" value="お任せしたい(ヒアリングから作成)"><label for="to-c3">お任せしたい</label>
+        </div>
       </div>
     </div>
 
@@ -198,23 +223,53 @@
     var el = document.getElementById(id);
     return (el && el.value.trim()) ? el.value.trim() : '(未記入)';
   }
+  function isBuildSelected(){
+    var t1 = document.getElementById('to-type1');
+    var t2 = document.getElementById('to-type2');
+    return (t1 && t1.checked) || (t2 && t2.checked);
+  }
   function buildMessage(){
-    return [
+    var lines = [
       '【お見積り依頼】※資料ページより',
-      '■ご相談内容: ' + pickedAll('to-type'),
+      '■ご相談内容: ' + pickedAll('to-type')
+    ];
+    if (isBuildSelected()){
+      lines.push('■ページの分量: ' + picked('to-volume'));
+      lines.push('■原稿・写真: ' + picked('to-copy'));
+    }
+    lines.push(
       '■希望納期: ' + picked('to-when'),
       '■ご予算感: ' + picked('to-budget'),
       '■サイトURL: ' + val('to-url'),
       '■お名前: ' + val('to-name'),
       '■ご要望:',
       val('to-detail')
-    ].join('\n');
+    );
+    return lines.join('\n');
   }
   function validate(){
-    var ok = !!document.querySelector('.taf-order input[name="to-type"]:checked');
-    document.getElementById('to-error').classList.toggle('show', !ok);
-    return ok;
+    var err = document.getElementById('to-error');
+    if (!document.querySelector('.taf-order input[name="to-type"]:checked')){
+      err.textContent = '「ご相談内容」を1つ以上選んでください。';
+      err.classList.add('show');
+      return false;
+    }
+    if (isBuildSelected() && !document.querySelector('.taf-order input[name="to-volume"]:checked')){
+      err.textContent = '「ページの長さ・分量のイメージ」を選んでください(お見積りに必要です)。';
+      err.classList.add('show');
+      return false;
+    }
+    err.classList.remove('show');
+    return true;
   }
+
+  /* HP制作・LP制作を選んだときだけ分量・原稿の質問を表示 */
+  var scaleWrap = document.getElementById('to-scale-wrap');
+  document.querySelectorAll('.taf-order input[name="to-type"]').forEach(function(cb){
+    cb.addEventListener('change', function(){
+      scaleWrap.style.display = isBuildSelected() ? '' : 'none';
+    });
+  });
   function copyText(text, done){
     if (navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text); done(); });
