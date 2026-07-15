@@ -203,6 +203,16 @@
       </div>
 
       <div class="to-q">
+        <div class="to-q-label">ページの横幅(コンテンツ幅) <span class="to-opt">任意</span></div>
+        <div class="to-pills" id="to-width">
+          <input type="radio" name="to-width" id="to-w1" value="スマホ重視・800px(縦1カラム)"><label for="to-w1">スマホ重視・800px</label>
+          <input type="radio" name="to-width" id="to-w2" value="PC重視・1200〜1440px(ワイドレイアウト)"><label for="to-w2">PC重視・1200〜1440px</label>
+          <input type="radio" name="to-width" id="to-w3" value="おまかせ・相談して決めたい"><label for="to-w3">おまかせ・相談したい</label>
+        </div>
+        <p class="to-hint">💡 スマホからのアクセスが大半のため、迷ったら<b>「スマホ重視・800px」がおすすめ</b>です。スマホで最も見やすく、低価格で仕上がります。PCでは中央寄せの縦長レイアウトになります。<br>PC画面いっぱいに広がる本格レイアウト(1200px〜)は、企業サイトなどPCで見られる機会が多い場合に。</p>
+      </div>
+
+      <div class="to-q">
         <div class="to-q-label">サイトに付けたい機能(複数OK) <span class="to-opt">任意</span></div>
         <div class="to-pills" id="to-feature">
           <input type="checkbox" name="to-feature" id="to-f1" value="お問い合わせフォーム"><label for="to-f1">お問い合わせフォーム</label>
@@ -405,6 +415,7 @@
       if (isWpSelected()){
         lines.push('■WordPressの組み立て方: ' + picked('to-wp'));
       }
+      lines.push('■ページの横幅: ' + picked('to-width'));
       lines.push('■必要な機能: ' + pickedAll('to-feature'));
     }
     if (isSiteSelected()){
