@@ -123,12 +123,17 @@
         <input type="checkbox" name="to-type" id="to-type2" value="LP制作(新規・1ページ)"><label for="to-type2">LP制作(1ページ)</label>
         <input type="checkbox" name="to-type" id="to-type3" value="既存サイトの修正・機能追加(プラグイン等)"><label for="to-type3">既存サイトの修正・機能追加</label>
         <input type="checkbox" name="to-type" id="to-type4" value="ロゴ・バナーなどデザイン"><label for="to-type4">ロゴ・バナー</label>
-        <input type="checkbox" name="to-type" id="to-type5" value="広告運用(YouTube・Google・Meta)"><label for="to-type5">広告運用(YouTube・Google等)</label>
-        <input type="checkbox" name="to-type" id="to-type6" value="SNS・公式LINE運用(インスタ更新等)"><label for="to-type6">SNS・公式LINE運用</label>
-        <input type="checkbox" name="to-type" id="to-type7" value="セールスファネル構築(UTAGE・コネクティッドワン・マイスピー)"><label for="to-type7">セールスファネル(UTAGE等)</label>
-        <input type="checkbox" name="to-type" id="to-type8" value="SEO・AI検索対策"><label for="to-type8">SEO・AI検索対策</label>
-        <input type="checkbox" name="to-type" id="to-type9" value="AI導入・チャットボット"><label for="to-type9">AI導入・ボット</label>
-        <input type="checkbox" name="to-type" id="to-type10" value="その他・相談して決めたい"><label for="to-type10">その他・相談したい</label>
+        <input type="checkbox" name="to-type" id="to-type5" value="メタ広告運用(Instagram・Facebook広告)"><label for="to-type5">メタ広告運用</label>
+        <input type="checkbox" name="to-type" id="to-type6" value="YouTube・Google広告運用"><label for="to-type6">YouTube・Google広告</label>
+        <input type="checkbox" name="to-type" id="to-type7" value="インスタ運用(投稿・更新代行)"><label for="to-type7">インスタ運用</label>
+        <input type="checkbox" name="to-type" id="to-type8" value="公式LINE運用"><label for="to-type8">公式LINE運用</label>
+        <input type="checkbox" name="to-type" id="to-type9" value="セールスファネル構築"><label for="to-type9">セールスファネル構築</label>
+        <input type="checkbox" name="to-type" id="to-type10" value="UTAGE"><label for="to-type10">UTAGE</label>
+        <input type="checkbox" name="to-type" id="to-type11" value="コネクティッドワン"><label for="to-type11">コネクティッドワン</label>
+        <input type="checkbox" name="to-type" id="to-type12" value="マイスピー"><label for="to-type12">マイスピー</label>
+        <input type="checkbox" name="to-type" id="to-type13" value="SEO・AI検索対策"><label for="to-type13">SEO・AI検索対策</label>
+        <input type="checkbox" name="to-type" id="to-type14" value="AI導入・チャットボット"><label for="to-type14">AI導入・ボット</label>
+        <input type="checkbox" name="to-type" id="to-type15" value="その他・相談して決めたい"><label for="to-type15">その他・相談したい</label>
       </div>
     </div>
 
@@ -167,6 +172,41 @@
           <input type="radio" name="to-copy" id="to-c3" value="お任せしたい(ヒアリングから作成)"><label for="to-c3">お任せしたい</label>
         </div>
       </div>
+
+      <div class="to-q">
+        <div class="to-q-label">作り方のご希望 <span class="to-opt">任意</span></div>
+        <div class="to-pills" id="to-method">
+          <input type="radio" name="to-method" id="to-mt1" value="WordPress"><label for="to-mt1">WordPress</label>
+          <input type="radio" name="to-method" id="to-mt2" value="HTML・CSS・JS(コーディング)"><label for="to-mt2">HTML・CSS・JS</label>
+          <input type="radio" name="to-method" id="to-mt3" value="Canvaの画像LP"><label for="to-mt3">Canvaの画像LP</label>
+          <input type="radio" name="to-method" id="to-mt4" value="おまかせ・相談して決めたい"><label for="to-mt4">おまかせ・相談したい</label>
+        </div>
+        <p class="to-hint">💡 わからなければ「おまかせ」でOK。用途とご予算に合わせて、最適な作り方をご提案します。</p>
+      </div>
+
+      <div class="to-q">
+        <div class="to-q-label">サイトに付けたい機能(複数OK) <span class="to-opt">任意</span></div>
+        <div class="to-pills" id="to-feature">
+          <input type="checkbox" name="to-feature" id="to-f1" value="お問い合わせフォーム"><label for="to-f1">お問い合わせフォーム</label>
+          <input type="checkbox" name="to-feature" id="to-f2" value="ブログ・お知らせの投稿機能"><label for="to-f2">ブログ・お知らせ投稿</label>
+          <input type="checkbox" name="to-feature" id="to-f3" value="特になし・わからない"><label for="to-f3">特になし・わからない</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="to-server-wrap" style="display:none">
+      <div class="to-q">
+        <div class="to-q-label">レンタルサーバーのご契約 <span class="to-opt">任意</span></div>
+        <div class="to-pills" id="to-server">
+          <input type="radio" name="to-server" id="to-sv1" value="エックスサーバー"><label for="to-sv1">エックスサーバー</label>
+          <input type="radio" name="to-server" id="to-sv2" value="ロリポップ"><label for="to-sv2">ロリポップ</label>
+          <input type="radio" name="to-server" id="to-sv3" value="ConoHa"><label for="to-sv3">ConoHa</label>
+          <input type="radio" name="to-server" id="to-sv4" value="さくらインターネット"><label for="to-sv4">さくら</label>
+          <input type="radio" name="to-server" id="to-sv5" value="その他・わからない"><label for="to-sv5">その他・わからない</label>
+          <input type="radio" name="to-server" id="to-sv6" value="契約していない"><label for="to-sv6">契約していない</label>
+        </div>
+        <p class="to-hint">💡 <b>サーバー契約がなくても大丈夫です。</b>契約なしでWEBを公開できる方法もご用意していますので、そのままお進みください。</p>
+      </div>
     </div>
 
     <div id="to-design-wrap" style="display:none">
@@ -188,6 +228,7 @@
           <input type="checkbox" name="to-color" id="to-col13" value="おまかせ"><label for="to-col13">おまかせ</label>
         </div>
         <p class="to-error" id="to-color-limit">色は4つまでで選んでください。</p>
+        <input type="text" class="to-input" id="to-color-free" placeholder="自由記入: 例)会社のロゴと同じ緑、#00A2DE など" style="margin-top:10px">
       </div>
 
       <div class="to-q">
@@ -204,6 +245,7 @@
           <input type="checkbox" name="to-mood" id="to-m9" value="和風・伝統"><label for="to-m9">和風・伝統</label>
           <input type="checkbox" name="to-mood" id="to-m10" value="おまかせ"><label for="to-m10">おまかせ</label>
         </div>
+        <input type="text" class="to-input" id="to-mood-free" placeholder="自由記入: 例)海外サイトっぽく、写真を大きく使いたい など" style="margin-top:10px">
       </div>
     </div>
 
@@ -295,6 +337,13 @@
   function isHpSelected(){ return typeChecked('to-type1'); }
   function isBuildSelected(){ return typeChecked('to-type1') || typeChecked('to-type2'); }
   function isDesignSelected(){ return isBuildSelected() || typeChecked('to-type4'); }
+  function isSiteSelected(){ return isBuildSelected() || typeChecked('to-type3'); }
+  function withFree(pickedText, freeId){
+    var el = document.getElementById(freeId);
+    var free = (el && el.value.trim()) ? el.value.trim() : '';
+    if (!free) return pickedText;
+    return (pickedText === '(未選択)') ? free : (pickedText + ' / ' + free);
+  }
 
   function deadlineText(){
     var base = picked('to-when');
@@ -323,10 +372,15 @@
     if (isBuildSelected()){
       lines.push('■ページの分量: ' + picked('to-volume'));
       lines.push('■原稿・写真: ' + picked('to-copy'));
+      lines.push('■作り方の希望: ' + picked('to-method'));
+      lines.push('■必要な機能: ' + pickedAll('to-feature'));
+    }
+    if (isSiteSelected()){
+      lines.push('■サーバー: ' + picked('to-server'));
     }
     if (isDesignSelected()){
-      lines.push('■好きな色: ' + pickedAll('to-color'));
-      lines.push('■雰囲気: ' + pickedAll('to-mood'));
+      lines.push('■好きな色: ' + withFree(pickedAll('to-color'), 'to-color-free'));
+      lines.push('■雰囲気: ' + withFree(pickedAll('to-mood'), 'to-mood-free'));
     }
     lines.push(
       '■希望納期: ' + deadlineText(),
@@ -364,10 +418,12 @@
   var pagesWrap  = document.getElementById('to-pages-wrap');
   var scaleWrap  = document.getElementById('to-scale-wrap');
   var designWrap = document.getElementById('to-design-wrap');
+  var serverWrap = document.getElementById('to-server-wrap');
   function updateWraps(){
     pagesWrap.style.display  = isHpSelected()     ? '' : 'none';
     scaleWrap.style.display  = isBuildSelected()  ? '' : 'none';
     designWrap.style.display = isDesignSelected() ? '' : 'none';
+    serverWrap.style.display = isSiteSelected()   ? '' : 'none';
   }
   document.querySelectorAll('.taf-order input[name="to-type"]').forEach(function(cb){
     cb.addEventListener('change', updateWraps);
