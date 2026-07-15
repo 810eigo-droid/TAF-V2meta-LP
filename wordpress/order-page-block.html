@@ -2,7 +2,7 @@
   TAF Design お見積りページ(WordPress カスタムHTMLブロック用)
   使い方: 固定ページ /order/ の編集画面で「カスタムHTML」ブロックを
   追加し、このファイルの中身を丸ごと貼り付けて公開するだけ。
-  ▼要変更: 下のJS内 MAIL_TO のメールアドレス(1箇所)
+  受信メール: JS内 MAIL_TO に設定済み(info@taf-design.com)
 ============================================================== -->
 <div class="taf-order" id="taf-order">
 <style>
@@ -333,7 +333,7 @@
 <script>
 (function(){
   var LINE_URL = 'https://lin.ee/pqfXTUJ';
-  var MAIL_TO  = 'info@taf-design.com'; /* ▼要変更: 受信用メールアドレス */
+  var MAIL_TO  = 'info@taf-design.com'; /* 受信用メールアドレス(確認済み) */
 
   function picked(name){
     var el = document.querySelector('.taf-order input[name="'+name+'"]:checked');
