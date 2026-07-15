@@ -1,0 +1,239 @@
+<!-- =============================================================
+  TAF Design お見積りページ(WordPress カスタムHTMLブロック用)
+  使い方: 固定ページ /order/ の編集画面で「カスタムHTML」ブロックを
+  追加し、このファイルの中身を丸ごと貼り付けて公開するだけ。
+  ▼要変更: 下のJS内 MAIL_TO のメールアドレス(1箇所)
+============================================================== -->
+<div class="taf-order" id="taf-order">
+<style>
+  .taf-order{
+    --to-blue:#00A2DE; --to-orange:#F6AC0E; --to-pink:#E82E6C;
+    --to-green:#06C755; --to-bg:#F5F7FA; --to-bg-blue:#ECF4F9;
+    --to-line:#E5E8EC; --to-ink:#111; --to-sub:#555A62;
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--to-ink); line-height:1.8; max-width:760px; margin:0 auto; padding:8px 0 40px;
+  }
+  .taf-order *{box-sizing:border-box;}
+  .taf-order .to-eyebrow{font-weight:800;font-size:12px;letter-spacing:.22em;color:var(--to-blue);font-family:"Roboto Mono",monospace;}
+  .taf-order h2.to-title{font-size:30px;font-weight:900;line-height:1.4;margin:8px 0 10px;}
+  .taf-order h2.to-title .or{color:var(--to-orange);}
+  .taf-order .to-lead{color:var(--to-sub);font-size:14.5px;margin:0 0 26px;}
+  .taf-order .to-lead b{color:var(--to-ink);}
+
+  /* 流れ 3ステップ */
+  .taf-order .to-steps{display:flex;gap:10px;margin:0 0 30px;padding:0;list-style:none;counter-reset:tostep;}
+  .taf-order .to-steps li{
+    counter-increment:tostep; flex:1; background:var(--to-bg-blue);
+    border-radius:12px; padding:14px 14px 12px; font-size:12.5px; color:var(--to-sub); position:relative;
+  }
+  .taf-order .to-steps li::before{
+    content:"0" counter(tostep); display:block;
+    font:800 13px/1 "Roboto Mono",monospace; color:var(--to-blue); margin-bottom:6px;
+  }
+  .taf-order .to-steps li b{display:block;color:var(--to-ink);font-size:13.5px;margin-bottom:2px;}
+
+  /* フォーム */
+  .taf-order .to-card{background:#fff;border:1px solid var(--to-line);border-radius:16px;padding:26px 24px;box-shadow:0 12px 35px rgba(30,50,70,.07);}
+  .taf-order .to-q{margin:0 0 22px;}
+  .taf-order .to-q-label{display:flex;align-items:center;gap:8px;font-weight:800;font-size:14.5px;margin-bottom:10px;}
+  .taf-order .to-req{font-size:10px;font-weight:800;color:#fff;background:var(--to-pink);border-radius:5px;padding:2px 7px;white-space:nowrap;flex:none;}
+  .taf-order .to-opt{font-size:10px;font-weight:800;color:var(--to-sub);background:var(--to-bg);border:1px solid var(--to-line);border-radius:5px;padding:2px 7px;white-space:nowrap;flex:none;}
+
+  .taf-order .to-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .taf-order .to-pills input{position:absolute;opacity:0;width:1px;height:1px;}
+  .taf-order .to-pills label{
+    display:inline-block;border:1.5px solid var(--to-line);border-radius:999px;
+    padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--to-sub);
+    cursor:pointer;background:#fff;transition:.15s;
+  }
+  .taf-order .to-pills input:checked + label{
+    border-color:var(--to-blue);background:var(--to-bg-blue);color:var(--to-blue);
+  }
+  .taf-order .to-pills input:focus-visible + label{outline:2px solid var(--to-blue);outline-offset:2px;}
+
+  .taf-order input[type="text"].to-input, .taf-order textarea.to-input{
+    width:100%;border:1.5px solid var(--to-line);border-radius:10px;
+    padding:11px 14px;font-size:14px;font-family:inherit;color:var(--to-ink);background:#fff;
+  }
+  .taf-order .to-input:focus{outline:none;border-color:var(--to-blue);}
+  .taf-order textarea.to-input{min-height:110px;resize:vertical;}
+
+  /* 送信ボタン */
+  .taf-order .to-actions{margin-top:26px;text-align:center;}
+  .taf-order .to-btn{
+    display:block;width:100%;border:none;cursor:pointer;border-radius:999px;
+    font-family:inherit;font-weight:800;text-decoration:none;text-align:center;transition:.15s;
+  }
+  .taf-order .to-btn-line{
+    background:var(--to-green);color:#fff;font-size:16.5px;padding:17px 20px;
+    box-shadow:0 10px 26px rgba(6,199,85,.35);
+  }
+  .taf-order .to-btn-line:hover{filter:brightness(1.06);}
+  .taf-order .to-btn-mail{
+    background:#fff;color:var(--to-sub);border:1.5px solid var(--to-line);
+    font-size:13.5px;padding:12px 20px;margin-top:12px;
+  }
+  .taf-order .to-btn-mail:hover{border-color:var(--to-sub);}
+  .taf-order .to-note{font-size:11.5px;color:var(--to-sub);margin-top:14px;}
+  .taf-order .to-error{display:none;color:var(--to-pink);font-weight:700;font-size:13px;margin-top:12px;}
+  .taf-order .to-error.show{display:block;}
+  .taf-order .to-copied{
+    display:none;background:var(--to-bg-blue);border:1px solid var(--to-blue);
+    color:var(--to-ink);border-radius:12px;padding:14px 16px;font-size:13px;margin-top:14px;text-align:left;
+  }
+  .taf-order .to-copied.show{display:block;}
+  .taf-order .to-copied b{color:var(--to-blue);}
+
+  /* 安心材料 */
+  .taf-order .to-trust{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:12px;color:var(--to-sub);}
+  .taf-order .to-trust span::before{content:"✓ ";color:var(--to-blue);font-weight:800;}
+
+  @media (max-width:600px){
+    .taf-order h2.to-title{font-size:24px;}
+    .taf-order .to-steps{flex-direction:column;}
+    .taf-order .to-card{padding:20px 16px;}
+  }
+</style>
+
+  <p class="to-eyebrow">ESTIMATE / FREE</p>
+  <h2 class="to-title">お見積り依頼<span class="or">(無料)</span></h2>
+  <p class="to-lead">
+    サービス資料をご覧いただき、ありがとうございます。<br>
+    下の項目を選んで送るだけで、<b>24時間以内にお見積り</b>をご返信します。<br>
+    <b>送信=ご契約ではありません。</b>お見積りを見てから、ゆっくりご検討ください。
+  </p>
+
+  <ol class="to-steps">
+    <li><b>内容を選ぶ</b>ぴったり合う項目がなくても大丈夫。ざっくりでOKです。</li>
+    <li><b>LINEで送る</b>ボタンを押すと依頼文ができあがります。貼り付けて送信。</li>
+    <li><b>見積りが届く</b>24時間以内にご返信。追加費用は事前に必ずご相談します。</li>
+  </ol>
+
+  <div class="to-card">
+
+    <div class="to-q">
+      <div class="to-q-label">作りたいもの <span class="to-req">必須</span></div>
+      <div class="to-pills" id="to-type">
+        <input type="radio" name="to-type" id="to-type1" value="新規ホームページ"><label for="to-type1">新規ホームページ</label>
+        <input type="radio" name="to-type" id="to-type2" value="新規LP(1ページ)"><label for="to-type2">新規LP(1ページ)</label>
+        <input type="radio" name="to-type" id="to-type3" value="既存サイトの修正・ページ追加"><label for="to-type3">既存サイトの修正・追加</label>
+        <input type="radio" name="to-type" id="to-type4" value="ロゴ・バナーなどデザイン"><label for="to-type4">ロゴ・バナー</label>
+        <input type="radio" name="to-type" id="to-type5" value="その他・相談して決めたい"><label for="to-type5">その他・相談したい</label>
+      </div>
+    </div>
+
+    <div class="to-q">
+      <div class="to-q-label">希望納期 <span class="to-opt">任意</span></div>
+      <div class="to-pills" id="to-when">
+        <input type="radio" name="to-when" id="to-when1" value="お急ぎ(〜2週間)"><label for="to-when1">お急ぎ(〜2週間)</label>
+        <input type="radio" name="to-when" id="to-when2" value="1ヶ月以内"><label for="to-when2">1ヶ月以内</label>
+        <input type="radio" name="to-when" id="to-when3" value="特に決まっていない"><label for="to-when3">特に決まっていない</label>
+      </div>
+    </div>
+
+    <div class="to-q">
+      <div class="to-q-label">ご予算感 <span class="to-opt">任意</span></div>
+      <div class="to-pills" id="to-budget">
+        <input type="radio" name="to-budget" id="to-b1" value="〜2万円"><label for="to-b1">〜2万円</label>
+        <input type="radio" name="to-budget" id="to-b2" value="2〜5万円"><label for="to-b2">2〜5万円</label>
+        <input type="radio" name="to-budget" id="to-b3" value="5〜10万円"><label for="to-b3">5〜10万円</label>
+        <input type="radio" name="to-budget" id="to-b4" value="10万円以上"><label for="to-b4">10万円以上</label>
+        <input type="radio" name="to-budget" id="to-b5" value="相談して決めたい"><label for="to-b5">相談して決めたい</label>
+      </div>
+    </div>
+
+    <div class="to-q">
+      <div class="to-q-label">現在のサイト・参考にしたいサイトのURL <span class="to-opt">任意</span></div>
+      <input type="text" class="to-input" id="to-url" placeholder="https:// …(なければ空欄でOK)">
+    </div>
+
+    <div class="to-q">
+      <div class="to-q-label">ご要望・お仕事の内容など <span class="to-opt">任意</span></div>
+      <textarea class="to-input" id="to-detail" placeholder="例)エステサロンのLPを作りたい。予約につなげたい。写真は手元にあります。"></textarea>
+    </div>
+
+    <div class="to-q" style="margin-bottom:0">
+      <div class="to-q-label">お名前(ニックネーム可) <span class="to-opt">任意</span></div>
+      <input type="text" class="to-input" id="to-name" placeholder="例)山田 / やまだサロン">
+    </div>
+
+    <div class="to-actions">
+      <p class="to-error" id="to-error">「作りたいもの」を1つ選んでください。</p>
+      <button type="button" class="to-btn to-btn-line" id="to-send-line">LINEで送って見積りをもらう(無料)</button>
+      <div class="to-copied" id="to-copied">
+        <b>依頼文をコピーしました。</b>このあと開くLINEの友だち追加→トーク画面で、<b>長押し→貼り付け</b>して送信してください。
+      </div>
+      <button type="button" class="to-btn to-btn-mail" id="to-send-mail">メールで送る方はこちら</button>
+      <p class="to-note">どちらも無料です。しつこい営業は一切しません。</p>
+    </div>
+  </div>
+
+  <div class="to-trust">
+    <span>お見積り後のキャンセル可</span>
+    <span>追加費用は事前に文書でご相談</span>
+    <span>全国対応(オンライン完結)</span>
+  </div>
+
+<script>
+(function(){
+  var LINE_URL = 'https://lin.ee/pqfXTUJ';
+  var MAIL_TO  = 'info@taf-design.com'; /* ▼要変更: 受信用メールアドレス */
+
+  function picked(name){
+    var el = document.querySelector('.taf-order input[name="'+name+'"]:checked');
+    return el ? el.value : '(未選択)';
+  }
+  function val(id){
+    var el = document.getElementById(id);
+    return (el && el.value.trim()) ? el.value.trim() : '(未記入)';
+  }
+  function buildMessage(){
+    return [
+      '【お見積り依頼】※資料ページより',
+      '■作りたいもの: ' + picked('to-type'),
+      '■希望納期: ' + picked('to-when'),
+      '■ご予算感: ' + picked('to-budget'),
+      '■サイトURL: ' + val('to-url'),
+      '■お名前: ' + val('to-name'),
+      '■ご要望:',
+      val('to-detail')
+    ].join('\n');
+  }
+  function validate(){
+    var ok = !!document.querySelector('.taf-order input[name="to-type"]:checked');
+    document.getElementById('to-error').classList.toggle('show', !ok);
+    return ok;
+  }
+  function copyText(text, done){
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
+  }
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  document.getElementById('to-send-line').addEventListener('click', function(){
+    if (!validate()) return;
+    var msg = buildMessage();
+    copyText(msg, function(){
+      document.getElementById('to-copied').classList.add('show');
+      setTimeout(function(){ window.open(LINE_URL, '_blank', 'noopener'); }, 900);
+    });
+  });
+
+  document.getElementById('to-send-mail').addEventListener('click', function(){
+    if (!validate()) return;
+    var msg = buildMessage();
+    location.href = 'mailto:' + MAIL_TO
+      + '?subject=' + encodeURIComponent('お見積り依頼(資料ページより)')
+      + '&body=' + encodeURIComponent(msg);
+  });
+})();
+</script>
+</div>
+<!-- ===================== ここまでを貼り付け ===================== -->
