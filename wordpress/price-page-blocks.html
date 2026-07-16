@@ -84,7 +84,7 @@
 
     <section class="taf-p-section__products">
 
-      <div class="taf-p-section__products-group" data-category="create">
+      <div class="taf-p-section__products-group is-active" data-category="create">
         <div class="taf-p-section__products-header">
           <h3 class="taf-p-section__products-title"><span class="taf-p-section__products-title-accent">01</span>制作系のサービス</h3>
           <span class="taf-p-section__products-count">4 SERVICES</span>
@@ -577,7 +577,7 @@
         </details>
       </div>
 
-      <div class="taf-p-section__products-group" data-category="fix">
+      <div class="taf-p-section__products-group is-active" data-category="fix">
         <div class="taf-p-section__products-header">
           <h3 class="taf-p-section__products-title"><span class="taf-p-section__products-title-accent">03</span>修正系のサービス</h3>
           <span class="taf-p-section__products-count">2 SERVICES</span>
@@ -683,10 +683,35 @@
   </div>
 </div>
 
+<style>
+/* ==== 2026-07-16 変更: タブ切替をやめて3カテゴリ常時表示に ==== */
+/* 外部CSSがどんな方法で非アクティブグループを隠していても表示を強制する */
+.taf-p-section__products-group{
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  position:static !important;
+  height:auto !important;
+  max-height:none !important;
+  overflow:visible !important;
+  transform:none !important;
+  pointer-events:auto !important;
+}
+.taf-p-section__products-group + .taf-p-section__products-group{
+  margin-top:56px;
+}
+/* カテゴリカードは「ジャンプナビ」になった。スクロール位置の余白確保 */
+.taf-p-section__products-group{
+  scroll-margin-top:90px;
+}
+</style>
+
 <script>
 (function() {
   'use strict';
 
+  /* 2026-07-16 変更: カテゴリカードのクリックは「表示切替」ではなく
+     「該当カテゴリへのスクロール移動」に変更(全カテゴリ常時表示のため) */
   function initTafPriceTabs() {
     var sections = document.querySelectorAll('.taf-p-section');
     if (!sections.length) return;
@@ -697,6 +722,11 @@
 
       if (!buttons.length || !groups.length) return;
 
+      /* 全グループを常に表示状態にしておく */
+      groups.forEach(function(group) {
+        group.classList.add('is-active');
+      });
+
       buttons.forEach(function(btn) {
         btn.addEventListener('click', function() {
           var category = btn.getAttribute('data-category');
@@ -705,26 +735,9 @@
             b.classList.toggle('is-active', b === btn);
           });
 
-          groups.forEach(function(group) {
-            var isMatch = group.getAttribute('data-category') === category;
-
-            group.classList.toggle('is-active', isMatch);
-
-            if (!isMatch) {
-              group.querySelectorAll('details[open]').forEach(function(detail) {
-                detail.removeAttribute('open');
-              });
-            }
-          });
-
-          if (window.innerWidth <= 900) {
-            var products = root.querySelector('.taf-p-section__products');
-            if (products) {
-              window.scrollTo({
-                top: products.getBoundingClientRect().top + window.pageYOffset - 20,
-                behavior: 'smooth'
-              });
-            }
+          var target = root.querySelector('.taf-p-section__products-group[data-category="' + category + '"]');
+          if (target && target.scrollIntoView) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         });
       });
