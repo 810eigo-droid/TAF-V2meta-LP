@@ -225,6 +225,50 @@
       transform: translateX(6px);
     }
 
+    /* 見積もりボタンはサイト共通ルール(アウトライン=見積もり)に合わせる */
+    .taf-cta-button--outline {
+      background: transparent;
+      border: 2px solid var(--taf-gold);
+      color: var(--taf-gold-light);
+      box-shadow: none;
+    }
+
+    .taf-cta-button--outline:hover {
+      background: var(--taf-gold);
+      color: #FFFFFF;
+      box-shadow: 0 12px 28px rgba(197, 160, 89, 0.4);
+    }
+
+    /* ボタン下の安心注記 */
+    .taf-cta-note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.04em;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 資料DLへのサブリンク */
+    .taf-cta-sub {
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.04em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .taf-cta-sub a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .taf-cta-sub a:hover {
+      color: var(--taf-gold-light);
+    }
+
     /* ============================================================
        レスポンシブ対応（モバイル最適化）
        ============================================================ */
@@ -269,20 +313,22 @@
       </ul>
     </section>
 
-    <!-- 無料相談エリア -->
+    <!-- かんたん見積もりエリア(2026-07-16 無料相談→見積もり導線に変更) -->
     <section class="taf-cta-block">
-      <div class="taf-cta-eyebrow">FREE CONSULTATION</div>
-      <h3 class="taf-cta-title">まずは無料でご相談ください</h3>
+      <div class="taf-cta-eyebrow">FREE QUOTE</div>
+      <h3 class="taf-cta-title">かんたん無料見積もり</h3>
       <p class="taf-cta-text">
-        どのプランが最適か、ご予算・ご要望に合わせて<br>
-        プロが最適なご提案をいたします。<br>
-        些細な疑問・ご相談も大歓迎です。
+        選択式のフォームに答えるだけで、48時間以内に<br>
+        あなたに合わせた概算お見積りをお届けします。
       </p>
-      <!-- リンク先の「#contact」は、実際のお問い合わせフォームのID等に合わせて調整してください -->
-      <a href="https://taf-design.com/offer2/" class="taf-cta-button">
-        無料相談する
+      <a href="https://taf-design.com/order/" class="taf-cta-button taf-cta-button--outline">
+        無料見積もりをはじめる
         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
+      <p class="taf-cta-note">送信＝ご契約ではありません。お見積りを見てから、ゆっくりご検討ください。</p>
+      <p class="taf-cta-sub">
+        じっくり検討したい方へ ─ <a href="https://taf-design.com/offer2/">サービス資料の無料ダウンロードはこちら</a>
+      </p>
     </section>
 
   </div>
