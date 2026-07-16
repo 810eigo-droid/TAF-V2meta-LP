@@ -748,3 +748,46 @@
   }
 })();
 </script>
+
+
+<!-- ============================================================ -->
+<!-- 上に戻るボタン(position:fixedなのでページ全体で有効。         -->
+<!-- このブロックに1つだけ置く。600pxスクロールで出現)             -->
+<!-- ============================================================ -->
+<style>
+.taf-totop{
+  position:fixed; right:20px; bottom:24px; z-index:9999;
+  width:52px; height:52px; border-radius:50%;
+  background:#1A2A3A; border:1px solid rgba(197,160,89,.6); color:#D4B772;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; box-shadow:0 6px 18px rgba(26,42,58,.3);
+  opacity:0; visibility:hidden; transform:translateY(12px);
+  transition:opacity .35s ease, visibility .35s ease, transform .35s ease, background .3s ease;
+  padding:0;
+}
+.taf-totop.is-show{ opacity:1; visibility:visible; transform:translateY(0); }
+.taf-totop:hover{ background:#C5A059; color:#fff; transform:translateY(-3px); }
+.taf-totop svg{ width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+@media (max-width:600px){
+  .taf-totop{ right:14px; bottom:18px; width:46px; height:46px; }
+}
+</style>
+<button type="button" class="taf-totop" aria-label="ページの先頭へ戻る">
+  <svg viewBox="0 0 24 24"><polyline points="6 14 12 8 18 14"></polyline><line x1="12" y1="8" x2="12" y2="20"></line></svg>
+</button>
+<script>
+(function(){
+  'use strict';
+  var btn = document.querySelector('.taf-totop');
+  if(!btn) return;
+  function onScroll(){
+    if(window.pageYOffset > 600){ btn.classList.add('is-show'); }
+    else{ btn.classList.remove('is-show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+})();
+</script>
