@@ -17,10 +17,27 @@
 .breadcrumb, .breadSection,
 .page-header, .entry-header, h1.entry-title,
 .vk-mobile-nav, .vk-mobile-nav-menu-btn,
-.site-body-top, .header_scrolled { display: none !important; }
+.site-body-top, .header_scrolled,
+#lightning-fixedBottomNav, .vk_fixedBtn, .vk-mobile-nav-menu-btn { display: none !important; }
 body { padding-top: 0 !important; margin-top: 0 !important; background: #faf7f0 !important; }
 .site-body, .entry-body, .site-body-container { padding-top: 0 !important; }
 .entry-body > .container, .site-body .container { max-width: 100% !important; padding: 0 !important; }
+
+/* ===== 高さ制限を解除して下までスクロールできるようにする ===== */
+html, body {
+  height: auto !important;
+  max-height: none !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  position: static !important;
+}
+.site-body, .site-body-container, .entry-body, .entry-content,
+#main, main, #content, .site-content, .mainSection, .container {
+  height: auto !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
 
 /* ===== ページ本体 ===== */
 .tafc, .tafc * { box-sizing: border-box; }
