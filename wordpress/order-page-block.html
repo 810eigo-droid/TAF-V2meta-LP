@@ -6,6 +6,14 @@
 ============================================================== -->
 <div class="taf-order" id="taf-order">
 <style>
+/* ===== このページだけ: パンくずとヘッダーの見積りボタンを非表示 ===== */
+.breadcrumb, .breadSection, nav.breadcrumb,
+.site-body-top { display: none !important; }
+/* ヘッダー内の「簡単お見積り」ボタン(このページ自身へのリンクのため不要) */
+.site-header a[href*="/order"], #header a[href*="/order"], .siteHeader a[href*="/order"],
+.site-header a[href*="offer"], #header a[href*="offer"], .siteHeader a[href*="offer"],
+.header-cta, .headerCta { display: none !important; }
+
   .taf-order{
     --to-blue:#00A2DE; --to-orange:#F6AC0E; --to-pink:#E82E6C;
     --to-green:#06C755; --to-bg:#F5F7FA; --to-bg-blue:#ECF4F9;
