@@ -1,0 +1,1201 @@
+<!-- ============================================================ -->
+<!-- TAF 料金プランページ(/price/) WordPressブロック一式          -->
+<!-- 2026-07-16 ユーザー提供の現行データをGitHub管理化したもの      -->
+<!-- 構成: ①料金プラン(3カテゴリ12サービス)+タブJS               -->
+<!--       ②無料相談・共通補足セクション                           -->
+<!--       ③よくある質問(Q&A) ※スタイルは別ブロックまたはテーマ側  -->
+<!-- ============================================================ -->
+
+<div class="taf-p-section">
+  <div class="taf-p-section__inner">
+
+    <header class="taf-p-section__hero">
+      <div class="taf-p-section__eyebrow">PRICE</div>
+      <h2 class="taf-p-section__title">料金<span class="taf-p-section__title-accent">プラン</span></h2>
+      <p class="taf-p-section__subtitle">ビジネスステージに合わせて選べる、<strong>3カテゴリ・12サービス</strong></p>
+      <div class="taf-p-section__target">
+        <span class="taf-p-section__target-label">FOR 主に</span>
+        <span class="taf-p-section__target-text">忙しいインフルエンサー、経営者の方におすすめ</span>
+      </div>
+    </header>
+
+    <nav class="taf-p-section__categories">
+      <button class="taf-p-section__category-card" data-category="create" type="button">
+        <div class="taf-p-section__category-icon">
+          <svg viewBox="0 0 64 64">
+            <path d="M14 50 L42 22 L50 30 L22 58 L12 60 Z"></path>
+            <path d="M42 22 L46 18 L54 26 L50 30"></path>
+            <path d="M16 56 L20 60"></path>
+            <circle cx="48" cy="14" r="2"></circle>
+            <path d="M52 10 L50 12 M54 14 L56 12"></path>
+          </svg>
+        </div>
+        <h3 class="taf-p-section__category-name">制作系</h3>
+        <p class="taf-p-section__category-desc">新規のLP・HP・アプリ制作</p>
+        <div class="taf-p-section__category-meta">
+          <span class="taf-p-section__category-count"><strong>4</strong> 商品</span>
+          <span class="taf-p-section__category-price">FROM <strong>¥20,000</strong></span>
+        </div>
+      </button>
+
+      <button class="taf-p-section__category-card is-active" data-category="system" type="button">
+        <div class="taf-p-section__category-icon">
+          <svg viewBox="0 0 64 64">
+            <circle cx="32" cy="14" r="5"></circle>
+            <circle cx="14" cy="44" r="5"></circle>
+            <circle cx="50" cy="44" r="5"></circle>
+            <circle cx="32" cy="50" r="3"></circle>
+            <path d="M30 18 L17 40"></path>
+            <path d="M34 18 L47 40"></path>
+            <path d="M19 44 L29 49"></path>
+            <path d="M45 44 L35 49"></path>
+            <circle cx="32" cy="32" r="2"></circle>
+            <path d="M32 22 L32 30"></path>
+          </svg>
+        </div>
+        <h3 class="taf-p-section__category-name">システム系</h3>
+        <p class="taf-p-section__category-desc">AIボット・ファネル・広告運用</p>
+        <div class="taf-p-section__category-meta">
+          <span class="taf-p-section__category-count"><strong>6</strong> 商品</span>
+          <span class="taf-p-section__category-price">FROM <strong>¥20,000</strong></span>
+        </div>
+      </button>
+
+      <button class="taf-p-section__category-card" data-category="fix" type="button">
+        <div class="taf-p-section__category-icon">
+          <svg viewBox="0 0 64 64">
+            <path d="M14 50 L42 22"></path>
+            <path d="M38 18 L46 26"></path>
+            <path d="M50 14 L52 16 M48 12 L48 8 M54 12 L57 9 M53 19 L57 19"></path>
+            <path d="M14 14 L14 22 M10 18 L18 18"></path>
+            <path d="M52 44 L52 50 M49 47 L55 47"></path>
+            <circle cx="40" cy="48" r="1.5"></circle>
+            <circle cx="22" cy="14" r="1.5"></circle>
+          </svg>
+        </div>
+        <h3 class="taf-p-section__category-name">修正系</h3>
+        <p class="taf-p-section__category-desc">既存サイト・画像の改善</p>
+        <div class="taf-p-section__category-meta">
+          <span class="taf-p-section__category-count"><strong>2</strong> 商品</span>
+          <span class="taf-p-section__category-price">FROM <strong>¥3,000</strong></span>
+        </div>
+      </button>
+    </nav>
+
+    <section class="taf-p-section__products">
+
+      <div class="taf-p-section__products-group" data-category="create">
+        <div class="taf-p-section__products-header">
+          <h3 class="taf-p-section__products-title"><span class="taf-p-section__products-title-accent">01</span>制作系のサービス</h3>
+          <span class="taf-p-section__products-count">4 SERVICES</span>
+        </div>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">01</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">LP制作</span>
+              <span class="taf-p-section__product-tagline">原稿を送るだけ。プロ品質のLPに</span>
+            </span>
+            <span class="taf-p-section__product-price">¥20,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">「デザインに自信がない」「文字ばかりで読まれない」<br>そんなお悩みを、インフォグラフィックを活かしたプロ品質のLPへ仕上げます。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>原稿はあるけど形にできない方</li>
+                <li>売れる構成が分からない方</li>
+                <li>既存サイトを整え直したい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">対応パターン</h4>
+              <ul class="taf-p-section__product-list">
+                <li><strong>原稿あり</strong> → 流れを忠実に再現</li>
+                <li><strong>構成未定</strong> → 売れるLPの基本構成でご提案</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">納品形式</h4>
+              <ul class="taf-p-section__product-list">
+                <li>Canva共有リンク / 画像(PNG・JPG) / HTML・CSS / WordPress</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥20,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">※構成・分量により変動いたします。詳細はご相談の上、確定いたします。</p>
+            </div>
+
+            <a class="taf-p-section__detail-link" href="https://taf-design.com/lp-hp2/" target="_blank" rel="noopener">詳しくはこちら</a>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">02</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">HP制作</span>
+              <span class="taf-p-section__product-tagline">集客サイトをまる投げで構築</span>
+            </span>
+            <span class="taf-p-section__product-price">¥30,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">「自分で更新できるサイトが欲しい」「SEO・AI検索対策も入れたい」<br>WordPressで作るプロ品質の集客サイトを、原稿・画像のまる投げでお任せいただけます。SEO・AI検索対策やワードプレス組み込みがない場合LPと同一料金です。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>文章や画像を一から考えるのが苦手な方</li>
+                <li>SEO・AI検索(AEO)対策も最初から入れたい方</li>
+                <li>納品後は自分で更新したい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">3つの強み</h4>
+              <ul class="taf-p-section__product-list">
+                <li><strong>最新のSEO・AEO対策を標準装備</strong></li>
+                <li><strong>原稿・画像「まる投げ」OK</strong> ─ AI活用で文章・画像を作成</li>
+                <li><strong>柔軟なテーマ対応</strong> ─ SWELL / Lightning / Cocoon / Elementor等</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">ご用意いただくもの</h4>
+              <ul class="taf-p-section__product-list">
+                <li>サーバー・ドメイン(お客様ご契約 / 月額660円〜目安)</li>
+                <li>ざっくりとした掲載内容や目的</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥30,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">トップページ・3セクション程度 / 下層ページ:1ページ ¥3,000〜¥10,000程度<br>オプション:Figmaモックアップ作成 +¥7,000〜</p>
+              <div class="taf-p-section__product-pricebox-options"><strong>実績掲載不可オプション:</strong> +¥3,000〜(ご注文金額の10%)</div>
+            </div>
+
+            <a class="taf-p-section__detail-link" href="https://taf-design.com/hp3/" target="_blank" rel="noopener">詳しくはこちら</a>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">03</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">成約特化LP制作</span>
+              <span class="taf-p-section__product-tagline">マーケティング理論で「売れるLP」を</span>
+            </span>
+            <span class="taf-p-section__product-price">¥70,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">「デザインは綺麗だけど売れない…」<br>そんな悩みを、最新AIとマーケティングファネル理論で解決します。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>売上に直結するLPを作りたい方</li>
+                <li>集客から販売までの仕組みを整えたい方</li>
+                <li>編集できるLPで納品後も自由に育てたい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">制作内容</h4>
+              <ul class="taf-p-section__product-list">
+                <li>マーケティングファネル理論に基づいた<strong>成約特化型LP</strong></li>
+                <li>最新AIによる「刺さるコピー」と「高品質画像」制作</li>
+                <li>簡易SEO対策・ポップアップ挿入対応</li>
+                <li>WordPress / HTML・CSS・JS 納品 → 自由に編集可能</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-highlight">
+              <div class="taf-p-section__product-highlight-title">文章作成が苦手な方へ ─ 専用アプリご用意</div>
+              <p class="taf-p-section__product-highlight-text"><strong>専用のLP文章制作アプリ</strong>をご用意しています。質問に答えるだけで、プロ仕様のキャッチコピー・構成案に整います。スマホの音声入力にも対応。<br><a href="https://taf-business-navi.vercel.app/" target="_blank" rel="noopener">LP文章制作アプリを試す →</a></p>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥70,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note"><strong style="color: var(--taf-gold-light);">オプション:</strong><br>・完全まる投げパック +¥30,000<br>　(構成・ライティング・画像生成・WP実装・詳細SEO・ファネル構築アドバイス込)<br>・仕組み自動化・伴走パック +¥80,000<br>　(LINE公式・メルマガ・ステップ配信等ファネル全体構築)</p>
+              <div class="taf-p-section__product-pricebox-options"><strong>実績掲載不可オプション:</strong> +¥7,000〜(ご注文金額の10%)</div>
+            </div>
+
+            <a class="taf-p-section__detail-link" href="https://taf-design.com/lp7/" target="_blank" rel="noopener">詳しくはこちら</a>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">04</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">専用AIアプリ制作</span>
+              <span class="taf-p-section__product-tagline">自社専用のAIツールを低価格で</span>
+            </span>
+            <span class="taf-p-section__product-price">¥30,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">顧客対応、文章作成、ヒアリング、業務整理などに使える、自社専用の簡易AIアプリを制作します。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>自社サービスに合わせた診断アプリ・文章作成ツールが欲しい方</li>
+                <li>問い合わせ前のヒアリングや顧客情報整理を自動化したい方</li>
+                <li>業務効率化や顧客満足度アップにつながるAIツールを作りたい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">対応内容</h4>
+              <ul class="taf-p-section__product-list">
+                <li>専用AI文章作成アプリ</li>
+                <li>診断・ヒアリング型アプリ</li>
+                <li>問い合わせ前の自動整理フォーム</li>
+                <li>その他、目的に合わせた簡易AIツール制作</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥30,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">※規模・機能により大きく変動いたします。まずはご要望をお聞かせください。</p>
+              <div class="taf-p-section__product-pricebox-options"><strong>実績掲載不可オプション:</strong> +¥3,000〜(ご注文金額の10%)</div>
+            </div>
+
+            <a class="taf-p-section__detail-link" href="https://taf-design.com/app2-9/" target="_blank" rel="noopener">詳しくはこちら</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="taf-p-section__products-group is-active" data-category="system">
+        <div class="taf-p-section__products-header">
+          <h3 class="taf-p-section__products-title"><span class="taf-p-section__products-title-accent">02</span>システム系のサービス</h3>
+          <span class="taf-p-section__products-count">6 SERVICES</span>
+        </div>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">05</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">AIチャットボット組込</span>
+              <span class="taf-p-section__product-tagline">既存HP/LPに24時間自動接客を追加</span>
+            </span>
+            <span class="taf-p-section__product-price">¥20,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">24時間休まない自動接客で、深夜・休日の問い合わせ取りこぼしや離脱を防ぎます。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>既存のHP/LPに自動接客機能を追加したい方</li>
+                <li>よくある質問への対応を効率化したい方</li>
+                <li>深夜・休日の問い合わせ取りこぼしを防ぎたい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">できること</h4>
+              <ul class="taf-p-section__product-list">
+                <li>顧客の疑問にAIが即座に自動回答</li>
+                <li>24時間自動接客の実現</li>
+                <li>問い合わせ前の不安解消・離脱防止</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥20,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">※規模・シナリオ数により変動いたします。詳細はご相談の上、確定いたします。</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">06</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">広告運用・集客サポート <span class="taf-p-section__product-badge">GROWTH</span></span>
+              <span class="taf-p-section__product-tagline">制作したファネルの集客を代行</span>
+            </span>
+            <span class="taf-p-section__product-price">広告費の20%<span class="taf-p-section__product-price-unit">/月</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">制作したLP・LINE導線を活かし、Meta広告運用と公式LINE配信で集客を継続的にサポートします。</p>
+
+            <div class="taf-p-section__product-highlight">
+              <div class="taf-p-section__product-highlight-title">ファネル制作と組み合わせて利用できます</div>
+              <p class="taf-p-section__product-highlight-text"><strong>ファネル構築：LP・LINE・広告設定の制作一式 ¥150,000〜</strong><br>まず集客導線を作り、その後の広告運用・LINE配信までまとめて任せたい方におすすめです。</p>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>LPやLINE導線を作ったあと、集客まで任せたい方</li>
+                <li>Meta広告を出したいが、設定や改善を自分で行うのが不安な方</li>
+                <li>広告運用とLINE配信をまとめて外注したい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">対応内容</h4>
+              <ul class="taf-p-section__product-list">
+                <li><strong>Meta広告の運用代行・改善提案</strong></li>
+                <li><strong>公式LINE配信代行</strong> ─ 月4回まで対応</li>
+                <li>広告クリエイティブや導線改善の簡易アドバイス</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">ご利用条件</h4>
+              <ul class="taf-p-section__product-list">
+                <li>ファネル制作と組み合わせてご利用いただけます</li>
+                <li>広告費はお客様の広告アカウントから別途ご負担いただきます</li>
+                <li>運用内容・配信頻度・改善範囲は事前に確認のうえ決定します</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">広告費の20%<span class="taf-p-section__product-pricebox-amount-unit">/月</span></div>
+              <p class="taf-p-section__product-pricebox-note">※ファネル制作と組み合わせてご利用いただけます。<br>※広告費そのものは別途必要です。運用範囲により内容は変動いたします。</p>
+            </div>
+
+            <a class="taf-p-section__detail-link" href="https://taf-design.com/ad/" target="_blank" rel="noopener">詳しくはこちら</a>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">07</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">Yes/No診断チャート組込</span>
+              <span class="taf-p-section__product-tagline">顧客を迷わせず最短ルートで成約へ</span>
+            </span>
+            <span class="taf-p-section__product-price">¥20,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">顧客が自分で答えを選び、最適な商品・サービスへ自動誘導される仕組みを実装します。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>商品が多くて顧客が迷ってしまう方</li>
+                <li>接客の手間を減らしつつ成約率を上げたい方</li>
+                <li>問い合わせ前の心理的ハードルを下げたい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">できること</h4>
+              <ul class="taf-p-section__product-list">
+                <li>顧客が自分で答えを選び、最適な商品・サービスへ誘導</li>
+                <li>接客の手間を大幅削減</li>
+                <li>成約までの心理的ハードルを下げる仕組み</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥20,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">※分岐数・複雑度により変動いたします。詳細はご相談の上、確定いたします。</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">08</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">AI接客ボット組込LP <span class="taf-p-section__product-badge">FULL SET</span></span>
+              <span class="taf-p-section__product-tagline">LP + AIボット + LINE構築の一括パッケージ</span>
+            </span>
+            <span class="taf-p-section__product-price">¥100,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">「アクセスはあるけど、LINE登録や問い合わせに繋がらない…」<br>その悩みを、24時間自動で接客する仕組みで解決します。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>LINE・メアドのリスト獲得を強化したい方</li>
+                <li>深夜・休日の取りこぼしを防ぎたい方</li>
+                <li>LINEのBANリスクに備えてメアドも確保したい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">3つの強み</h4>
+              <ul class="taf-p-section__product-list">
+                <li><strong>24時間働く自動接客ボット&amp;LINE構築</strong> ─ FAQ自動回答 / メアドも取得(BAN対策) / ワンタップで公式LINEへ</li>
+                <li><strong>マーケティング視点の「売れる構成」</strong> ─ 10年以上のプロが設計 / 音声入力OK / AI画像生成対応</li>
+                <li><strong>編集できるLP</strong> ─ WordPress / HTML・CSS で納品後も自由に更新</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">基本構成</h4>
+              <ul class="taf-p-section__product-list">
+                <li>LP制作(PC 5〜7スクロール程度)</li>
+                <li>AIボット初期設定(1シナリオ)</li>
+                <li>WordPress または HTML・CSS 納品</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥100,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">※構成・機能により変動いたします。詳細はご相談の上、確定いたします。</p>
+              <div class="taf-p-section__product-pricebox-options"><strong>実績掲載不可オプション:</strong> +¥10,000〜(ご注文金額の10%)</div>
+            </div>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">09</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">プロ作 リスト取りLP <span class="taf-p-section__product-badge">EXPERT</span></span>
+              <span class="taf-p-section__product-tagline">10年のプロが課題整理〜導線設計まで一貫対応</span>
+            </span>
+            <span class="taf-p-section__product-price">¥120,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">「LPを作っても売れない」「導線が弱く成約率が伸びない」<br>その悩みを、10年以上の経験を持つプロが課題整理から導線設計まで一貫対応します。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>LPを広告に使う予定の方</li>
+                <li>広告運用前に「導線」を最適化したい方</li>
+                <li>ファネル設計の相談相手が欲しい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">特徴 ─ 「カスタマイズ前提」のLP</h4>
+              <ul class="taf-p-section__product-list">
+                <li>Yes/No診断チャート・AIチャットボットの組込みも対応</li>
+                <li>機能の増減を柔軟に設計</li>
+                <li>集客〜販売の導線を最適化するアドバイス込み</li>
+                <li>ご自身で編集可能(WordPress または HTML・CSS・JS)</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">対応内容</h4>
+              <ul class="taf-p-section__product-list">
+                <li>LP制作(PC・スマホ対応)</li>
+                <li>メルマガ・公式LINE構築</li>
+                <li>CTA設置・文章構成の改善提案</li>
+                <li>ヒアリングによる課題整理</li>
+                <li>販売ファネル設計(導線プランニング)</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥120,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">※構成・機能により変動いたします。詳細はご相談の上、確定いたします。</p>
+              <div class="taf-p-section__product-pricebox-options"><strong>実績掲載不可オプション:</strong> +¥12,000〜(ご注文金額の10%)</div>
+            </div>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">10</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">ファネル構築 <span class="taf-p-section__product-badge">FUNNEL</span></span>
+              <span class="taf-p-section__product-tagline">LP・LINE・広告設定の制作一式</span>
+            </span>
+            <span class="taf-p-section__product-price">¥150,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">LP制作、LINE導線、広告出稿に必要な初期設定までを一式で整える、集客開始前の軽量ファネル構築パッケージです。</p>
+
+            <div class="taf-p-section__product-highlight">
+              <div class="taf-p-section__product-highlight-title">広告運用・集客サポートと組み合わせ可能</div>
+              <p class="taf-p-section__product-highlight-text">制作後は、<strong>Meta広告運用＋LINE配信代行</strong>まで継続サポートできます。導線を作って終わりではなく、集客開始まで一貫して整えたい方におすすめです。</p>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>LP・LINE・広告設定をまとめて整えたい方</li>
+                <li>複数の外注先を管理せず、Web集客の土台を一括で作りたい方</li>
+                <li>広告運用前に、問い合わせ・登録までの導線を整えたい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">制作内容</h4>
+              <ul class="taf-p-section__product-list">
+                <li><strong>LP制作</strong> ─ 商品・サービスの魅力が伝わる販売導線を作成</li>
+                <li><strong>公式LINE導線</strong> ─ 登録後の案内・配信設計を整備</li>
+                <li><strong>広告設定サポート</strong> ─ Meta広告を開始するための初期設定を補助</li>
+                <li>必要に応じて、Thank Youページや相談導線も設計</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">得られる効果</h4>
+              <ul class="taf-p-section__product-list">
+                <li>制作から集客導線まで外注を一本化できる</li>
+                <li>集客〜教育〜販売の仕組みをまとめて構築できる</li>
+                <li>広告運用に入る前の土台が整う</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥150,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">※LPの分量・LINE導線・広告設定範囲により変動いたします。詳細はご相談の上、確定いたします。</p>
+              <div class="taf-p-section__product-pricebox-options"><strong>組み合わせ推奨:</strong> 広告運用・集客サポート 広告費の20%/月</div>
+            </div>
+
+            <a class="taf-p-section__detail-link" href="https://taf-design.com/lp15/" target="_blank" rel="noopener">詳しくはこちら</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="taf-p-section__products-group" data-category="fix">
+        <div class="taf-p-section__products-header">
+          <h3 class="taf-p-section__products-title"><span class="taf-p-section__products-title-accent">03</span>修正系のサービス</h3>
+          <span class="taf-p-section__products-count">2 SERVICES</span>
+        </div>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">11</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">画像・広告・スライド・サムネ修正</span>
+              <span class="taf-p-section__product-tagline">既存画像の細かい修正から、ゼロからの制作まで</span>
+            </span>
+            <span class="taf-p-section__product-price">¥3,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">既存画像の細かい修正から、ゼロからのオリジナル制作まで、柔軟に対応いたします。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>既存画像の不要物除去・色味調整をしたい方</li>
+                <li>LP・SNS・教材用の画像を新規で作りたい方</li>
+                <li>普段お使いのツールで編集データが欲しい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">対応内容</h4>
+              <ul class="taf-p-section__product-list">
+                <li><strong>修正</strong> ─ 不要物の除去・色味調整・レイアウト最適化</li>
+                <li><strong>新規制作</strong> ─ ロゴ・ビジネス資料・漫画・写真加工・サムネイル・広告画像</li>
+                <li><strong>用途別デザイン</strong> ─ LP・SNS・教材など</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">対応ツール&amp;納品形式</h4>
+              <ul class="taf-p-section__product-list">
+                <li>Canva(標準) / Figma / Affinity(納品は追加料金 +¥1,000〜)</li>
+                <li>ご希望のツールに合わせた編集データで納品 → 微調整もスムーズ</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥3,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">※作業ボリューム・難易度により変動いたします。詳細はご相談の上、確定いたします。</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="taf-p-section__product">
+          <summary>
+            <span class="taf-p-section__product-number">12</span>
+            <span class="taf-p-section__product-info">
+              <span class="taf-p-section__product-name">LP・HP修正・改善 <span class="taf-p-section__product-badge">REPAIR</span></span>
+              <span class="taf-p-section__product-tagline">導線やデザインをプロ目線で最適化</span>
+            </span>
+            <span class="taf-p-section__product-price">¥15,000<span class="taf-p-section__product-price-unit">〜</span></span>
+            <span class="taf-p-section__product-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </summary>
+          <div class="taf-p-section__product-body">
+            <p class="taf-p-section__product-lead">自作されたLP・HPの導線やデザインをプロ目線で最適化し、「動く・伝わる」状態に仕上げます。</p>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">こんな方に</h4>
+              <ul class="taf-p-section__product-list">
+                <li>AIでLP・HPを作ったが不安な方</li>
+                <li>見た目は整っているが成果が出ない方</li>
+                <li>最後の仕上げをプロに任せたい方</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">対応内容</h4>
+              <ul class="taf-p-section__product-list">
+                <li>CTA(ボタン)の最適化 / リンク・導線の修正・整理 / デザインバランスの提案</li>
+                <li>ファーストビューの改善提案 / 文章の整理・調整</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-section">
+              <h4 class="taf-p-section__product-section-title">対応形式</h4>
+              <ul class="taf-p-section__product-list">
+                <li>Canva / HTML / WordPress(SWELL・Lightning・Cocoon等)</li>
+                <li>※Elementor・Figmaも対応可(工数により別途お見積もり)</li>
+              </ul>
+            </div>
+
+            <div class="taf-p-section__product-pricebox">
+              <div class="taf-p-section__product-pricebox-label">PRICE</div>
+              <div class="taf-p-section__product-pricebox-amount">¥15,000<span class="taf-p-section__product-pricebox-amount-unit">〜</span></div>
+              <p class="taf-p-section__product-pricebox-note">目安：一般的な修正は¥10,000〜¥20,000、大きな調整は¥20,000〜¥25,000程度。<br>※事前の内容確認とお見積りが必要です。</p>
+            </div>
+
+            <a class="taf-p-section__detail-link" href="https://taf-design.com/repair/" target="_blank" rel="noopener">詳しくはこちら</a>
+          </div>
+        </details>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  function initTafPriceTabs() {
+    var sections = document.querySelectorAll('.taf-p-section');
+    if (!sections.length) return;
+
+    sections.forEach(function(root) {
+      var buttons = root.querySelectorAll('.taf-p-section__category-card');
+      var groups = root.querySelectorAll('.taf-p-section__products-group');
+
+      if (!buttons.length || !groups.length) return;
+
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var category = btn.getAttribute('data-category');
+
+          buttons.forEach(function(b) {
+            b.classList.toggle('is-active', b === btn);
+          });
+
+          groups.forEach(function(group) {
+            var isMatch = group.getAttribute('data-category') === category;
+
+            group.classList.toggle('is-active', isMatch);
+
+            if (!isMatch) {
+              group.querySelectorAll('details[open]').forEach(function(detail) {
+                detail.removeAttribute('open');
+              });
+            }
+          });
+
+          if (window.innerWidth <= 900) {
+            var products = root.querySelector('.taf-p-section__products');
+            if (products) {
+              window.scrollTo({
+                top: products.getBoundingClientRect().top + window.pageYOffset - 20,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTafPriceTabs);
+  } else {
+    initTafPriceTabs();
+  }
+})();
+</script>
+
+
+<!-- ============================================================ -->
+<!-- TAF Free Consultation & Notes Section / 無料相談・共通補足セクション -->
+<!-- WordPress HTMLブロック貼り付け用 完全自己完結型                   -->
+<!-- ============================================================ -->
+
+<div class="taf-consultation-section">
+
+  <style>
+    /* 料金プラン側のオリジナルカラーとフォントを踏襲 */
+    .taf-consultation-section {
+      --taf-navy: #1A2A3A;
+      --taf-navy-light: #2D3E50;
+      --taf-gold: #C5A059;
+      --taf-gold-light: #D4B772;
+      --taf-gold-dark: #A88846;
+      --taf-text: #2D3E50;
+      --taf-bg-soft: #F5F2EC;
+      --taf-border: rgba(197, 160, 89, 0.25);
+      --taf-serif: 'Noto Serif JP', 'Yu Mincho', serif;
+      --taf-sans: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      --taf-num: 'Cormorant Garamond', 'Noto Serif JP', serif;
+
+      font-family: var(--taf-sans);
+      color: var(--taf-text);
+      line-height: 1.75;
+      padding: 60px 24px 80px;
+      max-width: 100%;
+      box-sizing: border-box;
+      background-color: #FAFAFA; /* 背景色を料金プランと統一 */
+    }
+
+    .taf-consultation-section *,
+    .taf-consultation-section *::before,
+    .taf-consultation-section *::after {
+      box-sizing: border-box;
+    }
+
+    .taf-consultation-section p,
+    .taf-consultation-section ul,
+    .taf-consultation-section h3,
+    .taf-consultation-section h4 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .taf-consultation-section ul {
+      list-style: none;
+    }
+
+    .taf-consultation-container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       共通事項・補足（Notes）スタイリング
+       ============================================================ */
+    .taf-notes-block {
+      margin-bottom: 56px;
+      padding: 40px 36px;
+      background: var(--taf-bg-soft);
+      border-radius: 8px;
+      border: 1px solid var(--taf-border);
+    }
+
+    .taf-notes-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--taf-serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--taf-navy);
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
+    .taf-notes-title::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--taf-gold);
+    }
+
+    .taf-notes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .taf-notes-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 14px;
+      color: var(--taf-text);
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+    }
+
+    .taf-notes-list li::before {
+      content: "※";
+      position: absolute;
+      left: 0;
+      color: var(--taf-gold);
+      font-weight: 500;
+    }
+
+    .taf-notes-list li strong {
+      color: var(--taf-navy);
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       無料相談（Final CTA）スタイリング
+       ============================================================ */
+    .taf-cta-block {
+      padding: 56px 32px;
+      background: linear-gradient(135deg, var(--taf-navy) 0%, var(--taf-navy-light) 100%);
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(26, 42, 58, 0.08);
+    }
+
+    /* 背景グラデーション装飾 */
+    .taf-cta-block::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .taf-cta-block::after {
+      content: "";
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(212, 183, 114, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .taf-cta-eyebrow {
+      font-family: var(--taf-num);
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      color: var(--taf-gold-light);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .taf-cta-title {
+      font-family: var(--taf-serif);
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .taf-cta-text {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .taf-cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 48px;
+      background: var(--taf-gold);
+      color: #FFFFFF;
+      font-family: var(--taf-serif);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 8px 24px rgba(197, 160, 89, 0.4);
+    }
+
+    .taf-cta-button:hover {
+      background: var(--taf-gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(197, 160, 89, 0.5);
+    }
+
+    .taf-cta-button svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.3s ease;
+    }
+
+    .taf-cta-button:hover svg {
+      transform: translateX(6px);
+    }
+
+    /* ============================================================
+       レスポンシブ対応（モバイル最適化）
+       ============================================================ */
+    @media (max-width: 900px) {
+      .taf-consultation-section {
+        padding: 40px 16px 60px;
+      }
+      .taf-notes-block {
+        padding: 32px 20px;
+        margin-bottom: 40px;
+      }
+      .taf-cta-block {
+        padding: 40px 20px;
+      }
+      .taf-notes-list li {
+        font-size: 13px; /* スマホで文字サイズをわずかに縮小 */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .taf-cta-button {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 24px;
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  <div class="taf-consultation-container">
+
+    <!-- 共通事項・補足 -->
+    <section class="taf-notes-block">
+      <h3 class="taf-notes-title">共通事項・補足</h3>
+      <ul class="taf-notes-list">
+        <li>表示の料金はすべて<strong>目安</strong>です。構成・分量・機能により変動いたします。</li>
+        <li>正式金額は事前のお見積りで<strong>必ず確定</strong>させていただきますので、ご安心ください。</li>
+        <li><strong>サーバー・ドメイン</strong>はお客様にてご契約をお願いしております（月額660円〜目安）。</li>
+        <li><strong>実績掲載不可オプション</strong>（対象6商品）は、ご注文金額の<strong>10%</strong>にて承ります。</li>
+        <li>納品形式・修正対応・納期等の詳細は、ご相談時に丁寧にご説明いたします。</li>
+        <li>お見積り・ご相談は<strong>無料</strong>です。お気軽にお問い合わせください。</li>
+      </ul>
+    </section>
+
+    <!-- 無料相談エリア -->
+    <section class="taf-cta-block">
+      <div class="taf-cta-eyebrow">FREE CONSULTATION</div>
+      <h3 class="taf-cta-title">まずは無料でご相談ください</h3>
+      <p class="taf-cta-text">
+        どのプランが最適か、ご予算・ご要望に合わせて<br>
+        プロが最適なご提案をいたします。<br>
+        些細な疑問・ご相談も大歓迎です。
+      </p>
+      <!-- リンク先の「#contact」は、実際のお問い合わせフォームのID等に合わせて調整してください -->
+      <a href="https://taf-design.com/offer2/" class="taf-cta-button">
+        無料相談する
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </section>
+
+  </div>
+
+</div>
+<!-- ============ END: TAF Free Consultation & Notes Section ============ -->
+
+
+<div class="faq-section-wrapper">
+    <h2 class="faq-section-title">よくある質問（Q&amp;A）</h2>
+
+    <div class="faq-container">
+
+        <!-- Q1 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> どのプランを選べばいいかわかりません。
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    目的やご予算に合わせて最適なプランをご提案いたします。
+                    <ul class="faq-plan-list">
+                        <li><strong>専用のAIツールを導入したい方：</strong>「AIアプリ制作」</li>
+                        <li><strong>低予算で早くLPを作りたい方：</strong>「LP・HP制作（20,000円〜）」</li>
+                        <li><strong>LINEやメルマガへの登録を増やしたい方：</strong>「リスト取りLP」</li>
+                        <li><strong>集客から販売までの導線をすべて任せたい方：</strong>「HP/LP＋セールスファネル」</li>
+                    </ul>
+                    迷われた場合は、「見積り相談」よりお気軽にお問い合わせください。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q2 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> 原稿や画像がなくても依頼できますか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    はい、可能です。原稿をお持ちでない場合や文章が決まらない場合でも、ヒアリングをもとに構成案の作成や文章のブラッシュアップのご提案をいたします。参考サイトやイメージなどをお伝えいただけるとスムーズです。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q3 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> どのような支払い方法がありますか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    クレジットカード決済と銀行振込に対応しております。クレジットカード決済はご注文時の決済となります。銀行振込の場合は、ご注文後<strong>7日以内</strong>にお振り込みをお願いいたします（振込手数料はお客様のご負担となります）。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q4 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> 途中でのキャンセルや返金はできますか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    デジタルコンテンツ・サービスの性質上、費用の支払い等による契約成立後の利用者都合によるキャンセル、および納品後の返品・返金は一切お受けしておりません。あらかじめご了承ください。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q5 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> 修正は無料で対応してもらえますか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    納品前の無料修正回数は、原則として事前見積もり時に定めた回数となります。ラフ案をご提示しデザインが確定した後の「文章の修正」については、納品<strong>2日前まで</strong>無料で対応いたします。<br>
+                    ただし、当初の目的から大きく逸脱する大幅な仕様変更やデザイン変更、規定回数を超える修正については追加料金が発生いたします。また、一度修正した箇所（セクション）への再度の修正は、オプション対応として1回2,500円が必要となります。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q6 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> 最短どのくらいで納品可能ですか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    プランによって異なりますが、例えば「LP・HP制作（20,000円〜）」の場合、オプションの特急対応をご利用いただくと最短24時間でデザインが完成します。通常は、原稿確定後2営業日〜7営業日程度での初稿提出となります（プランやお客様からのご返信状況により変動します）。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q7 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> 納品はどのような形式になりますか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    ご希望に合わせて複数の形式に対応しております。Canvaの共有リンク、画像データ（PNG/JPG）、HTML/CSS/JS、WordPress、Figmaなどからお選びいただけます。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q8 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> サイトにAIチャットボットを入れることはできますか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    はい、可能です。「AIチャットボット」や「YesNoチャート」の組み込み（20,000円〜）をオプションとしてご用意しております。特に「リスト取りLP」などのプランと組み合わせることで、24時間自動接客などの機能を追加し、成約率の向上を図ることが得意です。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q9 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> 制作したサイトを実績として公開されたくないのですが。
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    制作物は原則として当方の実績として公開させていただいておりますが、オプションの「実績掲載不可（5,500円）」をご購入いただくことで非公開にすることが可能です。ご希望の場合は、必ずご購入手続きの前にお知らせください。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q10 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> 納品後のサポートや保守をお願いすることはできますか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    はい、承っております。「月額保守・管理お任せパック（5,500円～11,000円）」にて、ボットの動作チェック、文字修正、定期更新、バックアップなどをサポートいたします。また、納品後の新たなセクション追加などもオプションで柔軟に対応可能です。
+                </div>
+            </div>
+        </details>
+
+        <!-- Q11 -->
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span class="faq-icon-q">Q.</span> 月額保守・管理お任せパックの解約はどうすればいいですか？
+                <span class="faq-toggle-icon"></span>
+            </summary>
+            <div class="faq-answer">
+                <span class="faq-icon-a">A.</span>
+                <div class="faq-answer-content">
+                    保守・管理パックには契約期間の縛りはありません。解約をご希望の場合は、次回決済日の<strong>10日前までに</strong>公式ラインにてご連絡ください。なお、日割り計算による返金は行っておりませんのでご了承ください。
+                </div>
+            </div>
+        </details>
+
+    </div>
+</div>
