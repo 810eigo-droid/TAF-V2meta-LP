@@ -78,6 +78,15 @@
   .taf-order .to-dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:1px solid rgba(0,0,0,.18);}
   .taf-order .to-date-row{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:12.5px;color:var(--to-sub);flex-wrap:wrap;}
   .taf-order input.to-date{width:auto;max-width:200px;padding:8px 12px;font-size:13.5px;}
+  .taf-order .to-price-link{
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    margin-top:14px;padding:12px 18px;border-radius:10px;
+    border:1.5px solid var(--to-orange);color:#b97f06;background:#fffaf0;
+    font-weight:800;font-size:13.5px;text-decoration:none;transition:.15s;
+  }
+  .taf-order .to-price-link span{font-size:11px;font-weight:600;color:var(--to-sub);}
+  .taf-order .to-price-link:hover{background:var(--to-orange);color:#fff;}
+  .taf-order .to-price-link:hover span{color:rgba(255,255,255,.85);}
   .taf-order .to-hint{font-size:11.5px;color:var(--to-sub);margin:10px 0 0;line-height:1.7;background:var(--to-bg);border-radius:10px;padding:10px 14px;}
   .taf-order .to-hint b{color:var(--to-ink);}
   .taf-order .to-error{display:none;color:var(--to-pink);font-weight:700;font-size:13px;margin-top:12px;}
@@ -135,6 +144,12 @@
         <input type="checkbox" name="to-type" id="to-type14" value="AI導入・チャットボット"><label for="to-type14">AI導入・ボット</label>
         <input type="checkbox" name="to-type" id="to-type15" value="その他・相談して決めたい"><label for="to-type15">その他・相談したい</label>
       </div>
+    </div>
+
+    <div class="to-q" id="to-first-wrap" style="display:none">
+      <div class="to-q-label">その中で、まず最初に始めたいもの(1つ) <span class="to-req">必須</span></div>
+      <div class="to-pills" id="to-first"></div>
+      <p class="to-hint">💡 ぜんぶ一度にやる必要はありません。ご予算に合わせて<b>最初の一歩</b>から順番にご提案しますので、直感で選んでOKです。</p>
     </div>
 
     <div id="to-pages-wrap" style="display:none">
@@ -300,6 +315,8 @@
         <input type="radio" name="to-budget" id="to-b4" value="10万円以上"><label for="to-b4">10万円以上</label>
         <input type="radio" name="to-budget" id="to-b5" value="相談して決めたい"><label for="to-b5">相談して決めたい</label>
       </div>
+      <a class="to-price-link" href="https://taf-design.com/price/" target="_blank" rel="noopener">📋 料金表を見る<span>(別タブで開きます)</span></a>
+      <p class="to-hint">💡 あらかじめ<b>料金の費用感</b>だけご確認いただくと、お見積りのやり取りがスムーズです。</p>
     </div>
 
     <div class="to-q">
@@ -318,9 +335,15 @@
       <textarea class="to-input" id="to-detail" placeholder="例)エステサロンのLPを作りたい。予約につなげたい。写真は手元にあります。"></textarea>
     </div>
 
-    <div class="to-q" style="margin-bottom:0">
+    <div class="to-q">
       <div class="to-q-label">お名前(ニックネーム可) <span class="to-opt">任意</span></div>
       <input type="text" class="to-input" id="to-name" placeholder="例)山田 / やまだサロン">
+    </div>
+
+    <div class="to-q" style="margin-bottom:0">
+      <div class="to-q-label">メールアドレス <span class="to-opt">任意</span></div>
+      <input type="text" class="to-input" id="to-mail" placeholder="例)info@example.com" inputmode="email" autocomplete="email">
+      <p class="to-hint" style="margin-top:8px">メールでの返信をご希望の方はご記入ください。LINEで送る方は空欄でOKです。</p>
     </div>
 
     <div class="to-actions">
@@ -406,6 +429,9 @@
       '【お見積り依頼】※資料ページより',
       '■ご相談内容: ' + pickedAll('to-type')
     ];
+    if (isFirstVisible()){
+      lines.push('■まず最初に: ' + picked('to-first'));
+    }
     if (isHpSelected()){
       lines.push('■下層ページ数: ' + picked('to-pages'));
     }
@@ -432,6 +458,7 @@
       '■現在のサイト: ' + val('to-url'),
       '■参考サイト: ' + refsText(),
       '■お名前: ' + val('to-name'),
+      '■メール: ' + val('to-mail'),
       '■ご要望:',
       val('to-detail')
     );
@@ -441,6 +468,11 @@
     var err = document.getElementById('to-error');
     if (!document.querySelector('.taf-order input[name="to-type"]:checked')){
       err.textContent = '「ご相談内容」を1つ以上選んでください。';
+      err.classList.add('show');
+      return false;
+    }
+    if (isFirstVisible() && !document.querySelector('.taf-order input[name="to-first"]:checked')){
+      err.textContent = '「まず最初に始めたいもの」を1つ選んでください(お見積りに必要です)。';
       err.classList.add('show');
       return false;
     }
@@ -463,6 +495,38 @@
     return true;
   }
 
+  /* 複数選択時のみ「まず最初に始めたいもの」を選んだ項目から選ばせる */
+  var firstWrap = document.getElementById('to-first-wrap');
+  var firstBox  = document.getElementById('to-first');
+  function isFirstVisible(){
+    return firstWrap.style.display !== 'none';
+  }
+  function updateFirst(){
+    var checked = Array.prototype.slice.call(
+      document.querySelectorAll('.taf-order input[name="to-type"]:checked'));
+    if (checked.length < 2){
+      firstWrap.style.display = 'none';
+      firstBox.innerHTML = '';
+      return;
+    }
+    var prev = document.querySelector('.taf-order input[name="to-first"]:checked');
+    var prevVal = prev ? prev.value : null;
+    firstWrap.style.display = '';
+    firstBox.innerHTML = '';
+    checked.forEach(function(cb, k){
+      var id = 'to-first-' + k;
+      var input = document.createElement('input');
+      input.type = 'radio'; input.name = 'to-first'; input.id = id; input.value = cb.value;
+      if (cb.value === prevVal) input.checked = true;
+      var label = document.createElement('label');
+      label.setAttribute('for', id);
+      var srcLabel = document.querySelector('.taf-order label[for="' + cb.id + '"]');
+      label.textContent = srcLabel ? srcLabel.textContent : cb.value;
+      firstBox.appendChild(input);
+      firstBox.appendChild(label);
+    });
+  }
+
   /* 選んだ内容に応じて追加の質問を表示 */
   var pagesWrap  = document.getElementById('to-pages-wrap');
   var scaleWrap  = document.getElementById('to-scale-wrap');
@@ -475,6 +539,7 @@
     designWrap.style.display = isDesignSelected() ? '' : 'none';
     serverWrap.style.display = isSiteSelected()   ? '' : 'none';
     wpWrap.style.display     = isWpSelected()     ? '' : 'none';
+    updateFirst();
   }
   document.querySelectorAll('.taf-order input[name="to-type"]').forEach(function(cb){
     cb.addEventListener('change', updateWraps);
