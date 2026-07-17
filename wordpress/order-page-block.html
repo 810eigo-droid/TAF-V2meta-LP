@@ -115,7 +115,25 @@
     .taf-order .to-steps{flex-direction:column;}
     .taf-order .to-card{padding:20px 16px;}
   }
+  /* 前のページへ戻る(パンくず非表示の代わりの小さな導線) */
+  .taf-order .to-back{display:inline-block;font-size:12.5px;color:var(--to-sub);text-decoration:none;margin:0 0 14px;}
+  .taf-order .to-back:hover{color:var(--to-blue);text-decoration:underline;}
 </style>
+
+  <a class="to-back" id="to-back" href="https://taf-design.com/">‹ 前のページへ戻る</a>
+  <script>
+  (function(){
+    var b = document.getElementById('to-back');
+    if(!b) return;
+    b.addEventListener('click', function(e){
+      /* 直前のページがあればそこへ戻る。直接アクセス時はリンク先(公式トップ)へ */
+      if(document.referrer && window.history.length > 1){
+        e.preventDefault();
+        window.history.back();
+      }
+    });
+  })();
+  </script>
 
   <p class="to-eyebrow">ESTIMATE / FREE</p>
   <h2 class="to-title">お見積り依頼<span class="or">(無料)</span></h2>
