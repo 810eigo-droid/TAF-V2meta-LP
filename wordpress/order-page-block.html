@@ -341,7 +341,7 @@
         <input type="radio" name="to-budget" id="to-b4" value="10万円以上"><label for="to-b4">10万円以上</label>
         <input type="radio" name="to-budget" id="to-b5" value="相談して決めたい"><label for="to-b5">相談して決めたい</label>
       </div>
-      <a class="to-price-link" href="https://taf-design.com/price/" target="_blank" rel="noopener">📋 料金表を見る<span>(別タブで開きます)</span></a>
+      <a class="to-price-link" href="https://taf-design.com/price/">📋 料金表を見る<span>(ブラウザの「戻る」でこのページへ帰れます。入力内容は保持されます)</span></a>
       <p class="to-hint">💡 あらかじめ<b>料金の費用感</b>だけご確認いただくと、お見積りのやり取りがスムーズです。</p>
     </div>
 
@@ -615,6 +615,71 @@
       + '?subject=' + encodeURIComponent('お見積り依頼(資料ページより)')
       + '&body=' + encodeURIComponent(msg);
   });
+})();
+</script>
+
+<script>
+/* =============================================================
+   入力内容の自動保存・復元(2026-07-16追加)
+   料金表リンクを同一タブ遷移に変更したため、ページを離れても
+   選択・入力内容が消えないよう sessionStorage に保存して復元する。
+   (タブを閉じると消える一時保存。個人情報を永続保存しない)
+============================================================= */
+(function(){
+  'use strict';
+  var KEY = 'tafOrderDraft';
+  var root = document.getElementById('taf-order');
+  if(!root || !window.sessionStorage) return;
+
+  function fields(){
+    return root.querySelectorAll('input, textarea, select');
+  }
+
+  function keyOf(el){
+    return el.id || (el.name ? el.name + ':' + el.value : '');
+  }
+
+  function save(){
+    try{
+      var data = {};
+      fields().forEach(function(el){
+        var k = keyOf(el);
+        if(!k) return;
+        if(el.type === 'checkbox' || el.type === 'radio'){ data[k] = el.checked; }
+        else { data[k] = el.value; }
+      });
+      sessionStorage.setItem(KEY, JSON.stringify(data));
+    }catch(e){}
+  }
+
+  function restore(){
+    var raw;
+    try{ raw = sessionStorage.getItem(KEY); }catch(e){ return; }
+    if(!raw) return;
+    var data;
+    try{ data = JSON.parse(raw); }catch(e){ return; }
+    /* まずチェック状態を戻し、changeを発火して条件表示を再現する */
+    fields().forEach(function(el){
+      var k = keyOf(el);
+      if(!k || !(k in data)) return;
+      if(el.type === 'checkbox' || el.type === 'radio'){
+        if(el.checked !== data[k]){
+          el.checked = data[k];
+          el.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      } else if(data[k] !== '' && el.value !== data[k]){
+        el.value = data[k];
+      }
+    });
+  }
+
+  /* ページを離れる直前に保存(戻る・料金表への移動・タブ切替すべて対応) */
+  window.addEventListener('pagehide', save);
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'hidden') save();
+  });
+
+  restore();
 })();
 </script>
 </div>
