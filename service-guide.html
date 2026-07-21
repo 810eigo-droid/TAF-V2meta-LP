@@ -52,20 +52,33 @@
   .cover-inner{ position:absolute; inset:0; padding:22mm 18mm; display:flex; flex-direction:column;}
   .cover-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px;letter-spacing:.02em;}
   .cover-logo img{width:26px;height:26px;object-fit:contain;}
-  .cover-mid{margin-top:11mm;}
+  .cover-mid{margin-top:26mm;}
   .cover-eyebrow{font:800 13px/1 "Roboto Mono",monospace;letter-spacing:.3em;color:var(--blue);}
-  .cover h1{ font-size:19px; font-weight:900; line-height:1.5; letter-spacing:.02em; margin:12px 0 0;}
-  /* ===== 表紙ストーリー(2026-07-19追加) ===== */
-  .cover-story{ margin-top:16px; max-width:120mm; }
-  .cs-catch{ font-size:28px; font-weight:900; line-height:1.55; letter-spacing:.01em; margin:0 0 14px; }
-  .cs-catch .bl{ color:var(--blue); }
-  .cs-body{ font-size:13px; color:var(--sub); line-height:1.95; margin:0 0 11px; }
-  .cs-body b{ color:var(--ink); }
-  .cs-body .or2{ color:var(--orange); font-weight:800; }
+  .cover h1{ font-size:41px; font-weight:900; line-height:1.42; letter-spacing:.01em; margin:16px 0 0;}
+  /* ===== ストーリーページ(表紙の次・2026-07-19追加) ===== */
+  .story-catch{ font-size:46px; font-weight:900; line-height:1.45; letter-spacing:.01em; margin:8px 0 20px;}
+  .story-catch .bl{ color:var(--blue); }
+  .story-p{ font-size:18px; line-height:2.0; color:var(--ink); margin:0 0 16px; font-weight:500;}
+  .story-p b{ font-weight:800; background:linear-gradient(transparent 64%, #FFE9A8 64%); }
+  .ig-compare{ margin:14px 0 20px; display:flex; flex-direction:column; gap:14px;}
+  .ig-label{ font-size:14px; font-weight:800; color:var(--sub); margin-bottom:6px;}
+  .ig-bar{ display:flex; width:100%; border-radius:12px; overflow:hidden; height:56px;}
+  .ig-seg{ display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; color:#fff; padding:0 10px; text-align:center; line-height:1.4;}
+  .ig-old{ background:#9aa1ab; width:100%;}
+  .ig-new{ background:var(--blue); width:34%;}
+  .ig-saved{ background:var(--orange); width:66%;}
+  .story-flow{ display:flex; gap:8px; margin:14px 0 0; align-items:stretch;}
+  .sf-step{ flex:1; background:var(--blue-bg); border:1.5px solid var(--blue-l); border-radius:14px; padding:16px 12px; text-align:center;}
+  .sf-step .n{ font:800 13px/1 "Roboto Mono",monospace; color:var(--blue); letter-spacing:.15em;}
+  .sf-step .t{ font-size:16px; font-weight:900; margin-top:8px; line-height:1.5;}
+  .sf-step .d{ font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.7;}
+  .sf-arrow{ align-self:center; font-size:22px; color:var(--orange); font-weight:900; flex:0 0 auto;}
+  .story-close{ margin-top:20px; background:linear-gradient(135deg,#111820,#1c2530); color:#fff; border-radius:16px; padding:24px 28px; font-size:18px; line-height:2.0; font-weight:600;}
+  .story-close b{ color:#F6C15C; }
   .cover h1 .bl{color:var(--blue);}
-  .cover-sub{ font-size:13px; color:var(--sub); margin-top:6px; line-height:1.9; font-weight:500;}
+  .cover-sub{ font-size:16px; color:var(--sub); margin-top:20px; line-height:1.9; font-weight:500;}
   .cover-sub b{color:var(--ink);}
-  .cover-badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;max-width:84mm;}
+  .cover-badges{display:flex;gap:9px;margin-top:22px;flex-wrap:wrap;}
   .cover-badges span{ background:var(--white); border:1.5px solid var(--blue-l); color:var(--blue);
     font-size:12px; font-weight:700; padding:6px 13px; border-radius:999px;
     box-shadow:0 6px 16px rgba(30,60,90,.06);}
@@ -325,25 +338,8 @@
 
     <div class="cover-mid">
       <div class="cover-eyebrow">SERVICE GUIDE</div>
-      <h1>事業主・副業オーナーのための<span class="bl">Web制作サービス</span></h1>
-      <p class="cover-sub">AIの時代に、ちょうどいい価格で。<b>買い切り22,000円(税込)から・サブスクなし。</b></p>
-
-      <div class="cover-story">
-        <p class="cs-catch">安く作る。だけじゃない。<br><span class="bl">売れる形で、安く作る。</span></p>
-        <p class="cs-body">
-          そのHPの見積もり、<b>半分は&ldquo;いらない費用&rdquo;かもしれません。</b><br>
-          HP制作の価格が高いのは、<br>
-          人の手で何ヶ月もかけて作っていた時代の名残です。<br>
-          私たちはAIを使い、制作コストを最小限にしました。<br>
-          だから、HPもLPも広告運用も、まとめて低価格。<br>
-          制作後の修正や追加も、<b>2,750円から</b>お受けしています。
-        </p>
-        <p class="cs-body">
-          そして、浮いた予算は——<span class="or2">広告へ。</span><br>
-          「作って終わり」ではなく、<b>&ldquo;お客様が増える仕組み&rdquo;に予算を使う。</b><br>
-          それが、私たちの仕事です。
-        </p>
-      </div>
+      <h1>事業主・<br>副業オーナーのための<br><span class="bl">Web制作サービス</span></h1>
+      <p class="cover-sub">AIの時代に、ちょうどいい価格で。<br><b>買い切り22,000円(税込)から・サブスクなしで安心。</b></p>
       <div class="cover-badges"><span>全て低価格</span><span>Youtube・Google広告運用</span><span>スマホ最適化</span><span>SEO・AI検索対策</span><span>セールスファネル</span><span>マーケティング全般</span><span>公式ライン・インスタ等SNS更新</span><span>AI導入/ボット</span><span>機能追加(プラグインetc)</span><span>UTAGE・コネクティッドワン・マイスピー対応</span><span class="more">など</span></div>
     </div>
 
@@ -354,6 +350,43 @@
       <div class="meta">taf-design.com<br>Service Guide 2026</div>
     </div>
   </div>
+</section>
+
+<!-- ============================ PAGE 1.5 : STORY(2026-07-19追加) ============================ -->
+<section class="page" id="p-story">
+  <div class="content">
+    <div class="eyebrow">OUR STORY</div>
+    <h2 class="story-catch">安く作る。だけじゃない。<br><span class="bl">売れる形で、安く作る。</span></h2>
+
+    <p class="story-p">そのHPの見積もり、<b>半分は&ldquo;いらない費用&rdquo;かもしれません。</b><br>
+    HP制作の価格が高いのは、人の手で何ヶ月もかけて作っていた時代の名残です。</p>
+
+    <div class="ig-compare">
+      <div>
+        <div class="ig-label">従来のHP制作</div>
+        <div class="ig-bar"><span class="ig-seg ig-old">人の手で数ヶ月 ＝ 30万円クラスの見積もり</span></div>
+      </div>
+      <div>
+        <div class="ig-label">TAF Design</div>
+        <div class="ig-bar"><span class="ig-seg ig-new">AI制作<br>22,000円〜</span><span class="ig-seg ig-saved">浮いた予算 → 広告・集客へ</span></div>
+      </div>
+    </div>
+
+    <p class="story-p">私たちはAIを使い、制作コストを最小限にしました。<br>
+    だから、HPもLPも広告運用も、まとめて低価格。<br>
+    制作後の修正や追加も、<b>2,750円から</b>お受けしています。</p>
+
+    <div class="story-flow">
+      <div class="sf-step"><div class="n">STEP 1</div><div class="t">売れる形で、<br>安く作る</div><div class="d">HP・LP 22,000円(税込)〜</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="n">STEP 2</div><div class="t">浮いた予算は、<br>広告へ</div><div class="d">「作って終わり」にしない</div></div>
+      <div class="sf-arrow">→</div>
+      <div class="sf-step"><div class="n">STEP 3</div><div class="t">お客様が<br>増える</div><div class="d">集客の仕組みまで一社で</div></div>
+    </div>
+
+    <div class="story-close">「作って終わり」ではなく、<b>&ldquo;お客様が増える仕組み&rdquo;に予算を使う。</b><br>それが、私たちの仕事です。</div>
+  </div>
+  <div class="pagefoot"><div>TAF Design ｜ サービスのご案内</div><div></div></div>
 </section>
 
 <!-- ============================ PAGE 2 : 目次 ============================ -->
