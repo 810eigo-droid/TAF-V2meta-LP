@@ -63,7 +63,10 @@ h2.sec .bl{color:var(--blue);} h2.sec .pk{color:var(--pink);} h2.sec .or{color:v
 .cover-badges span{background:var(--white);border:1.5px solid var(--blue-l);color:var(--blue);font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;box-shadow:0 3px 10px rgba(0,120,170,.08);}
 .cover-badges span.more{background:none;border:none;box-shadow:none;color:var(--sub);}
 .cover-illust{position:static;width:100%;margin-top:28px;}
-.cover-illust img{width:100%;display:block;border-radius:18px;box-shadow:0 20px 50px rgba(0,90,140,.18);aspect-ratio:4/3;object-fit:cover;}
+.imgbox{position:relative;width:100%;overflow:hidden;border-radius:18px;box-shadow:0 20px 50px rgba(0,90,140,.18);height:0;}
+.imgbox--43{padding-bottom:75%;}
+.imgbox--169{padding-bottom:56.25%;}
+.imgbox img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;}
 .cover-foot{margin-top:28px;display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;}
 .cover-foot .co{font-weight:800;font-size:14px;color:var(--ink);}
 .cover-foot .co span{display:block;font-size:10.5px;color:var(--blue);letter-spacing:.2em;font-weight:700;margin-top:4px;}
@@ -77,7 +80,7 @@ h2.sec .bl{color:var(--blue);} h2.sec .pk{color:var(--pink);} h2.sec .or{color:v
 .story-p b{font-weight:800;background:linear-gradient(transparent 62%,#FFE9A8 62%);}
 .ig-compare{margin:24px 0 26px;display:flex;flex-direction:column;gap:16px;}
 .story-figure{margin:8px 0 26px;}
-.story-figure img{width:100%;display:block;border-radius:18px;box-shadow:0 16px 40px rgba(0,90,140,.16);aspect-ratio:16/9;object-fit:cover;}
+/* story画像はimgboxで表示 */
 .ig-label{font-size:14px;font-weight:800;color:var(--sub);margin-bottom:8px;}
 .ig-bar{display:flex;width:100%;border-radius:14px;overflow:hidden;height:58px;box-shadow:0 8px 20px rgba(0,90,140,.10);}
 .ig-seg{display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;padding:0 10px;text-align:center;line-height:1.45;}
@@ -329,11 +332,12 @@ h2.sec .bl{color:var(--blue);} h2.sec .pk{color:var(--pink);} h2.sec .or{color:v
       <div class="cover-badges"><span>全て低価格</span><span>Youtube・Google広告運用</span><span>スマホ最適化</span><span>SEO・AI検索対策</span><span>セールスファネル</span><span>マーケティング全般</span><span>公式ライン・インスタ等SNS更新</span><span>AI導入/ボット</span><span>機能追加(プラグインetc)</span><span>UTAGE対応</span><span>コネクティッドワン対応</span><span>マイスピー対応</span><span class="more">など</span></div>
     </div>
 
-    <div class="cover-illust"><img src="images/guide-hero.webp" alt="AIの時代の、ちょうどいい価格でのWeb制作" width="1600" height="1200" loading="eager" onerror="this.closest('.cover-illust').remove()"></div>
+    <div class="cover-illust"><div class="imgbox imgbox--43"><img src="images/guide-hero.webp" alt="AIの時代の、ちょうどいい価格でのWeb制作" loading="eager"
+  onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/guide-hero.jpg';}else if(this.dataset.t=='1'){this.dataset.t=2;this.src='images/guide-hero.png';}else{this.closest('.cover-illust').remove();}"></div></div>
 
     <div class="cover-foot">
       <div class="co">ティーチ&amp;ファネル Design<span>TEACH &amp; FUNNEL DESIGN</span></div>
-      <div class="meta">taf-design.com<br>Service Guide 2026</div>
+      <div class="meta">taf-design.com<br>Service Guide 2026 ｜ v8</div>
     </div>
   </div>
 </section>
@@ -358,10 +362,10 @@ h2.sec .bl{color:var(--blue);} h2.sec .pk{color:var(--pink);} h2.sec .or{color:v
       </div>
     </div>
 
-    <figure class="story-figure">
+    <figure class="story-figure"><div class="imgbox imgbox--169">
       <img src="images/guide-story.webp" alt="AIで作った、成果につながるLP制作のイメージ"
-           width="1600" height="900" onerror="this.closest('figure').remove()">
-    </figure>
+           onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/guide-story.jpg';}else if(this.dataset.t=='1'){this.dataset.t=2;this.src='images/guide-story.png';}else{this.closest('figure').remove();}">
+    </div></figure>
 
     <p class="story-p">私たちはAIを使い、制作コストを最小限にしました。<br>
     だから、HPもLPも広告運用も、まとめて低価格。<br>
