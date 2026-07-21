@@ -283,7 +283,7 @@ h2.sec .bl{color:var(--blue);} h2.sec .pk{color:var(--pink);} h2.sec .or{color:v
 .sub2{font-size:16px;color:rgba(255,255,255,.75);margin-top:14px;}
 
 /* --- 追従PDFボタン(オレンジ) --- */
-.dl-print{position:fixed;right:14px;bottom:14px;z-index:100;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f5a30a,#f6b52e);color:#fff;font-weight:800;font-size:16px;padding:12px 18px;border-radius:999px;font-family:inherit;box-shadow:0 10px 26px rgba(246,172,14,.45);text-decoration:none;}
+.dl-print{position:fixed;right:14px;bottom:14px;z-index:100;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f5a30a,#f6b52e);color:#fff;font-weight:800;font-size:14px;padding:12px 18px;border-radius:999px;font-family:inherit;box-shadow:0 10px 26px rgba(246,172,14,.45);text-decoration:none;}
 
 /* --- 目次に戻るボタン(左下固定・目次通過後に出現) --- */
 .toc-fab{position:fixed;left:14px;bottom:14px;z-index:100;display:inline-flex;align-items:center;gap:7px;background:var(--white);border:1.5px solid var(--blue);color:var(--blue-d);font-weight:800;font-size:15px;padding:12px 17px;border-radius:999px;box-shadow:0 10px 26px rgba(0,90,140,.2);text-decoration:none;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,visibility .3s,transform .3s;}
@@ -295,6 +295,115 @@ h2.sec .bl{color:var(--blue);} h2.sec .pk{color:var(--pink);} h2.sec .or{color:v
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
 
 /* --- PC(760px以上) --- */
+
+/* --- スマホ専用: さらに+2px(PC版は変更なし・PDFボタン除く) --- */
+@media (max-width:759px){
+  .eyebrow{font-size:17px;}
+  h2.sec{font-size:33px;}
+  .lead{font-size:20px;}
+  .cover-logo{font-size:20px;}
+  .cover-eyebrow{font-size:17px;}
+  .cover h1{font-size:40px;}
+  .cover-sub{font-size:20px;}
+  .cover-badges span{font-size:18px;}
+  .cover-foot .co{font-size:18px;}
+  .cover-foot .co span{font-size:14.5px;}
+  .cover-foot .meta{font-size:18px;}
+  .story-catch{font-size:36px;}
+  .story-p{font-size:20.5px;}
+  .ig-label{font-size:18px;}
+  .ig-seg{font-size:18px;}
+  .sf-step .n{font-size:17px;}
+  .sf-step .t{font-size:23px;}
+  .sf-step .d{font-size:18px;}
+  .sf-arrow{font-size:26px;}
+  .story-close{font-size:20.5px;}
+  .toc-num{font-size:20px;}
+  .toc-tt{font-size:19.5px;}
+  .toc-tt small{font-size:18px;}
+  .toc-badge{font-size:14.5px;}
+  .greet-photo .cap{font-size:18px;}
+  .greet-body p{font-size:20px;}
+  .reason .n{font-size:23px;}
+  .reason h4{font-size:20.5px;}
+  .reason p{font-size:18.5px;}
+  .svc-card h4{font-size:20.5px;}
+  .svc-card h4 .ic{font-size:24px;}
+  .svc-card p{font-size:18.5px;}
+  .svc-more{font-size:18.5px;}
+  .story-body p{font-size:20px;}
+  .callout .cl-lb{font-size:15px;}
+  .callout p{font-size:19px;}
+  .cmp th,.cmp td{font-size:18px;}
+  .cmp .big{font-size:21px;}
+  .note-s{font-size:18px;}
+  .honest{font-size:18.5px;}
+  .price-hero .ph-l .tag{font-size:18px;}
+  .price-hero .ph-l h3{font-size:26px;}
+  .price-hero .ph-l p{font-size:18px;}
+  .price-hero .ph-r .yen{font-size:26px;}
+  .price-hero .ph-r .num{font-size:56px;}
+  .price-hero .ph-r .u{font-size:22px;}
+  .price-hero .kaikiri{font-size:16.5px;}
+  .price-hero .taxnote{font-size:18px;}
+  .opt-title{font-size:19px;}
+  .opt td{font-size:18.5px;}
+  .opt td.name small{font-size:18px;}
+  .opt td.val .p{font-size:18px;}
+  .pay-ex{font-size:18.5px;}
+  .pay-ex .big{font-size:24px;}
+  .incl .h{font-size:19px;}
+  .incl .h .badge{font-size:15.5px;}
+  .incl-col h5{font-size:18px;}
+  .incl-col li{font-size:18.5px;}
+  .price-note{font-size:18px;}
+  .price-cta-link{font-size:19px;}
+  .bgt-card .br{font-size:26px;}
+  .bgt-card p{font-size:18.5px;}
+  .budget-note{font-size:18px;}
+  .plan-links .pl-h{font-size:18px;}
+  .plan-links a{font-size:18px;}
+  .flow-step .fn{font-size:24px;}
+  .flow-step h4{font-size:20px;}
+  .flow-step h4 .pill{font-size:15px;}
+  .flow-step p{font-size:18.5px;}
+  .flow-time{font-size:18.5px;}
+  .flow-time .ic{font-size:26px;}
+  .works-grid .wl{font-size:18px;}
+  .works-grid .wl i{font-size:18px;}
+  .works-more{font-size:18.5px;}
+  .cap-more .cap-h{font-size:18.5px;}
+  .cap-tags span{font-size:18px;}
+  .cap-link{font-size:18px;}
+  .voice-card .stars{font-size:19px;}
+  .voice-card h4{font-size:19.5px;}
+  .voice-card p{font-size:18.5px;}
+  .voice-src{font-size:18px;}
+  .rank-band .rank-ic{font-size:30px;}
+  .rank-band b{font-size:20px;}
+  .rank-band span{font-size:18px;}
+  .faq-item .q{font-size:19.5px;}
+  .faq-item .q::before{font-size:19px;}
+  .faq-item .a{font-size:18.5px;}
+  .faq-item .a::before{font-size:19px;}
+  .company .h{font-size:18.5px;}
+  .company dl{font-size:18px;}
+  .cta .lb{font-size:16px;}
+  .cta h3{font-size:28px;}
+  .cta p{font-size:18.5px;}
+  .cta .btn{font-size:20.5px;}
+  .cta .url{font-size:18px;}
+  .apply-box .al{font-size:14.5px;}
+  .apply-box .av{font-size:20px;}
+  .apply-box .av.sm{font-size:19px;}
+  .apply-box .as{font-size:18px;}
+  .cta .alt-contact{font-size:18px;}
+  .budget-close{font-size:19px;}
+  .budget-close a{font-size:19px;}
+  .sub2{font-size:18px;}
+  .toc-fab{font-size:17px;}
+}
+
 @media (min-width:760px){
   .page{padding:92px 32px;}
   .cover{padding:40px 32px 76px;}
@@ -341,7 +450,7 @@ h2.sec .bl{color:var(--blue);} h2.sec .pk{color:var(--pink);} h2.sec .or{color:v
 
     <div class="cover-foot">
       <div class="co">ティーチ&amp;ファネル Design<span>TEACH &amp; FUNNEL DESIGN</span></div>
-      <div class="meta">taf-design.com<br>Service Guide 2026 ｜ v9</div>
+      <div class="meta">taf-design.com<br>Service Guide 2026 ｜ v10</div>
     </div>
   </div>
 </section>
