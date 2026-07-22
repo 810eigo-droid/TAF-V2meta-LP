@@ -13,6 +13,7 @@
 | 料金表 | /price/ | `wordpress/price-block1-plans.html`<br>`wordpress/price-block2-consultation.html`<br>`wordpress/price-block3-faq.html` | 3つのカスタムHTMLブロックに上から順に |
 | 簡単見積もり-order | /order/ | `wordpress/order-page-block.html` | カスタムHTMLブロック1つに丸ごと |
 | 5,000円OFFクーポン | /coupon/ | `wordpress/coupon-page-blocks.html` | BLOCK1 → CF7ショートコード → BLOCK3 の3構成 |
+| サイトまるごとバックアップパック | /backup/ | `wordpress/backup-pack-page.html` | カスタムHTMLブロック1つに丸ごと(2026-07-22新設。**WP側でスラッグ`backup`の固定ページ作成が必要**。料金表カード#13の「詳しくはこちら」がここへリンク) |
 
 **サービス資料**(WordPress固定ページではなくサーバー直置きファイル):
 | 用途 | 公開場所 | GitHubファイル |
