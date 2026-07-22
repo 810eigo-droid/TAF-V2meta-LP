@@ -14,7 +14,7 @@
 | 簡単見積もり-order | /order/ | `wordpress/order-page-block.html` | カスタムHTMLブロック1つに丸ごと |
 | 5,000円OFFクーポン | /coupon/ | `wordpress/coupon-page-blocks.html` | BLOCK1 → CF7ショートコード → BLOCK3 の3構成 |
 | サイトまるごとバックアップパック | /backup/ | `wordpress/backup-pack-page.html` | カスタムHTMLブロック1つに丸ごと(2026-07-22新設。**WP側でスラッグ`backup`の固定ページ作成が必要**。料金表カード#13の「詳しくはこちら」がここへリンク) |
-| 月次メンテナンスマニュアル(購入者向け) | /pdf-backup/ | `wordpress/backup-manual-page.html` | カスタムHTMLブロック1つに丸ごと(2026-07-22新設)。**print版(backup-manual-print.html)はA4 PDF専用でWPに貼ると崩れる — 必ずこちらを貼る**。購入者特典のため**WPの「パスワード保護」推奨** |
+| 月次メンテナンスマニュアル(購入者向け) | /pdf-backup/ | `wordpress/backup-manual-page.html` | カスタムHTMLブロック1つに丸ごと(2026-07-22新設)。**print版(backup-manual-print.html)はA4 PDF専用でWPに貼ると崩れる — 必ずこちらを貼る**。購入者特典のため**パスワード保護済み(2026-07-22設定完了)**。納品時にURL+パスワードをセットで案内する |
 
 **サービス資料**(WordPress固定ページではなくサーバー直置きファイル):
 | 用途 | 公開場所 | GitHubファイル |
