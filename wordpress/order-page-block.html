@@ -106,6 +106,15 @@
   .taf-order .to-copied.show{display:block;}
   .taf-order .to-copied b{color:var(--to-blue);}
 
+  /* 電話相談バナー(3ステップ直下) */
+  .taf-order .to-telbanner{
+    display:flex;gap:12px;align-items:flex-start;
+    background:#fffaf0;border:1.5px dashed var(--to-orange);border-radius:14px;
+    padding:14px 18px;margin:18px 0 0;font-size:13.5px;line-height:1.9;color:var(--to-ink);
+  }
+  .taf-order .to-telbanner .ic{font-size:20px;margin-top:2px;}
+  .taf-order .to-telbanner .tb-h{display:block;font-weight:800;font-size:14.5px;margin-bottom:2px;}
+
   /* 安心材料 */
   .taf-order .to-trust{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:12px;color:var(--to-sub);}
   .taf-order .to-trust span::before{content:"✓ ";color:var(--to-blue);font-weight:800;}
@@ -148,6 +157,14 @@
     <li><b>LINEで送る</b>ボタンを押すと依頼文ができあがります。貼り付けて送信。</li>
     <li><b>見積りが届く</b>48時間以内にご返信(追加費用は事前に必ずご相談)。お電話ご希望の方には、こちらからお掛けします。</li>
   </ol>
+
+  <div class="to-telbanner">
+    <span class="ic">📞</span>
+    <div>
+      <span class="tb-h">文字で伝えるのが苦手な方は、お電話でどうぞ(無料・10分程度)</span>
+      下のフォームで「電話相談を希望する」を選んで、お電話番号とご都合の良い時間帯を教えてください。<b>こちらからお掛けして</b>、直接ご要望をお聞きします。もちろん、お電話なしでそのまま進めてもOKです。
+    </div>
+  </div>
 
   <div class="to-card">
 
