@@ -20,9 +20,9 @@
 - コミットは `git -c user.name="810eigo-droid" -c user.email="caucasus189@gmail.com"`
 - 表示確認はPlaywright(Chromium)で検証してから渡す(スマホ390px・PC1280pxの両方)
 - **リンクは同一タブが原則**(`target="_blank"`禁止)。例外: tel:/mailto:/sms:/LINE(lin.ee)のみ。スマホの「戻る」で帰れるようにするため
-- **バージョン印**: service-guide.html はフッターに「Service Guide 2026 ｜ v◯◯」を持つ。**変更のたびに番号を上げ、ユーザーに「v◯◯が見えたら反映成功」と伝える**(アップロード反映の確認手段。現在 v24)
+- **バージョン印**: service-guide.html はフッターに「Service Guide 2026 ｜ v◯◯」を持つ。**変更のたびに番号を上げ、ユーザーに「v◯◯が見えたら反映成功」と伝える**(アップロード反映の確認手段。現在 v25)
 
-## 2. サービス資料 service-guide.html(最重要ページ・v24)
+## 2. サービス資料 service-guide.html(最重要ページ・v25)
 
 - 公開: `taf-design.com/lp/service-guide.html`(エックスサーバー `/public_html/lp/` に手動アップロード)
 - **Web版は明るいLPトンマナ**(白×ブルー#00A2DE×オレンジ#F6AC0E・広告LPと同系)。紺×ゴールド案は却下済み・暗くしない
@@ -56,6 +56,7 @@
 
 - **/budget/ 予算ハブ**(公式HP側管轄): 資料P6相当・クーポン・アシスタントに導線設置済み
 - **見積もりアシスタント**(claude.aiプロジェクト): 原本は `docs/estimate-assistant-context.md`。**最新版への差し替えを都度リマインドすること**(0円公開・セクション内部ルールまで入った版が最新)
+- **電話相談(2026-08-04導入)**: 無料・10分程度・希望者のみ・**こちらから発信**。資料v25の流れ+FAQ/lp FAQ+最終CTA//order/フォーム(任意の条件分岐: 希望する→番号+時間帯)//backup/CTA/アシスタント原本に反映済み。電話なしのチャット完結もOKを必ず併記する方針
 - 公式HP側の宿題は `docs/handoff-official-hp.md`(税込統一の同期・/ad/の月1.8万→20%修正・スマホクロージング崩れ・fv-bg画像ほか)
 
 ## 6. 今後やりたいこと(オーナー発言より)

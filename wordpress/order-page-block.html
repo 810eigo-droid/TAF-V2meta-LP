@@ -366,10 +366,29 @@
       <input type="text" class="to-input" id="to-name" placeholder="例)山田 / やまだサロン">
     </div>
 
-    <div class="to-q" style="margin-bottom:0">
+    <div class="to-q">
       <div class="to-q-label">メールアドレス <span class="to-opt">任意</span></div>
       <input type="text" class="to-input" id="to-mail" placeholder="例)info@example.com" inputmode="email" autocomplete="email">
       <p class="to-hint" style="margin-top:8px">メールでの返信をご希望の方はご記入ください。LINEで送る方は空欄でOKです。</p>
+    </div>
+
+    <div class="to-q" style="margin-bottom:0">
+      <div class="to-q-label">📞 お電話でのご相談(無料・10分程度) <span class="to-opt">任意</span></div>
+      <div class="to-pills" id="to-tel-want">
+        <input type="radio" name="to-tel-want" id="to-telw1" value="希望する(こちらからの発信を希望)"><label for="to-telw1">希望する</label>
+        <input type="radio" name="to-tel-want" id="to-telw2" value="希望しない(チャットで進める)"><label for="to-telw2">希望しない(チャットでOK)</label>
+      </div>
+      <div id="to-tel-wrap" style="display:none">
+        <input type="text" class="to-input" id="to-tel" placeholder="例)090-1234-5678" inputmode="tel" autocomplete="tel" style="margin-top:10px">
+        <div class="to-q-label" style="margin-top:12px">ご都合の良い時間帯(複数OK)</div>
+        <div class="to-pills" id="to-tel-time">
+          <input type="checkbox" name="to-tel-time" id="to-telt1" value="平日 午前"><label for="to-telt1">平日 午前</label>
+          <input type="checkbox" name="to-tel-time" id="to-telt2" value="平日 午後"><label for="to-telt2">平日 午後</label>
+          <input type="checkbox" name="to-tel-time" id="to-telt3" value="平日 夕方以降"><label for="to-telt3">平日 夕方以降</label>
+          <input type="checkbox" name="to-tel-time" id="to-telt4" value="土日"><label for="to-telt4">土日</label>
+        </div>
+      </div>
+      <p class="to-hint" style="margin-top:8px">ご希望の方には、<b>こちらからお電話</b>して直接ご要望をお聞きします。内容に応じてZoomでの画面共有相談(無料)もご案内できます。<b>お電話なしで、チャットだけで完結してそのまま制作に進むこともできます。</b></p>
     </div>
 
     <div class="to-actions">
@@ -484,7 +503,16 @@
       '■現在のサイト: ' + val('to-url'),
       '■参考サイト: ' + refsText(),
       '■お名前: ' + val('to-name'),
-      '■メール: ' + val('to-mail'),
+      '■メール: ' + val('to-mail')
+    );
+    if (document.getElementById('to-telw1').checked){
+      lines.push('■電話相談: 希望する(こちらからの発信を希望)');
+      lines.push('■電話番号: ' + val('to-tel'));
+      lines.push('■都合の良い時間帯: ' + pickedAll('to-tel-time'));
+    } else if (document.getElementById('to-telw2').checked){
+      lines.push('■電話相談: 希望しない(チャットで進める)');
+    }
+    lines.push(
       '■ご要望:',
       val('to-detail')
     );
@@ -572,6 +600,14 @@
   });
   document.querySelectorAll('.taf-order input[name="to-method"]').forEach(function(rb){
     rb.addEventListener('change', updateWraps);
+  });
+
+  /* 電話相談(任意): 「希望する」を選んだときだけ番号・時間帯を表示 */
+  var telWrap = document.getElementById('to-tel-wrap');
+  document.querySelectorAll('.taf-order input[name="to-tel-want"]').forEach(function(rb){
+    rb.addEventListener('change', function(){
+      telWrap.style.display = document.getElementById('to-telw1').checked ? '' : 'none';
+    });
   });
 
   /* 好きな色は4つまで */
