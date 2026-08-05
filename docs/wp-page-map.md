@@ -1,50 +1,77 @@
-# WordPress固定ページ ⇄ GitHubファイル 対応表
+# WordPress固定ページ ⇄ GitHubファイル 対応表(全18ページ)
 
-> 「WordPressのページ名」と「GitHubのファイル名」が一致せず分かりにくい問題の解決用。
-> 編集を頼むときは、この表の「GitHubファイル」の名前で指定すればOK。
-> 最終更新: 2026-07-19(WP固定ページ一覧のスクショで全スラッグ確認)
+> **ファイル名はWordPressのスラッグと同じ名前に統一しました(2026-08-05)。**
+> 例: スラッグ `budget` のページ → ファイルは `budget.html`。迷ったらスラッグで探せばOK。
+> WP管理画面の公開済み18ページ(2026-08-05スクショ)と完全対応。
+> 最終更新: 2026-08-05
 
 ---
 
-## このリポジトリ(TAF-V2meta-LP)でGit管理しているページ
+## 全ページ対応表(WP管理画面の並び順)
 
-| WPページのタイトル | スラッグ(URL) | GitHubファイル | 貼り付け方 |
-|---|---|---|---|
-| 料金表 | /price/ | `wordpress/price-block1-plans.html`<br>`wordpress/price-block2-consultation.html`<br>`wordpress/price-block3-faq.html` | 3つのカスタムHTMLブロックに上から順に |
-| 簡単見積もり-order | /order/ | `wordpress/order-page-block.html` | カスタムHTMLブロック1つに丸ごと |
-| 5,000円OFFクーポン | /coupon/ | `wordpress/coupon-page-blocks.html` | BLOCK1 → CF7ショートコード → BLOCK3 の3構成 |
-| サイトまるごとバックアップパック | /backup/ | `wordpress/backup-pack-page.html` | カスタムHTMLブロック1つに丸ごと(2026-07-22新設。**WP側でスラッグ`backup`の固定ページ作成が必要**。料金表カード#13の「詳しくはこちら」がここへリンク) |
-| 月次メンテナンスマニュアル(購入者向け) | /pdf-backup/ | `wordpress/backup-manual-page.html` | カスタムHTMLブロック1つに丸ごと(2026-07-22新設)。**print版(backup-manual-print.html)はA4 PDF専用でWPに貼ると崩れる — 必ずこちらを貼る**。購入者特典のため**パスワード保護済み(2026-07-22設定完了)**。納品時にURL+パスワードをセットで案内する |
+| スラッグ | WPページのタイトル | 原本ファイル(リポジトリ) |
+|---|---|---|
+| `offer2` | お問い合わせ2-renew | **official-hp** `docs/wp-blocks/offer2.html`(+CF7側の電話項目手順 `offer2-cf7-phone-fields.md`) |
+| `backup` | サイトまるごとバックアップパック | **V2meta-LP** `wordpress/backup.html` |
+| `maintenance` | サイト安心保守管理プラン | **V2meta-LP** `wordpress/maintenance.html` |
+| `price` | 料金表 | **V2meta-LP** `wordpress/price-block1-plans.html` + `price-block2-consultation.html` + `price-block3-faq.html`(3ブロックを上から順に) |
+| `order` | 簡単見積もり-order | **V2meta-LP** `wordpress/order.html` ★正はこちら(電話相談の条件分岐入り)。official-hp側の `order-old.html` は電話相談なしの旧版 — 使わない |
+| `budget` | 先に、ご予算を教えてください(予算から選ぶ) | **official-hp** `docs/wp-blocks/budget.html` |
+| `lp-hp2` | LP・HPデザイン制作プラン(2万円〜) | **official-hp** `docs/wp-blocks/lp-hp2.html` |
+| `hp3` | WordPress HP/LP制作プラン(3万円〜) | **official-hp** `docs/wp-blocks/hp3.html` |
+| `app2_9` | 専用AIアプリ制作プラン(2.9万円〜) | **official-hp** `docs/wp-blocks/app2_9.html` |
+| `lp7` | プロ制作プラン(7万円〜)リスト取り特化 | **official-hp** `docs/wp-blocks/lp7.html` |
+| `lp15` | HP/LP+セールスファネル一元化(15万円〜) | **official-hp** `docs/wp-blocks/lp15.html` |
+| `ad` | 広告運用・集客サポート(月1.8万円〜) | **official-hp** `docs/wp-blocks/ad.html` ※タイトル・中身とも「広告費の20%/月・最低月11,000円」への修正が宿題 |
+| `coupon` | 5,000円OFFクーポン(5万円以上ご利用) | **V2meta-LP** `wordpress/coupon.html`(BLOCK1→CF7→BLOCK3の3構成) |
+| `coupon-thanks` | クーポン受け取りTHANKYOUV2 | Git管理外(WP直接編集) |
+| `pdf-backup` | PDF-backup — パスワード保護中 | **V2meta-LP** `wordpress/pdf-backup.html`(購入者向け・パスワード保護済み。print版 `backup-manual-print.html` はA4 PDF専用でWPに貼ると崩れる) |
+| `privacy-policy` | Privacy-policy | Git管理外(法務・WP直接編集) |
+| `kiyaku` | 利用規約 | Git管理外(法務・WP直接編集) |
+| `tokushoho` | 特定商取引法に基づく表記 | Git管理外(法務・WP直接編集) |
 
-**サービス資料**(WordPress固定ページではなくサーバー直置きファイル):
+**リポジトリ略称**: official-hp = `810eigo-droid/taf-design-official-hp` / V2meta-LP = `810eigo-droid/TAF-V2meta-LP`
+
+## ページ内に組み込む「部品」(1ページ=1ファイルではないもの・official-hp側)
+
+| ファイル | 用途 |
+|---|---|
+| `docs/wp-blocks/parts-quick-estimate-button.html` | 簡単見積もりボタン。各プランページ(lp-hp2/hp3/app2_9/lp7/lp15/ad)の上下に設置済み |
+| `docs/wp-blocks/order-parts-price-accordion.html` | /order/ フォーム内の「料金の目安」開閉アコーディオン |
+| `docs/wp-blocks/parts-selfkeep-pack.html` | 保守の2択「任せる vs 自分で守る」。/price/ 保守セクション付近など |
+
+**サービス資料**(固定ページではなくサーバー直置き):
 | 用途 | 公開場所 | GitHubファイル |
 |---|---|---|
-| サービス資料(リンク配布用) | taf-design.com/lp/service-guide.html 等 | `service-guide.html`(エックスサーバーに直接アップロード) |
-
-## このリポジトリでは管理していないページ(WP直接編集 or LPtools製 or 公式HP側)
-
-これらは料金や文言を変えても**このセッションのGitには無い**ので、WordPress側で直接編集が必要。
-価格改定時は price-master.md と食い違わないよう注意。
-
-| WPページのタイトル | スラッグ | 現在のタイトル内価格 | 税込統一後の正しい価格(price-master準拠) |
-|---|---|---|---|
-| お問い合わせV2 | /offer2/ | ― | (資料DL・相談の受け皿) |
-| LP・HPデザイン制作プラン | /lp-hp2/ | 2万円〜 | **22,000円(税込)〜** ← 要修正 |
-| WordPress HP/LP制作プラン | /hp3/ | 3万円〜 | **33,000円(税込)〜** ← 要修正 |
-| 専用AIアプリ制作プラン | **/app2_9/** | 2.9万円〜 | 29,000円(税込)〜(整合OK) |
-| プロ制作プラン リスト取り特化 | /lp7/ | 7万円〜 | 70,000円(税込)〜(整合OK) |
-| HP/LP+セールスファネル一元化 | /lp15/ | 15万円〜 | 150,000円(税込)〜(整合OK) |
-| 広告運用・集客サポート | /ad/ | 月1.8万円〜 | **広告費の20%/月・最低月11,000円(税込)** ← 要修正 |
-| 先に、ご予算を教えてください | /budget/ | ― | (予算ハブ・公式HPセッション管轄) |
-| クーポン受け取りTHANKYOU | /coupon-thanks/ | ― | (クーポン送信後のサンクスページ) |
-| 利用規約 | **/kiyaku/** | ― | 法務ページ |
-| 特定商取引法に基づく表記 | **/tokushoho/** | ― | 法務ページ |
-| プライバシーポリシー | **/privacy-policy/** | ― | 法務ページ |
+| サービス資料 | taf-design.com/lp/service-guide.html | **V2meta-LP** `service-guide.html`(エックスサーバーへ直接アップ) |
+| 同PDF原稿 | taf-design.com/lp/service-guide.pdf | **V2meta-LP** `service-guide-print.html` → PDF生成 |
+| 広告LP | taf-design.com/lp/ | **V2meta-LP** `index.html` |
 
 ## 重要メモ(スラッグの罠)
 
 - AIアプリは **`app2_9`(アンダースコア)**。ハイフンの `app2-9` はリンク切れになる
-- 法務3ページの実スラッグは **`kiyaku` / `tokushoho` / `privacy-policy`**。
-  クーポンページが `terms` / `tokutei` / `privacy` にリンクしていた誤りは2026-07-19に修正済み
-- タイトルに「2万円〜」等が入っているプランページ(/lp-hp2/ /hp3/ /ad/)は、
-  税込統一に合わせて**WP側でタイトル・本文の価格を直す必要がある**(このGitには無いため)
+- 法務3ページの実スラッグは **`kiyaku` / `tokushoho` / `privacy-policy`**
+- **スラッグ(URL)は変更しないこと**。変えると設置済みのボタン・リンクが切れる
+- タイトルに旧価格が入るページ(/lp-hp2/ /hp3/ /ad/)は税込統一への修正が宿題(price-master.md 準拠)
+
+## 旧ファイル名 → 新ファイル名(2026-08-05リネーム記録)
+
+| 旧 | 新 |
+|---|---|
+| V2meta-LP `order-page-block.html` | `order.html` |
+| V2meta-LP `coupon-page-blocks.html` | `coupon.html` |
+| V2meta-LP `backup-pack-page.html` | `backup.html` |
+| V2meta-LP `maintenance-plan-page.html` | `maintenance.html` |
+| V2meta-LP `backup-manual-page.html` | `pdf-backup.html` |
+| official-hp `wp-budget-selector.html` | `budget.html` |
+| official-hp `wp-offer2-contact-form.html` | `offer2.html` |
+| official-hp `wp-ad-operation-plan.html` | `ad.html` |
+| official-hp `wp-ai-app-plan.html` | `app2_9.html` |
+| official-hp `wp-funnel-plan.html` | `lp15.html` |
+| official-hp `wp-hp-lp-plan.html` | `hp3.html` |
+| official-hp `wp-lp-hp2-plan.html` | `lp-hp2.html` |
+| official-hp `wp-lp-hp-pro-70k.html` | `lp7.html` |
+| official-hp `wp-order-estimate-form.html` | `order-old.html`(旧版・正はV2meta-LPの`order.html`) |
+| official-hp `wp-order-price-accordion.html` | `order-parts-price-accordion.html` |
+| official-hp `wp-quick-estimate-button.html` | `parts-quick-estimate-button.html` |
+| official-hp `wp-selfkeep-pack.html` | `parts-selfkeep-pack.html` |

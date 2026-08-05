@@ -43,8 +43,8 @@
 | ページ | ファイル | 状態 |
 |---|---|---|
 | 料金表 /price/ | `wordpress/price-block1-plans.html`(+block2無料相談/block3 FAQ) | 3カテゴリ13サービス常時表示(2026-07-22 バックアップパック追加)・上に戻るボタン・CTA=かんたん無料見積もり(/order/)・税込統一済み |
-| 簡単見積もり /order/ | `wordpress/order-page-block.html` | 15項目条件分岐・料金表リンク同一タブ+入力自動保存復元・「前のページへ戻る」あり |
-| クーポン /coupon/ | `wordpress/coupon-page-blocks.html` | 5万円(税抜)以上・法務リンク実スラッグ修正済み・/budget/リンクあり |
+| 簡単見積もり /order/ | `wordpress/order.html` | 15項目条件分岐・料金表リンク同一タブ+入力自動保存復元・「前のページへ戻る」あり |
+| クーポン /coupon/ | `wordpress/coupon.html` | 5万円(税抜)以上・法務リンク実スラッグ修正済み・/budget/リンクあり |
 
 ## 4. 価格(原本は docs/price-master.md — 変更は必ずそこから)
 
@@ -70,5 +70,5 @@
 ## 7. サイトまるごとバックアップパック関連(2026-07-22新設)
 
 - 商品: 16,500円(税込)・買い切り。原本は price-master.md A表#13
-- 専用ページ: `wordpress/backup-pack-page.html` → WPスラッグ **/backup/**(料金表カード#13「詳しくはこちら」のリンク先)
+- 専用ページ: `wordpress/backup.html` → WPスラッグ **/backup/**(料金表カード#13「詳しくはこちら」のリンク先)
 - 納品物マニュアル: A4原稿 `backup-manual-print.html` → `backup-manual.pdf`(6ページ・v01)。**購入者特典なので公開サーバーに置かない**(納品時に個別にお渡し)。巻末「あなたのサイト情報」表は納品時に記入する前提
